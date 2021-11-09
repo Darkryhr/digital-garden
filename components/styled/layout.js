@@ -26,6 +26,7 @@ const Wrapper = styled.div`
   display: block;
   margin: 0 auto;
   padding: 100px 1vw;
+  height: 85vh;
   /* display: flex; */
 `;
 

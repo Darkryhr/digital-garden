@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { LinkButton } from './styled/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaSearch } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { BiX } from 'react-icons/bi';
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
   return (
     <Nav>
       <Link href='/' passHref>
@@ -24,12 +26,15 @@ const Header = () => {
           </Link>
         </MenuLinks>
         <MenuLinks>
-          <LinkButton whileHover={{ color: '#fb8b24' }}>
+          <LinkButton
+            whileHover={{ color: '#fb8b24' }}
+            onClick={() => setOpen(!open)}
+          >
             <FaSearch />
           </LinkButton>
         </MenuLinks>
       </Menu>
-      {/* <Search /> */}
+      {open ? <Search setOpen={setOpen} /> : ''}
     </Nav>
   );
 };
@@ -77,9 +82,12 @@ const MenuLinks = styled.li`
   }
 `;
 
-const Search = () => {
+const Search = ({ setOpen }) => {
   return (
     <Overlay>
+      <CloseButton>
+        <BiX size={48} onClick={() => setOpen(!open)} />
+      </CloseButton>
       <InputWrapper>
         <SearchForm>
           <Input />
@@ -102,6 +110,18 @@ const Overlay = styled.div`
   align-items: center;
   top: 0;
   left: 0;
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 2em;
+  margin-right: 2em;
+  border: none;
+  background: none;
+  color: #fff;
+  cursor: pointer;
 `;
 
 const Input = styled.input`
