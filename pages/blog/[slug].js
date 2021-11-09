@@ -40,13 +40,13 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
 const PostPage = ({ frontMatter: { title }, mdxSource }) => {
   return (
-    <div style={{ paddingTop: '80px' }}>
+    <>
       <Title>{title}</Title>
       <MDXRemote
         {...mdxSource}
         components={{ Button, SyntaxHighlighter, article: Article }}
       />
-    </div>
+    </>
   );
 };
 

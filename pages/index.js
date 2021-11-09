@@ -4,9 +4,7 @@ import styled from 'styled-components';
 export default function Home() {
   return (
     <>
-      <Container>
-        <Hero>Hello There!</Hero>
-      </Container>
+      <Container></Container>
     </>
   );
 }
