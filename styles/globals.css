@@ -104,6 +104,7 @@ section {
 }
 body {
   overflow-x: hidden;
+  overflow-y: scroll;
   line-height: 1;
   width: 100%;
 }
@@ -132,7 +133,6 @@ a {
 
 * {
   box-sizing: border-box;
-  /* font-family: 'Rubik', sans-serif; */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

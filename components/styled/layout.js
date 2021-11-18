@@ -9,8 +9,10 @@ const Layout = ({ children }) => {
       <Fixed>
         <Header />
       </Fixed>
-      <Wrapper>{children}</Wrapper>
-      <Footer />
+      <Wrapper>
+        <ContentWrapper>{children}</ContentWrapper>
+        <Footer />
+      </Wrapper>
     </Main>
   );
 };
@@ -25,9 +27,13 @@ const Wrapper = styled.div`
   max-width: 768px;
   display: block;
   margin: 0 auto;
-  padding: 100px 1vw;
-  height: 85vh;
+  padding: 0 1vw;
+  padding-top: 100px;
   /* display: flex; */
+`;
+
+const ContentWrapper = styled.div`
+  min-height: 85vh;
 `;
 
 const Fixed = styled.div`

@@ -24,9 +24,8 @@ const Footer = () => {
 export default Footer;
 
 const FooterWrapper = styled.footer`
-  max-width: 768px;
   padding: 1em;
-  margin: 0 auto;
+  width: 100%;
   border-top: 1px solid rgba(128, 100, 100, 0.37);
 `;
 
@@ -35,6 +34,9 @@ const ContentWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 90px;
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
 `;
 
 const SocialWrapper = styled.div``;

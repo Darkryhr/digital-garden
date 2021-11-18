@@ -1,57 +1,79 @@
 import React from 'react';
-import fs from 'fs';
-import path from 'path';
-import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote } from 'next-mdx-remote';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import matter from 'gray-matter';
+import { useRouter } from 'next/router';
+import ErrorPage from 'next/error';
+import Head from 'next/head';
+import PostBody from '@components/post-body';
+import { getAllPosts, getPostBySlug } from 'lib/api';
+import markdownToHtml from 'lib/markdownToHtml';
+import styled from 'styled-components';
+import DateFormatter from '@components/date-formatter';
 import { Title } from '@components/styled/typography';
-import { Article } from '@components/styled';
+import { Divider } from '@components/styled';
 
-export const getStaticPaths = async () => {
-  const files = fs.readdirSync(path.join('posts'));
-
-  const paths = files.map((file) => ({
-    params: {
-      slug: file.replace('.mdx', ''),
-    },
-  }));
-  return {
-    paths,
-    fallback: false,
-  };
+const Post = ({ post }) => {
+  const router = useRouter();
+  if (!router.isFallback && !post?.slug) {
+    return <ErrorPage statusCode={404} />;
+  }
+  return (
+    <div>
+      {router.isFallback ? (
+        <h1>Loading...</h1>
+      ) : (
+        <ContentWrapper>
+          <Head>
+            <title>{post.title}</title>
+          </Head>
+          <PostHeader>
+            <Title>{post.title}</Title>
+            <DateFormatter dateString={post.date} />
+          </PostHeader>
+          <Divider />
+          <PostBody content={post.content} />
+        </ContentWrapper>
+      )}
+    </div>
+  );
 };
 
-export const getStaticProps = async ({ params: { slug } }) => {
-  const markdownWithMeta = fs.readFileSync(
-    path.join('posts', slug + '.mdx'),
-    'utf-8'
-  );
-  const { data: frontMatter, content } = matter(markdownWithMeta);
-  const mdxSource = await serialize(content);
+export default Post;
+
+const PostHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const ContentWrapper = styled.article`
+  margin: 0 auto;
+  width: 95%;
+`;
+
+export async function getStaticProps({ params }) {
+  const post = getPostBySlug(params.slug, ['title', 'date', 'slug', 'content']);
+  const content = await markdownToHtml(post.content || '');
+
   return {
     props: {
-      frontMatter,
-      slug,
-      mdxSource,
+      post: {
+        ...post,
+        content,
+      },
     },
   };
-};
+}
 
-const PostPage = ({ frontMatter: { title }, mdxSource }) => {
-  return (
-    <>
-      <Title>{title}</Title>
-      <MDXRemote
-        {...mdxSource}
-        components={{ Button, SyntaxHighlighter, article: Article }}
-      />
-    </>
-  );
-};
+export async function getStaticPaths() {
+  const posts = getAllPosts(['slug']);
 
-export default PostPage;
-
-const Button = ({ text }) => {
-  return <button>{text}</button>;
-};
+  return {
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      };
+    }),
+    fallback: false,
+  };
+}
