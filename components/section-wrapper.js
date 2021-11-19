@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Section } from './styled/LayoutStyles';
+import styled from 'styled-components';
 
 const SectionWrapper = ({ children, delay = 0 }) => {
   return (
     <Section
-      as={motion.div}
       initial={{ y: 10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, delay }}
@@ -17,3 +16,7 @@ const SectionWrapper = ({ children, delay = 0 }) => {
 };
 
 export default SectionWrapper;
+
+const Section = styled(motion.section)`
+  padding: 3em 0;
+`;

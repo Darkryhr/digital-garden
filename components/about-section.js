@@ -1,11 +1,11 @@
 import React from 'react';
 import { Divider } from './styled';
-import { Title, Subtitle, Text } from './styled/typography';
+import { Heading1, Subtitle, Text } from './styled/typography';
 
 const AboutSection = () => {
   return (
     <section>
-      <Title>Hi, I&apos;m Gabriel</Title>
+      <Heading1>Hi, I&apos;m Gabriel</Heading1>
       <Subtitle>Developer / Designer</Subtitle>
       <Divider />
       <Text>Info about meeeeeeeeeeeeeeeeeeee</Text>

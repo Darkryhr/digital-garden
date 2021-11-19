@@ -7,7 +7,7 @@ import { ContentWrapper } from './styled/LayoutStyles';
 const Footer = () => {
   return (
     <FooterWrapper>
-      <ContentWrapper>
+      <ContentWrapper height='90px'>
         <p>Gabriel Lellouche &copy; 2021</p>
         <div>
           <IconButton whileHover={{ scale: 1.1, color: '#fb8b24' }}>

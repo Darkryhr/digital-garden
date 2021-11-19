@@ -1,4 +1,3 @@
-import SEO from '@components/SEO';
 import React from 'react';
 import styled from 'styled-components';
 import Footer from '../Footer';

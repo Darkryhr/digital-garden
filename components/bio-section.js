@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Title, Text } from './styled/typography';
+import { Heading1, Text } from './styled/typography';
 import { Divider } from './styled';
 import { List, ListItem } from './styled/LayoutStyles';
 
 const BioSection = () => {
   return (
     <>
-      <Title>Bio</Title>
+      <Heading1>Bio</Heading1>
       <Divider />
       <List>
         <ListItem>

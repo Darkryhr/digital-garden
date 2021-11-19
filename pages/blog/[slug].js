@@ -5,10 +5,10 @@ import PostBody from '@components/post-body';
 import { getAllPosts, getPostBySlug } from 'lib/api';
 import markdownToHtml from 'lib/markdownToHtml';
 import DateFormatter from '@components/date-formatter';
-import { Title } from '@components/styled/typography';
-import { Divider } from '@components/styled';
+import { Heading2 } from '@components/styled/typography';
 import SEO from '@components/SEO';
-import { ContentWrapper, PostHeader } from '@components/styled/BlogStyles';
+import Loader from '@components/Loader';
+import { SpacedRow, Wrapper } from '@components/styled/LayoutStyles';
 
 const Post = ({ post }) => {
   const router = useRouter();
@@ -18,17 +18,16 @@ const Post = ({ post }) => {
   return (
     <div>
       {router.isFallback ? (
-        <h1>Loading...</h1>
+        <Loader />
       ) : (
-        <ContentWrapper>
+        <Wrapper>
           <SEO title={post.title} />
-          <PostHeader>
-            <Title>{post.title}</Title>
+          <SpacedRow>
+            <Heading2>{post.title}</Heading2>
             <DateFormatter dateString={post.date} />
-          </PostHeader>
-          <Divider />
+          </SpacedRow>
           <PostBody content={post.content} />
-        </ContentWrapper>
+        </Wrapper>
       )}
     </div>
   );
