@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
+import { Section } from './styled/LayoutStyles';
 
 const SectionWrapper = ({ children, delay = 0 }) => {
   return (
@@ -17,7 +17,3 @@ const SectionWrapper = ({ children, delay = 0 }) => {
 };
 
 export default SectionWrapper;
-
-const Section = styled(motion.section)`
-  padding: 2em 1em;
-`;

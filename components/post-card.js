@@ -1,8 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { Description, FeedTitle, Title } from './styled/typography';
+import { Description } from './styled/typography';
+import { FeedTitle } from './styled/BlogStyles';
 import DateFormatter from '@components/date-formatter';
+import { PostHeading } from './styled/BlogStyles';
+import { Card } from './styled/LayoutStyles';
 
 const PostCard = ({ title, date, excerpt, slug }) => {
   return (
@@ -19,20 +22,3 @@ const PostCard = ({ title, date, excerpt, slug }) => {
 };
 
 export default PostCard;
-
-const Card = styled.div`
-  width: 95%;
-  margin: 0 auto;
-  padding: 1em 0.5vw;
-  cursor: pointer;
-  margin-bottom: 1em;
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
-const PostHeading = styled.section`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;

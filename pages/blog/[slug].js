@@ -1,14 +1,14 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import Head from 'next/head';
 import PostBody from '@components/post-body';
 import { getAllPosts, getPostBySlug } from 'lib/api';
 import markdownToHtml from 'lib/markdownToHtml';
-import styled from 'styled-components';
 import DateFormatter from '@components/date-formatter';
 import { Title } from '@components/styled/typography';
 import { Divider } from '@components/styled';
+import SEO from '@components/SEO';
+import { ContentWrapper, PostHeader } from '@components/styled/BlogStyles';
 
 const Post = ({ post }) => {
   const router = useRouter();
@@ -21,9 +21,7 @@ const Post = ({ post }) => {
         <h1>Loading...</h1>
       ) : (
         <ContentWrapper>
-          <Head>
-            <title>{post.title}</title>
-          </Head>
+          <SEO title={post.title} />
           <PostHeader>
             <Title>{post.title}</Title>
             <DateFormatter dateString={post.date} />
@@ -37,17 +35,6 @@ const Post = ({ post }) => {
 };
 
 export default Post;
-
-const PostHeader = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const ContentWrapper = styled.article`
-  margin: 0 auto;
-  width: 95%;
-`;
 
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug, ['title', 'date', 'slug', 'content']);

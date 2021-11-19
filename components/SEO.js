@@ -8,7 +8,7 @@ const SEO = ({ title = 'Gabriel Lellouche' }) => {
       <meta name='description' content="Gabriel's Homepage" />
       <meta name='author' content='Gabriel Lellouche' />
       <link rel='apple-touch-icon' href='apple-touch-icon.jpg' />
-      <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
+      <link rel='shortcut icon' href='/favicon.ico' />
       <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:site' content='@GabrielAintReal' />
       <meta name='twitter:creator' content='@GabrielAintReal' />

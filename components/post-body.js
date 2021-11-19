@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const PostBody = ({ content }) => {
   return (
-    <div>
+    <>
       <MarkdownStyles dangerouslySetInnerHTML={{ __html: content }} />
-    </div>
+    </>
   );
 };
 

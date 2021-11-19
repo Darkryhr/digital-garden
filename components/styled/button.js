@@ -25,3 +25,15 @@ export const IconButton = styled(motion.button)`
   color: #fff;
   font-size: 24px;
 `;
+
+export const StrokedButton = styled(motion.button)`
+  border: none;
+  font-weight: 600;
+  background: orange;
+  border-radius: 50px;
+  padding: 6px 20px;
+  cursor: pointer;
+  display: block;
+  margin: 2rem auto;
+  font-size: 16px;
+`;

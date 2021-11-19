@@ -10,5 +10,5 @@ export default DateFormatter;
 
 const Time = styled.time`
   opacity: 0.7;
-  font-size: 14px;
+  font-size: 12px;
 `;

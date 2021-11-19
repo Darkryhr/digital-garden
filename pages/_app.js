@@ -1,8 +1,9 @@
-import SEO from '@components/SEO';
-import Layout from '../components/styled/layout';
-import Theme from '../components/styled/theme';
 import '../styles/globals.css';
 import { AnimatePresence } from 'framer-motion';
+
+import Layout from '../components/styled/layout';
+import Theme from '../components/styled/theme';
+import SEO from '@components/SEO';
 
 function MyApp({ Component, pageProps }) {
   return (

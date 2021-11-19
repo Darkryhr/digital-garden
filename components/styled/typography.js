@@ -11,11 +11,6 @@ export const Title = styled.h1`
   font-size: 30px;
 `;
 
-export const FeedTitle = styled.h2`
-  font-size: 22px;
-  font-weight: 600;
-`;
-
 export const Description = styled.p`
   font-weight: 400;
   opacity: 0.6;

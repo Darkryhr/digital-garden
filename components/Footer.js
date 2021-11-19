@@ -2,20 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { IconButton } from './styled/button';
+import { ContentWrapper } from './styled/LayoutStyles';
 
 const Footer = () => {
   return (
     <FooterWrapper>
       <ContentWrapper>
         <p>Gabriel Lellouche &copy; 2021</p>
-        <SocialWrapper>
+        <div>
           <IconButton whileHover={{ scale: 1.1, color: '#fb8b24' }}>
             <FaGithub />
           </IconButton>
           <IconButton whileHover={{ scale: 1.1, color: '#fb8b24' }}>
             <FaLinkedin />
           </IconButton>
-        </SocialWrapper>
+        </div>
       </ContentWrapper>
     </FooterWrapper>
   );
@@ -28,15 +29,3 @@ const FooterWrapper = styled.footer`
   width: 100%;
   border-top: 1px solid rgba(128, 100, 100, 0.37);
 `;
-
-const ContentWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 90px;
-  width: 100%;
-  max-width: 768px;
-  margin: 0 auto;
-`;
-
-const SocialWrapper = styled.div``;

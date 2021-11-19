@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { Title, Text } from './styled/typography';
 import { Divider } from './styled';
+import { List, ListItem } from './styled/LayoutStyles';
 
 const BioSection = () => {
   return (
     <>
       <Title>Bio</Title>
       <Divider />
-      <BioList>
+      <List>
         <ListItem>
           <Year>1998</Year>
           <Text>Born in Ashdod, IL</Text>
@@ -29,7 +30,7 @@ const BioSection = () => {
           <Year>2020</Year>
           <Text>John Bryce - Full-Stack Web Development Course</Text>
         </ListItem>
-      </BioList>
+      </List>
     </>
   );
 };
@@ -39,17 +40,4 @@ export default BioSection;
 const Year = styled.span`
   font-weight: 500;
   margin-right: ${(props) => (props.inline ? '0' : '15px')};
-`;
-
-const BioList = styled.ul`
-  list-style: none;
-`;
-
-const ListItem = styled.li`
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 0.5em;
-  &:last-child {
-    margin-bottom: 0;
-  }
 `;

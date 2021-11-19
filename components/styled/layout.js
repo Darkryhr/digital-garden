@@ -1,3 +1,4 @@
+import SEO from '@components/SEO';
 import React from 'react';
 import styled from 'styled-components';
 import Footer from '../Footer';
@@ -27,13 +28,13 @@ const Wrapper = styled.div`
   max-width: 768px;
   display: block;
   margin: 0 auto;
-  padding: 0 1vw;
+  padding: 0 3vw;
   padding-top: 100px;
   /* display: flex; */
 `;
 
 const ContentWrapper = styled.div`
-  min-height: 85vh;
+  min-height: calc(100vh - 230px);
 `;
 
 const Fixed = styled.div`
