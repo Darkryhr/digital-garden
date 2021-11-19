@@ -16,6 +16,8 @@ export const Button = styled(motion.button)`
   background: none;
   color: #fff;
   font-size: 16px;
+  color: ${({ theme }) => theme.colors.accent.base};
+  padding: 1.4em 0;
 `;
 
 export const IconButton = styled(motion.button)`
@@ -24,6 +26,7 @@ export const IconButton = styled(motion.button)`
   border: none;
   color: #fff;
   font-size: 24px;
+  margin-left: 1em;
 `;
 
 export const StrokedButton = styled(motion.button)`

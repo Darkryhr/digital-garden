@@ -80,6 +80,7 @@ summary,
 time,
 mark,
 audio,
+button,
 video {
   margin: 0;
   padding: 0;
@@ -129,6 +130,7 @@ table {
 }
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 * {

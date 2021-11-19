@@ -1,12 +1,12 @@
 import { getAllPosts } from 'lib/api';
 import React from 'react';
-import PostCard from '@components/post-card';
+import PostPreview from '@components/post-preview';
 
 const PostFeed = ({ allPosts }) => {
   return (
     <>
       {allPosts.map((post) => (
-        <PostCard
+        <PostPreview
           key={post.slug}
           slug={post.slug}
           title={post.title}

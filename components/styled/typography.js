@@ -18,9 +18,9 @@ export const Heading3 = styled.h3`
 
 export const Description = styled.p`
   font-weight: 400;
-  opacity: 0.7;
-  font-size: 14px;
-  padding-top: 5px;
+  font-size: 16px;
+  opacity: 0.8;
+  padding-top: 10px;
 `;
 
 export const Subtitle = styled.p`
