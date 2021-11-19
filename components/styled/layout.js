@@ -29,6 +29,10 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0 3vw;
   padding-top: 100px;
+  @media (max-width: 768px) {
+    padding: 0 7vw;
+    padding-top: 100px;
+  }
   /* display: flex; */
 `;
 
