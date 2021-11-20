@@ -6,14 +6,14 @@ export const GlobalStyles = createGlobalStyle`
     transition: all 0.50s linear;
   }
   a {
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.secondary};
   }
   button {
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.secondary};
 
   }
   svg {
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.secondary};
 
   }
   `;

@@ -1,15 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import { IconButton, LinkButton } from './styled/button';
+import { LinkButton } from './styled/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { BiMenuAltRight, BiSun, BiMoon } from 'react-icons/bi';
+import { useRouter } from 'next/router';
 
 const Header = ({ toggleTheme }) => {
   const [open, setOpen] = useState(false);
   const [themeIcon, setThemeIcon] = useState(false);
   let ref = useRef(null);
+  const router = useRouter();
   const handleClick = () => setOpen(!open);
   const LinkClick = () => setOpen(false);
   const handleClickOutside = (event) => {
@@ -38,14 +40,22 @@ const Header = ({ toggleTheme }) => {
       <Menu open={open}>
         <MenuLinks>
           <Link href='/portfolio' passHref>
-            <LinkButton whileHover={{ color: '#fb8b24' }} onClick={LinkClick}>
+            <LinkButton
+              whileHover={{ color: '#fb8b24' }}
+              onClick={LinkClick}
+              $active={router.pathname == '/portfolio'}
+            >
               Projects
             </LinkButton>
           </Link>
         </MenuLinks>
         <MenuLinks>
           <Link href='/blog' passHref>
-            <LinkButton whileHover={{ color: '#fb8b24' }} onClick={LinkClick}>
+            <LinkButton
+              whileHover={{ color: '#fb8b24' }}
+              onClick={LinkClick}
+              $active={router.pathname == '/blog'}
+            >
               Blog
             </LinkButton>
           </Link>
@@ -96,7 +106,7 @@ const Logo = styled.h1`
   margin-left: 0.3em;
   line-height: 2;
   overflow: hidden;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.secondary};
 `;
 
 const LogoSpan = styled.span`
@@ -130,6 +140,7 @@ const Menu = styled.ul`
 
 const MenuLinks = styled.li`
   margin-left: 2em;
+
   @media (max-width: 426px) {
     margin: 0;
     padding: 0.75em 0;
