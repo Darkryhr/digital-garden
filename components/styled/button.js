@@ -7,7 +7,7 @@ export const LinkButton = styled(motion.button)`
   border: none;
   background: none;
   font-size: 16px;
-  color: ${({ theme }) => theme.colors.text.base};
+  color: ${({ theme }) => theme.colors.text};
 `;
 export const Button = styled(motion.button)`
   font-weight: 600;

@@ -96,7 +96,7 @@ const Logo = styled.h1`
   margin-left: 0.3em;
   line-height: 2;
   overflow: hidden;
-  color: ${({ theme }) => theme.colors.text.base};
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 const LogoSpan = styled.span`
@@ -119,7 +119,7 @@ const Menu = styled.ul`
     justify-content: center;
     align-items: center;
     width: 100%;
-    background: ${(props) => props.theme.colors.primary.base};
+    background: ${(props) => props.theme.colors.primary};
     padding-bottom: 1em;
     position: absolute;
     left: 0;
