@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import Footer from '../Footer';
 import Header from '../Header';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, toggleTheme }) => {
   return (
     <Main>
       <Fixed>
-        <Header />
+        <Header toggleTheme={toggleTheme} />
       </Fixed>
       <Wrapper>
         <ContentWrapper>{children}</ContentWrapper>

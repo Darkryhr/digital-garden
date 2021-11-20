@@ -6,17 +6,15 @@ export const LinkButton = styled(motion.button)`
   cursor: pointer;
   border: none;
   background: none;
-  color: #fff;
   font-size: 16px;
+  color: ${({ theme }) => theme.colors.text.base};
 `;
 export const Button = styled(motion.button)`
   font-weight: 600;
   cursor: pointer;
   border: none;
   background: none;
-  color: #fff;
   font-size: 16px;
-  color: ${({ theme }) => theme.colors.accent.base};
   padding: 1.4em 0;
 `;
 
@@ -24,7 +22,6 @@ export const IconButton = styled(motion.button)`
   cursor: pointer;
   background: none;
   border: none;
-  color: #fff;
   font-size: 24px;
   margin-left: 1em;
 `;

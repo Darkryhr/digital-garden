@@ -1,6 +1,7 @@
 import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from './globalStyles';
 
-const theme = {
+export const darkTheme = {
   colors: {
     primary: {
       base: '#181818',
@@ -20,8 +21,22 @@ const theme = {
   },
 };
 
-const Theme = ({ children }) => (
-  <ThemeProvider theme={theme}>{children}</ThemeProvider>
-);
-
-export default Theme;
+export const lightTheme = {
+  colors: {
+    primary: {
+      base: '#f4f4f4',
+      darker: '#efefef',
+      lighter: '#ffffff',
+    },
+    accent: {
+      base: '#fb8b24',
+      darker: '#f7760d',
+      lighter: '#f9923e',
+    },
+    text: {
+      base: '#181818',
+      darker: '#212529',
+      lighter: '#1f363d',
+    },
+  },
+};

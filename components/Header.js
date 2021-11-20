@@ -1,28 +1,27 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import { LinkButton } from './styled/button';
+import { IconButton, LinkButton } from './styled/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { BiMenuAltRight } from 'react-icons/bi';
+import { BiMenuAltRight, BiSun, BiMoon } from 'react-icons/bi';
 
-const Header = () => {
+const Header = ({ toggleTheme }) => {
   const [open, setOpen] = useState(false);
+  const [themeIcon, setThemeIcon] = useState(false);
   let ref = useRef(null);
-
   const handleClick = () => setOpen(!open);
   const LinkClick = () => setOpen(false);
-
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) setOpen(false);
   };
-
   useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    setThemeIcon(savedTheme);
     document.addEventListener('click', handleClickOutside, true);
     return () =>
       document.removeEventListener('click', handleClickOutside, true);
   });
-
   return (
     <Nav>
       <Link href='/' passHref>
@@ -51,6 +50,11 @@ const Header = () => {
             </LinkButton>
           </Link>
         </MenuLinks>
+        <MenuLinks>
+          <LinkButton whileHover={{ color: '#fb8b24' }} onClick={toggleTheme}>
+            {themeIcon === 'light' ? <BiMoon size={20} /> : <BiSun size={20} />}
+          </LinkButton>
+        </MenuLinks>
       </Menu>
     </Nav>
   );
@@ -67,7 +71,6 @@ const MobileButton = styled.button`
   right: 0;
   padding-top: 33px;
   padding-right: 10px;
-  color: ${(props) => props.theme.colors.accent.base};
   &:focus {
     outline: none;
   }
@@ -93,6 +96,7 @@ const Logo = styled.h1`
   margin-left: 0.3em;
   line-height: 2;
   overflow: hidden;
+  color: ${({ theme }) => theme.colors.text.base};
 `;
 
 const LogoSpan = styled.span`
