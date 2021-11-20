@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from '../components/styled/theme';
 import { GlobalStyles } from '@components/styled/globalStyles';
 import Layout from '../components/styled/layout';
-import Theme from '../components/styled/theme';
 import SEO from '@components/SEO';
 
 function App({ Component, pageProps }) {

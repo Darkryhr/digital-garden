@@ -40,22 +40,14 @@ const Header = ({ toggleTheme }) => {
       <Menu open={open}>
         <MenuLinks>
           <Link href='/portfolio' passHref>
-            <LinkButton
-              whileHover={{ color: '#fb8b24' }}
-              onClick={LinkClick}
-              $active={router.pathname == '/portfolio'}
-            >
+            <LinkButton whileHover={{ color: '#fb8b24' }} onClick={LinkClick}>
               Projects
             </LinkButton>
           </Link>
         </MenuLinks>
         <MenuLinks>
           <Link href='/blog' passHref>
-            <LinkButton
-              whileHover={{ color: '#fb8b24' }}
-              onClick={LinkClick}
-              $active={router.pathname == '/blog'}
-            >
+            <LinkButton whileHover={{ color: '#fb8b24' }} onClick={LinkClick}>
               Blog
             </LinkButton>
           </Link>
