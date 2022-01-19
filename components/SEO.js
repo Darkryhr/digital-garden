@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-const SEO = ({ title = 'Gabriel Lellouche' }) => {
+const SEO = ({ title = '| Gabriel does a thing' }) => {
   return (
     <Head>
       <meta name='viewport' content='width=device-width, initial-scale=1' />

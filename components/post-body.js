@@ -15,6 +15,10 @@ const MarkdownStyles = styled.div`
   p {
     color: ${({ theme }) => theme.colors.text};
     font-size: 16px;
+    padding-bottom: 2em;
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
   h2 {
     font-weight: 600;

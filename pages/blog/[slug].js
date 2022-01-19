@@ -20,14 +20,14 @@ const Post = ({ post }) => {
       {router.isFallback ? (
         <Loader />
       ) : (
-        <Wrapper>
+        <>
           <SEO title={post.title} />
           <SpacedRow>
             <Heading2>{post.title}</Heading2>
             <DateFormatter dateString={post.date} />
           </SpacedRow>
           <PostBody content={post.content} />
-        </Wrapper>
+        </>
       )}
     </div>
   );

@@ -1,10 +1,11 @@
 import { getAllPosts } from 'lib/api';
 import React from 'react';
 import PostPreview from '@components/post-preview';
+import SectionWrapper from '@components/section-wrapper';
 
 const PostFeed = ({ allPosts }) => {
   return (
-    <>
+    <SectionWrapper delay={0.1}>
       {allPosts.map((post) => (
         <PostPreview
           key={post.slug}
@@ -14,7 +15,7 @@ const PostFeed = ({ allPosts }) => {
           excerpt={post.excerpt}
         />
       ))}
-    </>
+    </SectionWrapper>
   );
 };
 

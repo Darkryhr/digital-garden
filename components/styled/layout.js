@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Footer from '../Footer';
-import Header from '../Header';
+import Header from '../header/Header';
 
 const Layout = ({ children, toggleTheme }) => {
   return (
@@ -21,13 +21,14 @@ export default Layout;
 
 const Main = styled.main`
   width: 100%;
+  background: url('./bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const Wrapper = styled.div`
-  max-width: 768px;
   display: block;
   margin: 0 auto;
-  padding: 0 3vw;
   padding-top: 100px;
   @media (max-width: 768px) {
     padding: 0 7vw;

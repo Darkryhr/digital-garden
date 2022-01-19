@@ -15,44 +15,11 @@ export const ContentWrapper = styled(SpacedRow)`
   color: ${({ theme }) => theme.colors.text};
 `;
 
-export const Wrapper = styled.div`
-  margin: 0 auto;
-`;
-
-export const ColWrapper = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-`;
-
-//* Lists
-export const List = styled.ul`
-  list-style: none;
-`;
-
-export const ListItem = styled.li`
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 0.5em;
-  color: ${({ theme }) => theme.colors.text};
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
-export const SkillItem = styled.li`
-  display: block;
-  opacity: 0.8;
-  font-size: 0.9em;
-  margin-bottom: 0.2rem;
-  color: ${({ theme }) => theme.colors.text};
-`;
-
-export const Row = styled.div`
-  display: flex;
-  justify-content: space-around;
-  @media (max-width: 768px) {
-    flex-direction: ${(props) => (props.toCol ? 'column' : 'row')};
-  }
+  width: 100%;
+  height: calc(100vh - 227px);
 `;
