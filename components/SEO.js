@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 const SEO = ({
   title = '| Gabriel does a thing',
-  desc = "Gabriel's Website",
+  desc = "Let's be unboring",
 }) => {
   return (
     <Head>
@@ -13,7 +13,6 @@ const SEO = ({
       <link rel='apple-touch-icon' href='apple-touch-icon.jpg' />
       <link rel='shortcut icon' href='/favicon.ico' />
       <meta name='twitter:title' content={title} />
-      <meta name='twitter:card' content='/card.png' />
       <meta name='twitter:site' content='@GabrielAintReal' />
       <meta name='twitter:creator' content='@GabrielAintReal' />
       <meta name='twitter:image' content='/card.png' />
@@ -21,6 +20,7 @@ const SEO = ({
       <meta property='og:site_name' content='Gabriel does a thing' />
       <meta property='og:type' content='website' />
       <meta property='og:image' content='/card.png' />
+      <meta property='og:description' content={desc} />
       <title>{title}</title>
     </Head>
   );
