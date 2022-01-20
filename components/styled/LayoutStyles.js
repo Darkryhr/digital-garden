@@ -23,3 +23,20 @@ export const Container = styled.div`
   width: 100%;
   height: calc(100vh - 227px);
 `;
+
+export const Row = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+export const Grid = styled.div`
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  padding: 1rem 4rem;
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
+`;

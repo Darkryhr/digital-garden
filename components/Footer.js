@@ -11,12 +11,20 @@ const Footer = () => {
         <p>Gabriel Lellouche &copy; 2021</p>
         <div>
           <IconButton whileHover={{ scale: 1.1, color: '#fb8b24' }}>
-            <a href='https://github.com/Darkryhr'>
+            <a
+              href='https://github.com/Darkryhr'
+              rel='noreferrer'
+              target='_blank'
+            >
               <FaGithub />
             </a>
           </IconButton>
           <IconButton whileHover={{ scale: 1.1, color: '#fb8b24' }}>
-            <a href='https://www.linkedin.com/in/gabriel-lellouche'>
+            <a
+              href='https://www.linkedin.com/in/gabriel-lellouche'
+              rel='noreferrer'
+              target='_blank'
+            >
               <FaLinkedin />
             </a>
           </IconButton>

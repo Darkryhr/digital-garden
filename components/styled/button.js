@@ -18,3 +18,12 @@ export const IconButton = styled(motion.button)`
   font-size: 24px;
   margin-left: 1em;
 `;
+
+export const ProjectButton = styled(motion.button)`
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  max-width: 80px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+`;

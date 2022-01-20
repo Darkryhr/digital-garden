@@ -1,10 +1,12 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const Heading1 = styled.h1`
+export const Heading1 = styled(motion.h1)`
   font-weight: 700;
   font-size: 4rem;
   color: ${({ theme }) => theme.colors.text};
   text-align: center;
+  cursor: default;
 `;
 
 export const Heading2 = styled.h2`

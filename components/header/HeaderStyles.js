@@ -80,7 +80,7 @@ export const MobileMenu = styled(motion.div)`
   }
 `;
 
-export const MobileWrapper = styled.div`
+export const MobileWrapper = styled(motion.div)`
   margin-left: 1rem;
   display: none;
   position: relative;
