@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { BiSun, BiMoon } from 'react-icons/bi';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import {
@@ -14,6 +13,7 @@ import {
   LinkWrapper,
   LinkStyled,
 } from './HeaderStyles';
+import { AnimatePresence } from 'framer-motion';
 
 const Header = ({ toggleTheme }) => {
   const [open, setOpen] = useState(false);
@@ -32,6 +32,10 @@ const Header = ({ toggleTheme }) => {
       document.removeEventListener('click', handleClickOutside, true);
   });
 
+  const menuVariants = {
+    hidden: { opacity: 0, y: '-100%' },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
     <Nav>
       <WrapperLeft>
@@ -58,11 +62,19 @@ const Header = ({ toggleTheme }) => {
             onClick={() => setOpen(true)}
           />
         )}
-        {open && (
-          <MobileMenu>
-            <Menu mobile={true} toggleTheme={toggleTheme} />
-          </MobileMenu>
-        )}
+        <AnimatePresence>
+          {open && (
+            <MobileMenu
+              variants={menuVariants}
+              initial='hidden'
+              animate='visible'
+              exit='hidden'
+              onClick={() => setOpen(false)}
+            >
+              <Menu mobile={true} toggleTheme={toggleTheme} />
+            </MobileMenu>
+          )}
+        </AnimatePresence>
       </MobileWrapper>
     </Nav>
   );
