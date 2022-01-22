@@ -27,7 +27,24 @@ const Portfolio = () => {
             >
               <Image
                 src={'/assets/portfolio/sightsee.svg'}
-                alt='sightsee-logo'
+                alt='vacation site'
+                width={48}
+                height={48}
+              />
+            </ProjectButton>
+          </a>
+          <a
+            href='https://urban-vikings.vercel.app/'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <ProjectButton
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Image
+                src={'/assets/portfolio/urban-viking.svg'}
+                alt='e-comm site'
                 width={48}
                 height={48}
               />
