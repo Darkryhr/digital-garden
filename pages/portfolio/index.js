@@ -50,6 +50,23 @@ const Portfolio = () => {
               />
             </ProjectButton>
           </a>
+          <a
+            href='https://next-blog-nine-henna.vercel.app/'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <ProjectButton
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Image
+                src={'/assets/portfolio/vex.svg'}
+                alt='blog site'
+                width={48}
+                height={48}
+              />
+            </ProjectButton>
+          </a>
         </Grid>
       </SectionWrapper>
     </>
