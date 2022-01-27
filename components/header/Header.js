@@ -71,7 +71,7 @@ const Header = ({ toggleTheme }) => {
               exit='hidden'
               onClick={() => setOpen(false)}
             >
-              <Menu mobile={true} toggleTheme={toggleTheme} />
+              <Menu mobile toggleTheme={toggleTheme} />
             </MobileMenu>
           )}
         </AnimatePresence>
@@ -116,7 +116,7 @@ const Logo = ({ theme }) => {
       version='1.2'
       width='100%'
       height='auto'
-      fill={theme === 'dark' ? '#f4f4f4' : '#000000'}
+      fill={theme === 'dark' || !theme ? '#f4f4f4' : '#000000'}
       viewBox='0 0 4134.483 1403.448'
     >
       <g>

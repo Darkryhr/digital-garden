@@ -45,12 +45,12 @@ display: flex;
   }
 `;
 
-export const LinkWrapper = styled(motion.button)`
+export const LinkWrapper = styled.button`
   color: ${({ theme }) => theme.colors.text};
   font-weight: 500;
   font-size: 18px;
-  line-height: 25px;
   text-transform: capitalize;
+  line-height: 25px;
   margin: 0 1rem;
   background: none;
   cursor: pointer;
@@ -92,4 +92,5 @@ export const MobileWrapper = styled(motion.div)`
 export const LinkStyled = styled(motion.button)`
   background: none;
   cursor: pointer;
+  color: ${({ theme }) => theme.colors.text};
 `;
