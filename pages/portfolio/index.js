@@ -6,6 +6,33 @@ import { GradientButton, ProjectButton } from '@components/styled/button';
 import { Heading2, Subtitle, Text } from '@components/styled/typography';
 import { Grid, Row, Column } from '@components/styled/LayoutStyles';
 
+const projects = [
+  {
+    name: 'Sightsee',
+    url: 'https://clever-stonebraker-68587b.netlify.app/',
+    img: '/assets/portfolio/sightsee.svg',
+    desc: 'fullstack vacation site w/ RTK and Sequelize',
+  },
+  {
+    name: 'Urban Viking',
+    url: 'https://urban-vikings.vercel.app/',
+    img: '/assets/portfolio/urban-viking.svg',
+    desc: 'E-comm site w/ context and stripe',
+  },
+  {
+    name: 'Vex Blogs',
+    url: 'https://next-blog-nine-henna.vercel.app/',
+    img: '/assets/portfolio/vex.svg',
+    desc: 'NextJS blog w/ markdown',
+  },
+  {
+    name: 'Firestarter',
+    url: 'https://wonderful-goldstine-9fcc89.netlify.app/',
+    img: '/assets/portfolio/firestarter.svg',
+    desc: 'Angular kanban board',
+  },
+];
+
 const Portfolio = () => {
   return (
     <>
@@ -29,74 +56,16 @@ const Portfolio = () => {
       </SectionWrapper>
       <SectionWrapper delay={0.3}>
         <Grid>
-          <a
-            href='https://clever-stonebraker-68587b.netlify.app/'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <ProjectButton
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Image
-                src={'/assets/portfolio/sightsee.svg'}
-                alt='vacation site'
-                width={48}
-                height={48}
-              />
-            </ProjectButton>
-          </a>
-          <a
-            href='https://urban-vikings.vercel.app/'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <ProjectButton
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Image
-                src={'/assets/portfolio/urban-viking.svg'}
-                alt='e-comm site'
-                width={48}
-                height={48}
-              />
-            </ProjectButton>
-          </a>
-          <a
-            href='https://next-blog-nine-henna.vercel.app/'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <ProjectButton
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Image
-                src={'/assets/portfolio/vex.svg'}
-                alt='blog site'
-                width={48}
-                height={48}
-              />
-            </ProjectButton>
-          </a>
-          <a
-            href='https://wonderful-goldstine-9fcc89.netlify.app/'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <ProjectButton
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Image
-                src={'/assets/portfolio/firestarter.svg'}
-                alt='kanban note board'
-                width={48}
-                height={48}
-              />
-            </ProjectButton>
-          </a>
+          {projects.map(({ name, url, img, desc }) => (
+            <a href={url} target='_blank' rel='noreferrer' key={name}>
+              <ProjectButton
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Image src={img} alt={desc} width={48} height={48} />
+              </ProjectButton>
+            </a>
+          ))}
         </Grid>
       </SectionWrapper>
     </>
