@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 import SectionWrapper from '@components/section-wrapper';
 import { GradientButton, ProjectButton } from '@components/styled/button';
-import { Heading2 } from '@components/styled/typography';
-import { Grid, Row } from '@components/styled/LayoutStyles';
+import { Heading2, Subtitle, Text } from '@components/styled/typography';
+import { Grid, Row, Column } from '@components/styled/LayoutStyles';
 
 const Portfolio = () => {
   return (
@@ -15,11 +15,17 @@ const Portfolio = () => {
         </Row>
       </SectionWrapper>
       <SectionWrapper delay={0.2}>
-        <GradientButton>
-          <a href='/assets/portfolio/resume.pdf' download>
-            Resume
-          </a>
-        </GradientButton>
+        <Column>
+          <Subtitle>
+            Wanna get down to business? Click below to save time and download my
+            resume
+          </Subtitle>
+          <GradientButton>
+            <a href='/assets/portfolio/resume.pdf' download>
+              Resume
+            </a>
+          </GradientButton>
+        </Column>
       </SectionWrapper>
       <SectionWrapper delay={0.3}>
         <Grid>

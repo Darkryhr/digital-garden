@@ -18,5 +18,6 @@ const SectionWrapper = ({ children, delay = 0 }) => {
 export default SectionWrapper;
 
 const Section = styled(motion.section)`
+  width: 100%;
   padding: 1rem 0;
 `;

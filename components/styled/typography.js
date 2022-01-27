@@ -10,6 +10,7 @@ export const Heading1 = styled(motion.h1)`
 `;
 
 export const Heading2 = styled.h2`
+  text-align: center;
   font-weight: 600;
   font-size: 3rem;
   color: ${({ theme }) => theme.colors.text};
@@ -27,10 +28,11 @@ export const Subtitle = styled.p`
   font-size: 0.9rem;
   letter-spacing: 1px;
   color: ${({ theme }) => theme.colors.text};
-  line-height: 2.5;
+  line-height: 2;
 `;
 
 export const Text = styled.p`
+  text-align: start;
   font-weight: 400;
   font-size: 0.8rem;
   color: ${({ theme }) => theme.colors.text};

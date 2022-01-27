@@ -33,4 +33,5 @@ export const GradientButton = styled.button`
   font-size: medium;
   background: ${(props) => props.theme.colors.gradient};
   border-radius: 24px;
+  margin: 1.4rem 0;
 `;

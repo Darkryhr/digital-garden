@@ -24,8 +24,17 @@ export const Container = styled.div`
   height: calc(100vh - 227px);
 `;
 
+//* Standard centered row
 export const Row = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -34,7 +43,7 @@ export const Row = styled.div`
 export const Grid = styled.div`
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   padding: 1rem 4rem;
   grid-template-rows: auto;
   justify-items: center;
