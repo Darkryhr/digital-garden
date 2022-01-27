@@ -20,7 +20,7 @@ const Portfolio = () => {
             Wanna get down to business? Click below to save time and download my
             resume
           </Subtitle>
-          <GradientButton>
+          <GradientButton whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <a href='/assets/portfolio/resume.pdf' download>
               Resume
             </a>
