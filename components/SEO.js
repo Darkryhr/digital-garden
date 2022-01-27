@@ -19,7 +19,10 @@ const SEO = ({
       <meta property='og:title' content={title} />
       <meta property='og:site_name' content='Gabriel does a thing' />
       <meta property='og:type' content='website' />
-      <meta property='og:image' content='https://imgur.com/xQcr8X8' />
+      <meta
+        property='og:image:secure_url'
+        content='https://imgur.com/xQcr8X8'
+      />
       <meta property='og:description' content={desc} />
       <title>{title}</title>
     </Head>

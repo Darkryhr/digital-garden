@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 import SectionWrapper from '@components/section-wrapper';
-import { ProjectButton } from '@components/styled/button';
+import { GradientButton, ProjectButton } from '@components/styled/button';
 import { Heading2 } from '@components/styled/typography';
 import { Grid, Row } from '@components/styled/LayoutStyles';
 
@@ -15,6 +15,13 @@ const Portfolio = () => {
         </Row>
       </SectionWrapper>
       <SectionWrapper delay={0.2}>
+        <GradientButton>
+          <a href='/assets/portfolio/resume.pdf' download>
+            Resume
+          </a>
+        </GradientButton>
+      </SectionWrapper>
+      <SectionWrapper delay={0.3}>
         <Grid>
           <a
             href='https://clever-stonebraker-68587b.netlify.app/'
