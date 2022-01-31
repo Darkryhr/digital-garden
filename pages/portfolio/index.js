@@ -43,8 +43,15 @@ const Portfolio = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalProject, setModalProject] = useState({});
 
-  const close = () => setModalOpen(false);
-  const open = () => setModalOpen(true);
+  const close = () => {
+    document.body.style.overflow = 'scroll';
+    setModalOpen(false);
+  };
+
+  const open = () => {
+    document.body.style.overflow = 'hidden';
+    setModalOpen(true);
+  };
 
   return (
     <>
