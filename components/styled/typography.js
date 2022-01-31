@@ -20,6 +20,7 @@ export const Heading3 = styled.h3`
   font-weight: 600;
   font-size: 2rem;
   color: ${({ theme }) => theme.colors.text};
+  line-height: 2;
 `;
 
 export const Subtitle = styled.p`
