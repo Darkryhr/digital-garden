@@ -18,7 +18,7 @@ const Backdrop = ({ children, onClick }) => {
 export default Backdrop;
 
 const Overlay = styled(motion.div)`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

@@ -45,11 +45,13 @@ const Portfolio = () => {
 
   const close = () => {
     document.body.style.overflow = 'scroll';
+    document.body.style.height = '100%';
     setModalOpen(false);
   };
 
   const open = () => {
     document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
     setModalOpen(true);
   };
 
