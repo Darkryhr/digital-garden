@@ -10,7 +10,7 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Sending');
     let data = {
@@ -18,25 +18,21 @@ const Contact = () => {
       email,
       message,
     };
-    fetch('/api/contact', {
+    const res = await fetch('/api/contact', {
       method: 'POST',
       headers: {
         Accept: 'application/json, text/plain, */*',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    })
-      .then((res) => {
-        console.log('Response received');
-        if (res.status === 200) {
-          console.log('Response succeeded!');
-          setSubmitted(true);
-          setName('');
-          setEmail('');
-          setBody('');
-        }
-      })
-      .catch((err) => console.log(err));
+    });
+
+    if (res.status === 200) {
+      setName('');
+      setEmail('');
+      setMessage('');
+      alert('Thank You!');
+    }
   };
 
   return (
@@ -49,6 +45,7 @@ const Contact = () => {
               type='text'
               placeholder='Your name...'
               name='name'
+              value={name}
               onChange={(e) => {
                 setName(e.target.value);
               }}
@@ -59,6 +56,7 @@ const Contact = () => {
               type='text'
               placeholder='Your E-mail...'
               name='email'
+              value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
@@ -71,6 +69,7 @@ const Contact = () => {
             rows='3'
             placeholder='What do you have to say for yourself...'
             name='message'
+            value={message}
             onChange={(e) => {
               setMessage(e.target.value);
             }}

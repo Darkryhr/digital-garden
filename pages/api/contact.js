@@ -1,4 +1,4 @@
-export default function handler(req, res) {
+export default async function handler(req, res) {
   let nodemailer = require('nodemailer');
   const transporter = nodemailer.createTransport({
     port: 465,
@@ -20,8 +20,7 @@ export default function handler(req, res) {
 
   transporter.sendMail(mailData, (err, info) => {
     if (err) console.log(err);
-    else console.log(info);
   });
 
-  res.status(200);
+  res.status(200).send('success');
 }
