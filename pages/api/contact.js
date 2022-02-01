@@ -1,5 +1,7 @@
 export default function handler(req, res) {
   let nodemailer = require('nodemailer');
+  console.log(process.env.EMAIL_PASS);
+  console.log(process.env.MY_EMAIL);
   const transporter = nodemailer.createTransport({
     port: 465,
     host: 'smtp.gmail.com',
