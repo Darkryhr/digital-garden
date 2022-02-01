@@ -8,11 +8,12 @@ const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Sending');
+    setLoading(true);
     let data = {
       name,
       email,
@@ -33,6 +34,8 @@ const Contact = () => {
       setMessage('');
       alert('Thank You!');
     }
+
+    setLoading(false);
   };
 
   return (
@@ -81,7 +84,7 @@ const Contact = () => {
             handleSubmit(e);
           }}
         >
-          Send
+          {loading ? 'Sending...' : 'Send'}
         </Submit>
       </Form>
     </Column>
