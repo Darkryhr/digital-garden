@@ -5,13 +5,13 @@ export default function handler(req, res) {
     host: 'smtp.gmail.com',
     auth: {
       user: 'gl694414@gmail.com',
-      pass: '0i3rNA6Zy2G3',
+      pass: process.env.EMAIL_PASS,
     },
     secure: true,
   });
   const mailData = {
     from: 'gl694414@gmail.com',
-    to: 'info@gabriel-lellouche.com',
+    to: process.env.MY_EMAIL,
     subject: `Message From ${req.body.name}`,
     text: +' | Sent from: ' + req.body.email,
     html: `<div>${req.body.message}</div><p>Sent from:
