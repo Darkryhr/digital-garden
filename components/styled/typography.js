@@ -23,6 +23,13 @@ export const Heading3 = styled.h3`
   line-height: 2;
 `;
 
+export const Heading4 = styled.h3`
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: ${({ theme }) => theme.colors.text};
+  line-height: 1.5;
+`;
+
 export const Subtitle = styled.p`
   opacity: 0.8;
   font-weight: 300;

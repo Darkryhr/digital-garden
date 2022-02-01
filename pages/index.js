@@ -1,3 +1,4 @@
+import Contact from '@components/Contact';
 import SectionWrapper from '@components/section-wrapper';
 import IntroSection from 'containers/intro-section';
 
