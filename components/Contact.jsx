@@ -97,7 +97,7 @@ const Form = styled.form`
   flex-direction: column;
   width: 100%;
   max-width: 714px;
-  padding: 2rem;
+  padding: 2rem 0;
 `;
 const Wrapper = styled.div`
   display: flex;
