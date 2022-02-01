@@ -25,16 +25,18 @@ const Contact = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    }).then((res) => {
-      console.log('Response received');
-      if (res.status === 200) {
-        console.log('Response succeeded!');
-        setSubmitted(true);
-        setName('');
-        setEmail('');
-        setBody('');
-      }
-    });
+    })
+      .then((res) => {
+        console.log('Response received');
+        if (res.status === 200) {
+          console.log('Response succeeded!');
+          setSubmitted(true);
+          setName('');
+          setEmail('');
+          setBody('');
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -78,9 +80,6 @@ const Contact = () => {
           type='submit'
           onClick={(e) => {
             handleSubmit(e);
-          }}
-          onTap={{
-            background: '#fb8b24',
           }}
         >
           Send
@@ -149,6 +148,7 @@ const Submit = styled(motion.button)`
   background: none;
   padding: 1rem 0;
   background: black;
+  color: white;
   width: 100%;
   margin: 0.7rem 0;
   cursor: pointer;
