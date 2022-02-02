@@ -1,19 +1,25 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import styled from 'styled-components';
 import { Column } from './styled/LayoutStyles';
 import { Heading3, Subtitle } from './styled/typography';
+import useDarkMode from './useDarkMode';
 
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [theme, themeToggler, mountedComponent] = useDarkMode();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log(theme);
     setLoading(true);
+
+    const loadingToast = toast.loading('Sending...');
     let data = {
       name,
       email,
@@ -32,10 +38,23 @@ const Contact = () => {
       setName('');
       setEmail('');
       setMessage('');
-      alert('Thank You!');
+      toast.dismiss(loadingToast);
+    } else {
+      toast.error('Oops! looks like something went wrong...', {
+        id: loadingToast,
+      });
     }
 
     setLoading(false);
+    toast.success('Thank You!', {
+      id: loadingToast,
+      style: {
+        borderRadius: '10px',
+        background: `${theme === 'dark' ? '#181818' : '#F5F5F5'}`,
+        color: '#fb8b24',
+        border: `1px solid ${theme === 'dark' ? '#333333' : '#E0E0E0'}`,
+      },
+    });
   };
 
   return (
@@ -83,6 +102,7 @@ const Contact = () => {
           onClick={(e) => {
             handleSubmit(e);
           }}
+          disabled={loading || !name || !email}
         >
           {loading ? 'Sending...' : 'Send'}
         </Submit>
@@ -154,4 +174,9 @@ const Submit = styled(motion.button)`
   width: 100%;
   margin: 0.7rem 0;
   cursor: pointer;
+  &:disabled {
+    cursor: default;
+    filter: brightness(40%);
+    background: ${({ theme }) => theme.colors.secondary};
+  }
 `;

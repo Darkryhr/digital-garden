@@ -7,6 +7,7 @@ import '../styles/globals.css';
 import { GlobalStyles } from '@components/styled/globalStyles';
 import Layout from '../components/styled/layout';
 import SEO from '@components/SEO';
+import { Toaster } from 'react-hot-toast';
 
 function App({ Component, pageProps }) {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -20,6 +21,7 @@ function App({ Component, pageProps }) {
       <Layout toggleTheme={themeToggler}>
         <AnimatePresence exitBeforeEnter initial={true}>
           <Component {...pageProps} />
+          <Toaster position='bottom-center' reverseOrder={false} />
         </AnimatePresence>
       </Layout>
     </ThemeProvider>
