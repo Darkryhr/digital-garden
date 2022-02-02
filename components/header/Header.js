@@ -85,26 +85,24 @@ export default Header;
 const Menu = ({ mobile, themeIcon, toggleTheme }) => (
   <MenuStyles mobile={mobile}>
     <LinkWrapper>
-      <Link href='/blog' passHref>
-        <LinkStyled
-          color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
-          whileHover={{ scale: 1.1, color: '#fb8b24' }}
-          whileTap={{ scale: 0.9 }}
-        >
-          Blog
-        </LinkStyled>
-      </Link>
+      <LinkStyled
+        color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
+        whileHover={{ scale: 1.1, color: '#fb8b24' }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <Link href='/blog'>Blog</Link>
+      </LinkStyled>
     </LinkWrapper>
     <LinkWrapper>
-      <Link href='/portfolio' passHref>
-        <LinkStyled
-          color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
-          whileHover={{ scale: 1.1, color: '#fb8b24' }}
-          whileTap={{ scale: 0.9 }}
-        >
+      <LinkStyled
+        color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
+        whileHover={{ scale: 1.1, color: '#fb8b24' }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <Link href='/portfolio' passHref>
           Portfolio
-        </LinkStyled>
-      </Link>
+        </Link>
+      </LinkStyled>
     </LinkWrapper>
     <LinkWrapper onClick={() => toggleTheme()}>
       {themeIcon === 'light' ? <BiMoon size={20} /> : <BiSun size={20} />}
