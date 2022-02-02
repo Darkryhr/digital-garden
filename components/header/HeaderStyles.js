@@ -79,9 +79,9 @@ export const LinkStyled = styled(motion.button)`
   background: none;
   font-weight: 500;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.text};
   font-size: 18px;
   text-transform: capitalize;
+  color: ${(props) => props.color} !important;
 `;
 
 export const LinkWrapper = styled.div`

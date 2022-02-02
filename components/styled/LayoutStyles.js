@@ -12,7 +12,6 @@ export const ContentWrapper = styled(SpacedRow)`
   width: 100%;
   max-width: 768px;
   margin: 0 auto;
-  color: ${({ theme }) => theme.colors.text};
 `;
 
 export const Container = styled.div`

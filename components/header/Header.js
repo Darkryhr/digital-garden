@@ -87,6 +87,7 @@ const Menu = ({ mobile, themeIcon, toggleTheme }) => (
     <LinkWrapper>
       <Link href='/blog' passHref>
         <LinkStyled
+          color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
           whileHover={{ scale: 1.1, color: '#fb8b24' }}
           whileTap={{ scale: 0.9 }}
         >
@@ -97,6 +98,7 @@ const Menu = ({ mobile, themeIcon, toggleTheme }) => (
     <LinkWrapper>
       <Link href='/portfolio' passHref>
         <LinkStyled
+          color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
           whileHover={{ scale: 1.1, color: '#fb8b24' }}
           whileTap={{ scale: 0.9 }}
         >
