@@ -6,6 +6,7 @@ export const GlobalStyles = createGlobalStyle`
 background:${({ theme }) => theme.colors.primary};
   }
   a {
+  text-decoration: none;
   color: ${({ theme }) => theme.colors.text};
   }
   button {

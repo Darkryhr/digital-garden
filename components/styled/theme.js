@@ -17,7 +17,7 @@ export const lightTheme = {
     primary: '#F5F5F5',
     secondary: '#E0E0E0',
     accent: '#fb8b24',
-    text: '#181818',
+    text: '#000000',
     gradient: `
     linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%)
         `,

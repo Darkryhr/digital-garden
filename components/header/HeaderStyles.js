@@ -45,20 +45,6 @@ display: flex;
   }
 `;
 
-export const LinkWrapper = styled.button`
-  color: ${({ theme }) => theme.colors.text};
-  font-weight: 500;
-  font-size: 18px;
-  text-transform: capitalize;
-  line-height: 25px;
-  margin: 0 1rem;
-  background: none;
-  cursor: pointer;
-  @media (max-width: 1050px) {
-    margin-top: 1rem;
-  }
-`;
-
 export const MobileMenu = styled(motion.div)`
   display: flex;
   justify-content: flex-end;
@@ -91,6 +77,18 @@ export const MobileWrapper = styled(motion.div)`
 
 export const LinkStyled = styled(motion.button)`
   background: none;
+  font-weight: 500;
   cursor: pointer;
   color: ${({ theme }) => theme.colors.text};
+  font-size: 18px;
+  text-transform: capitalize;
+`;
+
+export const LinkWrapper = styled.div`
+  line-height: 25px;
+  margin: 0 1rem;
+  cursor: pointer;
+  @media (max-width: 1050px) {
+    margin-top: 1rem;
+  }
 `;
