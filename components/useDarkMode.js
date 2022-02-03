@@ -15,7 +15,17 @@ const useDarkMode = () => {
 
   useEffect(() => {
     const localTheme = window.localStorage.getItem('theme');
-    localTheme ? setTheme(localTheme) : setMode('light');
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (localTheme) {
+      setTheme(localTheme);
+    } else if (prefersDark) {
+      setTheme('dark');
+    } else {
+      setMode('light');
+    }
+    // localTheme ? setTheme(localTheme) : setMode('light');
     setMountedComponent(true);
   }, []);
 

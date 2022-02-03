@@ -60,7 +60,7 @@ const Contact = () => {
   return (
     <Column>
       <Form>
-        <Shout>give me a shout</Shout>
+        <Shout>Give me a shout</Shout>
         <Wrapper>
           <InputContainer>
             <Input
@@ -122,15 +122,22 @@ const Form = styled.form`
 `;
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   margin-bottom: 1rem;
+  justify-content: space-between;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 const InputContainer = styled.div`
-  width: 20rem;
+  width: 47%;
+  /* max-width: 280px; */
   flex-direction: column;
-  background: ${({ theme }) => theme.colors.secondary};
   padding: 0.7rem 1rem;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
+  /* margin: 0 1rem; */
+  border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
 const Input = styled(motion.input)`
@@ -143,16 +150,15 @@ const Input = styled(motion.input)`
 `;
 
 const Shout = styled.h4`
-  text-transform: uppercase;
   letter-spacing: 0.03rem;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 300;
   margin-bottom: 1.3rem;
 `;
 
 const AreaContainer = styled.div`
-  background: ${({ theme }) => theme.colors.secondary};
   border: 1px solid ${({ theme }) => theme.colors.primary};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
 
   padding: 0.7rem 1rem;
 `;
@@ -169,14 +175,14 @@ const TextArea = styled.textarea`
 const Submit = styled(motion.button)`
   background: none;
   padding: 1rem 0;
-  background: black;
+  background: ${({ theme }) => theme.colors.accent};
   color: white;
   width: 100%;
   margin: 0.7rem 0;
   cursor: pointer;
   &:disabled {
     cursor: default;
-    filter: brightness(40%);
+    filter: brightness(70%);
     background: ${({ theme }) => theme.colors.secondary};
   }
 `;

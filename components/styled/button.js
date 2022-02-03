@@ -16,7 +16,6 @@ export const IconButton = styled(motion.button)`
   background: none;
   border: none;
   font-size: 24px;
-  margin-left: 1em;
 `;
 
 export const ProjectButton = styled(motion.button)`
