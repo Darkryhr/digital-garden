@@ -14,21 +14,20 @@ export default PostBody;
 const MarkdownStyles = styled.div`
   p {
     color: ${({ theme }) => theme.colors.text};
-    font-size: 16px;
-    padding-bottom: 2em;
+    padding-bottom: 1rem;
+    line-height: 1.8;
     &:last-child {
       padding-bottom: 0;
     }
   }
   h2 {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 20px;
-    padding: 1em 0;
+    padding: 1rem 0;
   }
   h1 {
     font-weight: 700;
     font-size: 24px;
-    padding-bottom: 5px;
   }
   hr {
     opacity: 0.2;
@@ -37,11 +36,13 @@ const MarkdownStyles = styled.div`
     font-weight: 600 !important;
     display: block;
     color: ${({ theme }) => theme.colors.accent};
-    font-size: 18px;
-    padding: 0.4em 0;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding-bottom: 0.8rem;
   }
   ul {
     list-style: circle;
+    margin-bottom: 1rem;
   }
   li {
     padding-bottom: 3px;

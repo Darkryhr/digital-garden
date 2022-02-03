@@ -9,18 +9,24 @@ date: '2021-11-25T16:20.000'
 
 **What is your company name and how would you like it to appear on the logo?**
 Urban Vikings
+
 **What industry are you in?**
 We are an online apparel store focused on integrating Norse, Icelandic and Germanic themes and mythos into modern clothing. We currently have no plans for a physical store, but, should we grow large enough, may try pop-up stores.
+
 **What is the unique selling point of your product?**
 Our store focuses on making the process of purchasing clothing online as easy and anxiety-free as possible, we know what it's like to purchase clothes online and struggle and worry about sizing, fabric and returns. To that end we invest a lot into sizing, maximizing comfort and community discourse, so that customers can help not only us, but also each other, have a better shopping experience.
 Additionally our brand is focused on bringing the ideas and stories of the old world to the new one, we want our customers to *feel* like Vikings, that is to say have a sense of strength and purpose, being aggressive yet cool-minded.
+
 **Who is your target audience?**
 Since we are an online first brand -  our target demo is millennials and anyone tech savvy enough to work a browser, we hope to educate a younger audience about Norse mythology, history and culture.
+
 **What is your price point?**
 We're more focused on casual everyday wear(hence the 'urban'), but it's also very important for us to be environmentally conscious in our production, and provide a high level of comfort and durability(we feel the best way to recycle clothes is to never really throw them away). As such we would consider ourselves at slightly above average for our price bracket.
+
 **Style Preferences?**
 Cool colors, reminiscence of sky and sea
-In terms of logo we're not sure, we'll definitely use both intricate blackletter fonts and cleaner minimalist fonts on our designs, but were not sure which is a better fit as our defining signature, keep in mind we intend for the logo to be visible on most, if not all our products, in some shape or form  
+In terms of logo we're not sure, we'll definitely use both intricate blackletter fonts and cleaner minimalist fonts on our designs, but were not sure which is a better fit as our defining signature, keep in mind we intend for the logo to be visible on most, if not all our products, in some shape or form.
+
 **Words you think of when you think of your store concept?**
 Fresh air, a sense of nature, greenery mixed with the sense of strength given by a Viking aesthetic
 Cool
@@ -32,6 +38,7 @@ Mythos
 Hard Work
 Decisive
 Balance
+
 **Outside of logo, what else will you be needing?**
 Packaging, Social media marketing related stuff,
 
@@ -50,10 +57,12 @@ Packaging, Social media marketing related stuff,
 - Income: 70K+
 - Location: Michigan, US
 - Education: Technical College
+
 **Goals:**
 
 - Comfortable, Breathing fabric that's easy to move in
 - Loves the Viking aesthetic and symbols
+
 **Values:**
 
 - Hard, honest work

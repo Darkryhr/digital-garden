@@ -17,7 +17,7 @@ export const Heading2 = styled.h2`
 export const Heading3 = styled.h3`
   font-weight: 600;
   font-size: 2rem;
-  line-height: 2;
+  line-height: 1.4;
 `;
 
 export const Heading4 = styled.h3`

@@ -28,7 +28,6 @@ export default PostPreview;
 
 const PreviewTitle = styled(Heading3)`
   cursor: pointer;
-  padding-bottom: 0.2rem;
 `;
 
 const BlogLink = styled(motion.button)`
@@ -40,5 +39,5 @@ const BlogLink = styled(motion.button)`
 `;
 
 const PreviewWrapper = styled.div`
-  padding: 2rem 2vw;
+  padding: 1rem 0;
 `;

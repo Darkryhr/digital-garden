@@ -37,8 +37,10 @@ const Modal = ({ handleClose, project }) => {
         animate='visible'
         exit='exit'
       >
-        <Heading3>{project.name}</Heading3>
-        <Subtitle>{project.desc}</Subtitle>
+        <Heading3 style={{ marginBottom: '0.6rem' }}>{project.name}</Heading3>
+        <Subtitle style={{ textAlign: 'center', lineHeight: '1.5' }}>
+          {project.desc}
+        </Subtitle>
         <ModalButton
           onClick={handleClose}
           whileHover={{ scale: 1.1 }}

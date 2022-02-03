@@ -5,10 +5,11 @@ import PostBody from '@components/post-body';
 import { getAllPosts, getPostBySlug } from 'lib/api';
 import markdownToHtml from 'lib/markdownToHtml';
 import DateFormatter from '@components/date-formatter';
-import { Heading2 } from '@components/styled/typography';
+import { Heading2, Heading3 } from '@components/styled/typography';
 import SEO from '@components/SEO';
 import Loader from '@components/Loader';
 import { SpacedRow, Wrapper } from '@components/styled/LayoutStyles';
+import styled from 'styled-components';
 
 const Post = ({ post }) => {
   const router = useRouter();
@@ -16,20 +17,20 @@ const Post = ({ post }) => {
     return <ErrorPage statusCode={404} />;
   }
   return (
-    <div>
+    <MarkdownWrapper>
       {router.isFallback ? (
         <Loader />
       ) : (
         <>
           <SEO title={post.title} />
           <SpacedRow>
-            <Heading2>{post.title}</Heading2>
+            <Heading3>{post.title}</Heading3>
             <DateFormatter dateString={post.date} />
           </SpacedRow>
           <PostBody content={post.content} />
         </>
       )}
-    </div>
+    </MarkdownWrapper>
   );
 };
 
@@ -63,3 +64,10 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
+const MarkdownWrapper = styled.article`
+  margin: 0 auto;
+  padding: 2rem 7vw;
+  max-width: 1200px;
+  min-height: 90vh;
+`;
