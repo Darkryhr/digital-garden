@@ -22,7 +22,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 227px);
+  height: calc(100vh - 127px);
 `;
 
 //* Standard centered row
