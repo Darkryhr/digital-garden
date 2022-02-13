@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { ThemeProvider } from 'styled-components';
 import useDarkMode from '@components/useDarkMode';
 import { lightTheme, darkTheme } from '../components/styled/theme';
@@ -9,7 +9,7 @@ import Layout from '../components/styled/layout';
 import SEO from '@components/SEO';
 import { Toaster } from 'react-hot-toast';
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps, router }) {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
   if (!mountedComponent) return <div />;
@@ -20,7 +20,21 @@ function App({ Component, pageProps }) {
       <GlobalStyles />
       <Layout toggleTheme={themeToggler}>
         <AnimatePresence exitBeforeEnter initial={true}>
-          <Component {...pageProps} />
+          <motion.div
+            key={router.route}
+            initial='pageInitial'
+            animate='pageAnimate'
+            variants={{
+              pageInitial: {
+                opacity: 0,
+              },
+              pageAnimate: {
+                opacity: 1,
+              },
+            }}
+          >
+            <Component {...pageProps} />
+          </motion.div>
           <Toaster position='bottom-center' reverseOrder={false} />
         </AnimatePresence>
       </Layout>
