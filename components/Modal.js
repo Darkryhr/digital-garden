@@ -31,7 +31,7 @@ const Modal = ({ handleClose, project }) => {
   return (
     <Backdrop onClick={handleClose}>
       <ModalWrapper
-        onClick={(e) => e.stopPropagation()}
+        onClick={e => e.stopPropagation()}
         variants={dropIn}
         initial='hidden'
         animate='visible'
@@ -41,6 +41,11 @@ const Modal = ({ handleClose, project }) => {
         <Subtitle style={{ textAlign: 'center', lineHeight: '1.5' }}>
           {project.desc}
         </Subtitle>
+        <TagWrapper>
+          {project.tags.map(tag => (
+            <Tag key={tag}>{tag}</Tag>
+          ))}
+        </TagWrapper>
         <ModalButton
           onClick={handleClose}
           whileHover={{ scale: 1.1 }}
@@ -58,17 +63,18 @@ const Modal = ({ handleClose, project }) => {
 export default Modal;
 
 const ModalWrapper = styled(motion.div)`
+  box-sizing: border-box;
   margin: auto;
-  padding: 1.5rem;
-  border-radius: 0.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: ${(props) => props.theme.colors.primary};
-  border: 1px solid ${(props) => props.theme.colors.secondary};
+  justify-content: space-evenly;
+  padding: 2rem;
+  background: ${props => props.theme.colors.primary};
+  border: 1px solid ${props => props.theme.colors.secondary};
+  border-top: 3px solid ${({ theme }) => theme.colors.accent};
   width: clamp(20%, 400px, 80%);
-  height: min(50%, 250px);
+  height: min(55%, 450px);
 
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
@@ -79,9 +85,23 @@ const ModalButton = styled(motion.button)`
   color: ${({ theme }) => theme.colors.text};
   padding: 0.6rem 1.5rem;
   border-radius: 0.2rem;
+  margin-top: 1rem;
   cursor: pointer;
-  margin: 1.2rem;
-  border: 1px solid ${(props) => props.theme.colors.secondary};
+  border: 1px solid ${props => props.theme.colors.secondary};
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+`;
+
+const TagWrapper = styled.div`
+  padding: 0.2rem;
+  margin-top: 0.5rem;
+`;
+
+const Tag = styled.span`
+  font-size: 0.75rem;
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+  padding: 0.6rem;
+  border-radius: 7px;
+  display: inline-block;
+  margin: 0.2rem;
 `;

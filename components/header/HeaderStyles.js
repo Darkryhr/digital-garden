@@ -6,6 +6,7 @@ export const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 2rem 6rem;
+
   @media (max-width: 700px) {
     padding: 2rem 4rem;
   }
@@ -31,7 +32,7 @@ export const LogoWrapper = styled.div`
 `;
 
 export const MenuStyles = styled(motion.div)`
-  ${(props) =>
+  ${props =>
     props.mobile
       ? ''
       : `
@@ -41,7 +42,7 @@ display: flex;
 `}
 
   @media (max-width: 1050px) {
-    ${(props) => (props.mobile ? '' : ' display: none;')}
+    ${props => (props.mobile ? '' : ' display: none;')}
   }
 `;
 
@@ -56,7 +57,7 @@ export const MobileMenu = styled(motion.div)`
   z-index: 999;
   right: 0;
   top: 40px;
-  background: ${(props) => props.theme.colors.primary};
+  background: ${props => props.theme.colors.primary};
   margin-top: 1rem;
   min-width: 210px;
   border-radius: 5px;
@@ -81,14 +82,23 @@ export const LinkStyled = styled(motion.button)`
   cursor: pointer;
   font-size: 18px;
   text-transform: capitalize;
-  color: ${(props) => props.color} !important;
+  color: ${props => props.color} !important;
 `;
 
 export const LinkWrapper = styled.div`
   line-height: 25px;
   margin: 0 1rem;
   cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  &:last-child {
+    margin-right: 0;
+  }
   @media (max-width: 1050px) {
     margin-top: 1rem;
+    &:last-child {
+      margin: 0 1rem;
+      margin-top: 1.1rem;
+    }
   }
 `;

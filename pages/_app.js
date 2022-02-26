@@ -21,6 +21,7 @@ function App({ Component, pageProps, router }) {
       <Layout toggleTheme={themeToggler}>
         <AnimatePresence exitBeforeEnter initial={true}>
           <motion.div
+            style={{ width: '100%' }}
             key={router.route}
             initial='pageInitial'
             animate='pageAnimate'

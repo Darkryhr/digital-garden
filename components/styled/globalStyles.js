@@ -8,6 +8,10 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
     transition: all 0.50s linear;
     background:${({ theme }) => theme.colors.primary};
+    background-image: radial-gradient(${({ theme }) =>
+      theme.colors.secondary} 1px, transparent 0);
+    background-size: 40px 40px;
+    background-position: 22px 22px
   }
 
   a {
@@ -20,7 +24,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width:7px;
+    width:2px;
   }
   
   ::-webkit-scrollbar-track {

@@ -2,13 +2,17 @@ import { getAllPosts } from 'lib/api';
 import React from 'react';
 import PostPreview from '@components/post-preview';
 import SectionWrapper from '@components/section-wrapper';
-import { Container, ContentWrapper } from '@components/styled/LayoutStyles';
+import {
+  Box,
+  Container,
+  ContentWrapper,
+} from '@components/styled/LayoutStyles';
 
 const PostFeed = ({ allPosts }) => {
   return (
     <ContentWrapper>
       <SectionWrapper delay={0.1}>
-        {allPosts.map((post) => (
+        {allPosts.map(post => (
           <PostPreview
             key={post.slug}
             slug={post.slug}

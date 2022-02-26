@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { IconButton } from './styled/button';
-import { ContentWrapper } from './styled/LayoutStyles';
 import Contact from './Contact';
 import { Heading4 } from './styled/typography';
 
