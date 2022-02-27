@@ -5,13 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import SectionWrapper from '@components/section-wrapper';
 import { GradientButton, ProjectButton } from '@components/styled/button';
 import { Heading2, Subtitle, Text } from '@components/styled/typography';
-import {
-  Grid,
-  Row,
-  Column,
-  Box,
-  Container,
-} from '@components/styled/LayoutStyles';
+import { Grid, Row, Column, Container } from '@components/styled/LayoutStyles';
 import Modal from '@components/Modal';
 
 import projects from './data.json';
@@ -32,7 +26,7 @@ const Portfolio = () => {
   };
 
   return (
-    <Container>
+    <Container p='6rem 0'>
       <SectionWrapper delay={0.1}>
         <Row>
           <Heading2>Projects</Heading2>

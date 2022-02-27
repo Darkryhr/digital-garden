@@ -4,23 +4,17 @@ import styled from 'styled-components';
 export const SpacedRow = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
+  align-items: flex-start;
+  margin-bottom: 0.6rem;
 `;
 
 export const ContentWrapper = styled(SpacedRow)`
-  /* height: ${props => (props.height ? props.height : 'inherit')}; */
   height: 100vh;
   width: 100%;
   max-width: 768px;
-  padding: 0 3vw;
   margin: 0 auto;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  @media (min-width: 900px) {
-    padding-top: 100px;
-  }
+  padding-top: 5rem;
 `;
 
 export const Container = styled.div`
@@ -30,12 +24,8 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  padding-top: 3rem;
-`;
-
-export const Box = styled.div`
-  width: 100%;
-  height: calc(100vh - 110px);
+  padding: ${props => (props.p ? props.p : '')};
+  /* padding-top: 3rem; */
 `;
 
 //* Standard centered row
