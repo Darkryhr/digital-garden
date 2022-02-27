@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import styled from 'styled-components';
 import { Column } from './styled/LayoutStyles';
-import { Heading3, Subtitle } from './styled/typography';
+import { breakpoint } from '@components/styled/breakpoints';
 import useDarkMode from './useDarkMode';
 
 const Contact = () => {
@@ -13,7 +13,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [theme, themeToggler, mountedComponent] = useDarkMode();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
     console.log(theme);
@@ -68,7 +68,7 @@ const Contact = () => {
               placeholder='Your name...'
               name='name'
               value={name}
-              onChange={(e) => {
+              onChange={e => {
                 setName(e.target.value);
               }}
             />
@@ -79,7 +79,7 @@ const Contact = () => {
               placeholder='Your E-mail...'
               name='email'
               value={email}
-              onChange={(e) => {
+              onChange={e => {
                 setEmail(e.target.value);
               }}
             />
@@ -92,14 +92,14 @@ const Contact = () => {
             placeholder='What do you have to say for yourself...'
             name='message'
             value={message}
-            onChange={(e) => {
+            onChange={e => {
               setMessage(e.target.value);
             }}
           />
         </AreaContainer>
         <Submit
           type='submit'
-          onClick={(e) => {
+          onClick={e => {
             handleSubmit(e);
           }}
           disabled={loading || !name || !email}
@@ -124,7 +124,7 @@ const Wrapper = styled.div`
   display: flex;
   margin-bottom: 1rem;
   justify-content: space-between;
-  @media (max-width: 900px) {
+  @media (${breakpoint.device.sm}) {
     flex-direction: column;
   }
 `;
@@ -135,7 +135,7 @@ const InputContainer = styled.div`
   padding: 0.7rem 1rem;
   /* margin: 0 1rem; */
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
-  @media (max-width: 900px) {
+  @media (${breakpoint.device.sm}) {
     width: 100%;
   }
 `;

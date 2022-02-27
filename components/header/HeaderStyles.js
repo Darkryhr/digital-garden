@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { breakpoint } from '@components/styled/breakpoints';
 
 export const Nav = styled.nav`
   display: flex;
@@ -7,10 +8,7 @@ export const Nav = styled.nav`
   align-items: center;
   padding: 2rem 6rem;
 
-  @media (max-width: 700px) {
-    padding: 2rem 4rem;
-  }
-  @media (max-width: 550px) {
+  @media (${breakpoint.device.sm}) {
     padding: 2rem;
   }
 `;
@@ -41,7 +39,7 @@ display: flex;
   align-items: center;
 `}
 
-  @media (max-width: 1050px) {
+  @media (${breakpoint.device.sm}) {
     ${props => (props.mobile ? '' : ' display: none;')}
   }
 `;
@@ -62,7 +60,7 @@ export const MobileMenu = styled(motion.div)`
   min-width: 210px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-  @media (max-width: 550px) {
+  @media (${breakpoint.device.sm}) {
     top: 20px;
   }
 `;
@@ -71,7 +69,7 @@ export const MobileWrapper = styled(motion.div)`
   margin-left: 1rem;
   display: none;
   position: relative;
-  @media (max-width: 1050px) {
+  @media (${breakpoint.device.sm}) {
     display: flex;
   }
 `;
@@ -94,7 +92,7 @@ export const LinkWrapper = styled.div`
   &:last-child {
     margin-right: 0;
   }
-  @media (max-width: 1050px) {
+  @media (${breakpoint.device.sm}) {
     margin-top: 1rem;
     &:last-child {
       margin: 0 1rem;

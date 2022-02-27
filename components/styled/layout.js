@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Footer from '../Footer';
 import Header from '../header/Header';
 import { Container } from './LayoutStyles';
+import { breakpoint } from '@components/styled/breakpoints';
 
 const Layout = ({ children, toggleTheme }) => {
   return (
@@ -33,11 +34,11 @@ const Main = styled.main`
 const Wrapper = styled.div`
   display: block;
   margin: 0 auto;
-  @media (max-width: 768px) {
+  @media (${breakpoint.device.sm}) {
     padding: 0 7vw;
     padding-top: 100px;
   }
-  @media (max-width: 1200px) {
+  @media (${breakpoint.device.lg}) {
     padding: 0 7vw;
   }
 `;
@@ -52,7 +53,7 @@ const Fixed = styled.div`
   left: 50%;
   margin-left: -600px;
 
-  @media (max-width: 1200px) {
+  @media (${breakpoint.device.lg}) {
     left: 0;
     margin-left: 0;
   }
