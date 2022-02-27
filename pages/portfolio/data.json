@@ -14,9 +14,11 @@
     "tags": [
       "Redux Toolkit",
       "RTK Query",
+      "Vite",
+      "Express",
       "Sequelize",
       "SQL",
-      "JWT Authentication"
+      "JWT"
     ]
   },
   {
@@ -40,10 +42,29 @@
     "desc": "An angular kanban board + a small angular universal ssr demo, dynamic forms enbale both google and email login",
     "tags": [
       "Angular",
-      "Angular Material",
+      "Material",
       "Firebase",
       "SSR Demo",
-      "Drag n' Drop SDK"
+      "Drag&Drop SDK",
+      "RxJS"
+    ]
+  },
+  {
+    "name": "Firemart",
+    "url": "https://angular-firemart.firebaseapp.com/",
+    "icon": "/assets/portfolio/firemart.svg",
+    "desc": "MEAN stack app, dockerized express backend, frontend hosted w/ firebase. Features auth with JWT, admin CRUD w/ image upload, a real-time cart and printable invoices",
+    "tags": [
+      "Angular",
+      "Material",
+      "Firebase",
+      "MongoDB",
+      "Mongoose",
+      "Express",
+      "JWT",
+      "Docker",
+      "Heroku",
+      "RxJS"
     ]
   }
 ]

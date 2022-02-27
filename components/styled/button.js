@@ -30,7 +30,7 @@ export const ProjectButton = styled(motion.button)`
 export const GradientButton = styled.button`
   padding: 0.7rem 2rem;
   font-size: medium;
-  background: ${(props) => props.theme.colors.gradient};
+  background: ${props => props.theme.colors.gradient};
   border-radius: 24px;
   margin: 1.4rem 0;
 `;

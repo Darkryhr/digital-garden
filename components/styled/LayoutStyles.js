@@ -30,9 +30,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  @media (max-width: 900px) {
-    padding-top: 2rem;
-  }
+  padding-top: 2rem;
 `;
 
 export const Box = styled.div`
@@ -59,6 +57,7 @@ export const Column = styled.div`
 export const Grid = styled.div`
   display: grid;
   gap: 1rem;
+  row-gap: 5rem;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   padding: 1rem 4rem;
   grid-template-rows: auto;

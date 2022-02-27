@@ -74,7 +74,7 @@ const ModalWrapper = styled(motion.div)`
   border: 1px solid ${props => props.theme.colors.secondary};
   border-top: 3px solid ${({ theme }) => theme.colors.accent};
   width: clamp(20%, 400px, 80%);
-  height: min(55%, 450px);
+  height: min(65%, 450px);
 
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
