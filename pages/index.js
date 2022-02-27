@@ -1,6 +1,6 @@
-import Contact from '@components/Contact';
 import SectionWrapper from '@components/section-wrapper';
 import IntroSection from 'containers/intro-section';
+import styled from 'styled-components';
 
 export default function Home() {
   return (
