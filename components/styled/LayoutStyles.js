@@ -30,7 +30,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  padding-top: 2rem;
+  padding-top: 3rem;
 `;
 
 export const Box = styled.div`
