@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { breakpoint } from './breakpoints';
 
 export const Heading1 = styled(motion.h1)`
   font-weight: 700;
@@ -9,9 +10,15 @@ export const Heading1 = styled(motion.h1)`
 `;
 
 export const Heading2 = styled.h2`
-  text-align: center;
-  font-weight: 600;
-  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.16;
+  font-size: 3.2rem;
+  @media (${breakpoint.device.sm}) {
+    font-size: 2.5rem;
+  }
+  @media (${breakpoint.device.xs}) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const Heading3 = styled.h3`

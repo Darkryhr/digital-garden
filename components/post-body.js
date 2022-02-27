@@ -16,18 +16,19 @@ const MarkdownStyles = styled.div`
     color: ${({ theme }) => theme.colors.text};
     padding-bottom: 1rem;
     line-height: 1.8;
+    font-size: 16px;
     &:last-child {
       padding-bottom: 0;
     }
   }
   h2 {
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 22px;
     padding: 1rem 0;
   }
   h1 {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 22px;
   }
   hr {
     opacity: 0.2;
@@ -36,7 +37,7 @@ const MarkdownStyles = styled.div`
     font-weight: 600 !important;
     display: block;
     color: ${({ theme }) => theme.colors.accent};
-    font-size: 1.2rem;
+    font-size: 16px;
     line-height: 1;
     padding-bottom: 0.8rem;
   }

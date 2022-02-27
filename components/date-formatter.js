@@ -1,5 +1,6 @@
 import { parseISO, format } from 'date-fns';
 import styled from 'styled-components';
+import { breakpoint } from './styled/breakpoints';
 
 const DateFormatter = ({ dateString }) => {
   const date = parseISO(dateString);
@@ -12,4 +13,5 @@ const Time = styled.time`
   opacity: 0.7;
   font-size: 0.8rem;
   letter-spacing: 0.05rem;
+  padding-top: 1rem;
 `;

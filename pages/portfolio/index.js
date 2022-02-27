@@ -26,7 +26,7 @@ const Portfolio = () => {
   };
 
   return (
-    <Container p='6rem 0'>
+    <Container>
       <SectionWrapper delay={0.1}>
         <Row>
           <Heading2>Projects</Heading2>

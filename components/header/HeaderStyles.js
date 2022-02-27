@@ -6,10 +6,11 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 6rem;
-
+  padding: 0.8rem 4rem;
+  min-height: 90px;
+  width: 100%;
   @media (${breakpoint.device.sm}) {
-    padding: 2rem;
+    padding: 0.8rem 1.2rem;
   }
 `;
 

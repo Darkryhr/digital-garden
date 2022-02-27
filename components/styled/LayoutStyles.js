@@ -1,20 +1,22 @@
 import styled from 'styled-components';
-
+import { breakpoint } from './breakpoints';
 //* Wrappers
 export const SpacedRow = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 0.6rem;
+  @media (${breakpoint.device.sm}) {
+    flex-direction: column;
+  }
 `;
 
 export const ContentWrapper = styled(SpacedRow)`
-  height: 100vh;
+  height: calc(100vh - 100px);
   width: 100%;
   max-width: 768px;
   margin: 0 auto;
   display: flex;
-  padding-top: 5rem;
 `;
 
 export const Container = styled.div`
@@ -23,9 +25,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 100vh;
-  padding: ${props => (props.p ? props.p : '')};
-  /* padding-top: 3rem; */
+  min-height: calc(100vh - 100px);
 `;
 
 //* Standard centered row

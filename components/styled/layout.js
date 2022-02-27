@@ -8,9 +8,7 @@ import { breakpoint } from '@components/styled/breakpoints';
 const Layout = ({ children, toggleTheme }) => {
   return (
     <Main>
-      <Fixed>
-        <Header toggleTheme={toggleTheme} />
-      </Fixed>
+      <Header toggleTheme={toggleTheme} />
       <Wrapper>
         <Container>{children}</Container>
         <Footer />
