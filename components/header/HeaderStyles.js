@@ -74,21 +74,16 @@ export const MobileWrapper = styled(motion.div)`
   }
 `;
 
-export const LinkStyled = styled(motion.button)`
-  background: none;
-  font-weight: 500;
-  cursor: pointer;
-  font-size: 18px;
-  text-transform: capitalize;
-  color: ${props => props.color} !important;
-`;
-
-export const LinkWrapper = styled.div`
+export const LinkWrapper = styled(motion.div)`
   line-height: 25px;
   margin: 0 1rem;
   cursor: pointer;
   display: flex;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 18px;
   justify-content: flex-end;
+  color:${props => (props.currentTheme === 'dark' ? '#f4f4f4' : '#000000')}
   &:last-child {
     margin-right: 0;
   }

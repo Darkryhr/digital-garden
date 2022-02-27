@@ -13,14 +13,14 @@ import {
   LinkWrapper,
   LinkStyled,
 } from './HeaderStyles';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Header = ({ toggleTheme }) => {
   const [open, setOpen] = useState(false);
   const [themeIcon, setThemeIcon] = useState(false);
   let ref = useRef(null);
 
-  const handleClickOutside = (event) => {
+  const handleClickOutside = event => {
     if (ref.current && !ref.current.contains(event.target)) setOpen(false);
   };
 
@@ -84,27 +84,23 @@ export default Header;
 
 const Menu = ({ mobile, themeIcon, toggleTheme }) => (
   <MenuStyles mobile={mobile}>
-    <LinkWrapper>
-      <LinkStyled
-        color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
-        whileHover={{ scale: 1.1, color: '#fb8b24' }}
-        whileTap={{ scale: 0.9 }}
-      >
-        <Link href='/blog'>Blog</Link>
-      </LinkStyled>
+    <LinkWrapper
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      currentTheme={themeIcon}
+    >
+      <Link href='/blog'>Blog</Link>
     </LinkWrapper>
-    <LinkWrapper>
-      <LinkStyled
-        color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
-        whileHover={{ scale: 1.1, color: '#fb8b24' }}
-        whileTap={{ scale: 0.9 }}
-      >
-        <Link href='/portfolio' passHref>
-          Portfolio
-        </Link>
-      </LinkStyled>
+    <LinkWrapper
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      currentTheme={themeIcon}
+    >
+      <Link href='/portfolio' passHref>
+        Portfolio
+      </Link>
     </LinkWrapper>
-    <LinkWrapper onClick={() => toggleTheme()}>
+    <LinkWrapper onClick={() => toggleTheme()} whileHover={{ scale: 1.1 }}>
       {themeIcon === 'light' ? <BiMoon size={20} /> : <BiSun size={20} />}
     </LinkWrapper>
   </MenuStyles>
@@ -112,11 +108,12 @@ const Menu = ({ mobile, themeIcon, toggleTheme }) => (
 
 const Logo = ({ theme }) => {
   return (
-    <svg
+    <motion.svg
       version='1.2'
       width='100%'
       height='auto'
       fill={theme === 'dark' || !theme ? '#f4f4f4' : '#000000'}
+      // whileHover={{ fill: '#fb8b24' }}
       viewBox='0 0 4134.483 1403.448'
     >
       <g>
@@ -212,6 +209,6 @@ const Logo = ({ theme }) => {
           />
         </g>
       </g>
-    </svg>
+    </motion.svg>
   );
 };
