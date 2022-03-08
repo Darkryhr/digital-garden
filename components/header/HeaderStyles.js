@@ -51,14 +51,14 @@ export const MobileMenu = styled(motion.div)`
   align-items: flex-end;
   flex-direction: column;
   text-align: end;
-  padding: 2rem;
+  padding: 0.7rem 0.7rem 1.7rem 0;
   position: absolute;
   z-index: 999;
   right: 0;
   top: 40px;
   background: ${props => props.theme.colors.primary};
   margin-top: 1rem;
-  min-width: 210px;
+  min-width: 180px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   @media (${breakpoint.device.sm}) {

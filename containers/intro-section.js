@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 const IntroSection = () => {
   return (
-    <Container>
+    <Container p='0 0 6.5rem 0'>
       <Heading1>Gabriel Lellouche</Heading1>
       <Subtitle>Let&apos;s be unboring</Subtitle>
     </Container>

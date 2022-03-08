@@ -18,7 +18,13 @@ const PostPreview = ({ title, date, excerpt, slug }) => {
       </SpacedRow>
       <Subtitle>{excerpt}</Subtitle>
       <Link href={`/blog/${slug}`} passHref>
-        <BlogLink>Read More</BlogLink>
+        <BlogLink
+          whileHover={{
+            color: '#fb8b24',
+          }}
+        >
+          Read More
+        </BlogLink>
       </Link>
     </PreviewWrapper>
   );

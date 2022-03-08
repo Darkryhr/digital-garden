@@ -27,10 +27,12 @@ export const ProjectButton = styled(motion.button)`
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 `;
 
-export const GradientButton = styled.button`
+export const GradientButton = styled(motion.button)`
   padding: 0.7rem 2rem;
   font-size: medium;
+  font-weight: 500;
   background: ${props => props.theme.colors.gradient};
   border-radius: 24px;
-  margin: 1.4rem 0;
+  margin: 2rem 0 0 0;
+  cursor: pointer;
 `;

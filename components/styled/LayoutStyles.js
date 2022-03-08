@@ -26,6 +26,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   min-height: calc(100vh - 100px);
+  padding: ${props => (props.p ? props.p : '0')};
 `;
 
 //* Standard centered row
