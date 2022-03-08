@@ -8,7 +8,9 @@ import { breakpoint } from '@components/styled/breakpoints';
 const Layout = ({ children, toggleTheme }) => {
   return (
     <Main>
-      <Header toggleTheme={toggleTheme} />
+      <HeaderWrapper>
+        <Header toggleTheme={toggleTheme} />
+      </HeaderWrapper>
       <Wrapper>
         <Container>{children}</Container>
         <Footer />
@@ -22,16 +24,19 @@ export default Layout;
 const Main = styled.main`
   width: 100%;
   height: 100vh;
-  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
 `;
-
+const HeaderWrapper = styled.div`
+  border-bottom: 1px solid ${({ theme }) => theme.colors.secondary};
+`;
 const Wrapper = styled.div`
   display: block;
   margin: 0 auto;
+  max-width: 1200px;
+
   @media (${breakpoint.device.sm}) {
     padding: 0 7vw;
     padding-top: 100px;

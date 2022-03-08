@@ -33,6 +33,6 @@ export const GradientButton = styled(motion.button)`
   font-weight: 500;
   background: ${props => props.theme.colors.gradient};
   border-radius: 24px;
-  margin: 2rem 0 0 0;
+  margin: 1.5rem 0 0.5rem 0;
   cursor: pointer;
 `;

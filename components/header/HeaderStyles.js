@@ -9,6 +9,8 @@ export const Nav = styled.nav`
   padding: 0.8rem 4rem;
   min-height: 90px;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   @media (${breakpoint.device.sm}) {
     padding: 0.8rem 1.2rem;
   }
@@ -60,7 +62,9 @@ export const MobileMenu = styled(motion.div)`
   margin-top: 1rem;
   min-width: 180px;
   border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); */
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+
   @media (${breakpoint.device.sm}) {
     top: 20px;
   }

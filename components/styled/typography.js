@@ -35,7 +35,7 @@ export const Heading4 = styled.h3`
 
 export const Subtitle = styled.p`
   opacity: 0.8;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.9rem;
   letter-spacing: 1px;
   line-height: 2;

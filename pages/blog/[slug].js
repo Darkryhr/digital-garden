@@ -68,7 +68,7 @@ export async function getStaticPaths() {
 const MarkdownWrapper = styled.article`
   margin: 0 auto;
   max-width: 768px;
-  padding: 1rem 0;
+  padding: 1rem 0 5rem 0;
   min-height: calc(100vh - 100px);
   overflow: hidden;
 `;

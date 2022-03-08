@@ -11,12 +11,12 @@ const PostBody = ({ content }) => {
 
 export default PostBody;
 
-const MarkdownStyles = styled.div`
+const MarkdownStyles = styled.article`
   p {
     color: ${({ theme }) => theme.colors.text};
-    padding-bottom: 1rem;
     line-height: 1.8;
     font-size: 16px;
+    padding-top: 0.4rem;
     &:last-child {
       padding-bottom: 0;
     }
@@ -33,13 +33,13 @@ const MarkdownStyles = styled.div`
   hr {
     opacity: 0.2;
   }
-  strong {
+  h3 {
     font-weight: 600 !important;
-    display: block;
     color: ${({ theme }) => theme.colors.accent};
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1;
-    padding-bottom: 0.8rem;
+    padding: 1.2rem 0 0.6rem 0;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.accent};
   }
   ul {
     list-style: circle;
