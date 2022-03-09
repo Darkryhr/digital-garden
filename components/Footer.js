@@ -9,8 +9,8 @@ import { breakpoint } from '@components/styled/breakpoints';
 
 const Footer = () => {
   return (
-    <FooterWrapper>
-      <Wrapper>
+    <Wrapper>
+      <ContentWrapper>
         <Heading4>Gabriel Lellouche &copy; {new Date().getFullYear()}</Heading4>
         <SocialWrapper>
           <IconButton whileHover={{ scale: 1.1, color: '#fb8b24' }}>
@@ -41,15 +41,15 @@ const Footer = () => {
             </a>
           </IconButton>
         </SocialWrapper>
-      </Wrapper>
+      </ContentWrapper>
       <Contact />
-    </FooterWrapper>
+    </Wrapper>
   );
 };
 
 export default Footer;
 
-const Wrapper = styled.div`
+const ContentWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -60,15 +60,17 @@ const Wrapper = styled.div`
   }
 `;
 
-const FooterWrapper = styled.footer`
+const Wrapper = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border-top: 1px solid rgba(128, 100, 100, 0.37);
-  padding: 1rem 9vw;
+  max-width: ${breakpoint.size.lg};
+  margin: 0 auto;
+  padding: 2rem 8vw;
   @media (${breakpoint.device.sm}) {
     flex-direction: column-reverse;
+
     /* flex-direction: column; */
   }
 `;

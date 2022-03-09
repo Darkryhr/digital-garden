@@ -13,8 +13,10 @@ const Layout = ({ children, toggleTheme }) => {
       </HeaderWrapper>
       <Wrapper>
         <Container>{children}</Container>
-        <Footer />
       </Wrapper>
+      <FooterWrapper>
+        <Footer />
+      </FooterWrapper>
     </Main>
   );
 };
@@ -29,9 +31,15 @@ const Main = styled.main`
   background-repeat: no-repeat;
   background-size: cover;
 `;
-const HeaderWrapper = styled.div`
+
+const HeaderWrapper = styled.header`
   border-bottom: 1px solid ${({ theme }) => theme.colors.secondary};
 `;
+
+const FooterWrapper = styled.footer`
+  border-top: 1px solid ${({ theme }) => theme.colors.secondary};
+`;
+
 const Wrapper = styled.div`
   display: block;
   margin: 0 auto;
