@@ -37,15 +37,16 @@ const Modal = ({ handleClose, project }) => {
         animate='visible'
         exit='exit'
       >
-        <Heading3 style={{ marginBottom: '0.6rem' }}>{project.name}</Heading3>
-        <Subtitle style={{ textAlign: 'center', lineHeight: '1.5' }}>
-          {project.desc}
-        </Subtitle>
+        <Heading3 style={{ marginBottom: '1rem' }}>{project.name}</Heading3>
         <TagWrapper>
           {project.tags.map(tag => (
             <Tag key={tag}>{tag}</Tag>
           ))}
         </TagWrapper>
+        <Subtitle style={{ textAlign: 'start', lineHeight: '1.5' }}>
+          {project.desc}
+        </Subtitle>
+
         <ModalButton
           onClick={handleClose}
           whileHover={{ scale: 1.1 }}
@@ -68,13 +69,14 @@ const ModalWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 2rem;
+  justify-content: center;
+  padding: 1.7rem 2rem;
   background: ${props => props.theme.colors.primary};
   border: 1px solid ${props => props.theme.colors.secondary};
   border-top: 3px solid ${({ theme }) => theme.colors.accent};
   width: clamp(20%, 400px, 80%);
-  height: min(65%, 450px);
+  /* height: min(65%, 200px); */
+  min-height: 200px;
 
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
@@ -93,15 +95,21 @@ const ModalButton = styled(motion.button)`
 `;
 
 const TagWrapper = styled.div`
-  padding: 0.2rem;
-  margin-top: 0.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0.2rem 0 0.7rem 0;
 `;
 
 const Tag = styled.span`
-  font-size: 0.75rem;
-  border: 1px solid ${({ theme }) => theme.colors.secondary};
-  padding: 0.6rem;
-  border-radius: 7px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  /* padding: 0.4rem; */
+  padding-right: 0.5rem;
   display: inline-block;
-  margin: 0.2rem;
+  -space: nowrap;
+
+  color: ${({ theme }) => theme.colors.accent};
 `;

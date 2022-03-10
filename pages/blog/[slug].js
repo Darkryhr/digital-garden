@@ -24,7 +24,7 @@ const Post = ({ post }) => {
         <>
           <SEO title={post.title} />
           <SpacedRow>
-            <Heading2>{post.title}</Heading2>
+            <Heading2 style={{ padding: '0.5rem 0' }}>{post.title}</Heading2>
             <DateFormatter dateString={post.date} />
           </SpacedRow>
           <PostBody content={post.content} />

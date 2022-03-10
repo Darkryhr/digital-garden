@@ -4,28 +4,20 @@
     "url": "https://www.gabriel-lellouche.com/",
     "icon": "/assets/portfolio/mylogo.svg",
     "desc": "This, just...this. By yours truly, responsive design, static blog, light / dark theme and animations",
-    "tags": ["Next.js", "Framer Motion", "Styled Components", "Markdown Blog"]
+    "tags": ["Next.js", "Framer", "Styled-Components", "Markdown"]
   },
   {
     "name": "Sightsee",
     "url": "https://clever-stonebraker-68587b.netlify.app/",
     "icon": "/assets/portfolio/sightsee.svg",
     "desc": "SERN stack vacation site complete with followable holiday destinations and user authentication with JSON web tokens",
-    "tags": [
-      "Redux Toolkit",
-      "RTK Query",
-      "Vite",
-      "Express",
-      "Sequelize",
-      "SQL",
-      "JWT"
-    ]
+    "tags": ["Redux Toolkit", "Vite", "Express", "Sequelize", "JWT"]
   },
   {
     "name": "Urban Viking",
     "url": "https://urban-vikings.vercel.app/",
     "icon": "/assets/portfolio/urban-viking.svg",
-    "desc": "E-comm site w/ context and stripe",
+    "desc": "E-commerce site with context and stripe API",
     "tags": ["Context API", "Stripe", "SCSS"]
   },
   {
@@ -33,38 +25,20 @@
     "url": "https://next-blog-nine-henna.vercel.app/",
     "icon": "/assets/portfolio/vex.svg",
     "desc": "A next.js 'dev.to'-style blogging app, with efficient real-time data hydration using Incremental Static Regeneration",
-    "tags": ["Context API", "React Markdown", "Firebase", "Next.js ISR"]
+    "tags": ["Context", "Markdown", "Firebase", "Next.js", " ISR"]
   },
   {
     "name": "Firestarter",
     "url": "https://wonderful-goldstine-9fcc89.netlify.app/",
     "icon": "/assets/portfolio/firestarter.svg",
     "desc": "An angular kanban board + a small angular universal ssr demo, dynamic forms enbale both google and email login",
-    "tags": [
-      "Angular",
-      "Material",
-      "Firebase",
-      "SSR Demo",
-      "Drag&Drop SDK",
-      "RxJS"
-    ]
+    "tags": ["Angular", "Material", "Firebase", "SSR Demo", "Drag & Drop"]
   },
   {
     "name": "Firemart",
     "url": "https://angular-firemart.firebaseapp.com/",
     "icon": "/assets/portfolio/firemart.svg",
     "desc": "MEAN stack app, dockerized express backend, frontend hosted w/ firebase. Features auth with JWT, admin CRUD w/ image upload, a real-time cart and printable invoices",
-    "tags": [
-      "Angular",
-      "Material",
-      "Firebase",
-      "MongoDB",
-      "Mongoose",
-      "Express",
-      "JWT",
-      "Docker",
-      "Heroku",
-      "RxJS"
-    ]
+    "tags": ["Angular", "Material", "MongoDB", "Express", "JWT", "Docker"]
   }
 ]

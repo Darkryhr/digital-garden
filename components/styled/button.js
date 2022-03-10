@@ -3,12 +3,20 @@ import { motion } from 'framer-motion';
 
 export const Button = styled(motion.button)`
   font-weight: 500;
-  font-size: 0.9rem;
   letter-spacing: 0.02rem;
   cursor: pointer;
   border: none;
   background: none;
   border-radius: 5px;
+`;
+
+export const StrokedButton = styled(Button)`
+  border: 2px solid ${({ theme }) => theme.colors.secondary};
+  padding: 0.8rem 1.5rem;
+  font-weight: 400;
+  font-size: 0.9rem;
+  border-radius: 24px;
+  margin: 0.4rem;
 `;
 
 export const IconButton = styled(motion.button)`

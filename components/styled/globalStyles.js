@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
     transition: all 0.50s linear;
     background:${({ theme }) => theme.colors.primary};
+    
     background-image: radial-gradient(${({ theme }) =>
       theme.colors.secondary} 1px, transparent 0);
     background-size: 40px 40px;

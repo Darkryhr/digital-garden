@@ -12,9 +12,12 @@ const PostBody = ({ content }) => {
 export default PostBody;
 
 const MarkdownStyles = styled.article`
+  * {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
   p {
     color: ${({ theme }) => theme.colors.text};
-    line-height: 1.8;
+    line-height: 25px;
     font-size: 16px;
     padding-top: 0.4rem;
     &:last-child {
@@ -50,5 +53,24 @@ const MarkdownStyles = styled.article`
   }
   em {
     font-weight: 600;
+  }
+  strong {
+    font-weight: 700;
+  }
+  code {
+    font-family: monospace;
+    background: ${({ theme }) => theme.colors.secondary};
+    color: ${({ theme }) => theme.colors.accent};
+    padding: 0.3rem;
+    border-radius: 5px;
+  }
+  blockquote {
+    border: 2px solid ${({ theme }) => theme.colors.secondary};
+    margin-top: 1.3rem;
+    overflow-wrap: break-word;
+    padding: 0.8rem 1rem 1.5rem 1rem;
+  }
+  blockquote > p {
+    padding-left: 0.5rem;
   }
 `;
