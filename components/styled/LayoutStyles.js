@@ -52,11 +52,11 @@ export const Column = styled.div`
 export const Grid = styled.div`
   display: grid;
   gap: 1rem;
-  row-gap: 5rem;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  padding: 1rem 4rem;
+  row-gap: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding: 1rem 2rem;
   grid-template-rows: auto;
+  margin: 0 auto;
+  justify-content: center;
   justify-items: center;
-  align-items: center;
-  width: 100%;
 `;

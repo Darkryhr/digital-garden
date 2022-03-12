@@ -16,6 +16,7 @@ export const Nav = styled.nav`
   }
   @media (${breakpoint.device.xs}) {
     padding: 0 1.2rem;
+    min-height: none;
   }
 `;
 

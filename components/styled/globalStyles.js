@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
   * {
   color: ${({ theme }) => theme.colors.text};
+  box-sizing: border-box;
   }
 
   body {
