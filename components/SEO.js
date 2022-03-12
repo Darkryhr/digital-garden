@@ -31,7 +31,11 @@ const SEO = ({
         content='https://imgur.com/xQcr8X8'
       />
       <meta property='og:description' content={desc} />
-      <title>{title}</title>
+      <title>
+        {title === '| Gabriel does a thing'
+          ? title
+          : `${title} | Gabriel does a thing`}
+      </title>
     </Head>
   );
 };
