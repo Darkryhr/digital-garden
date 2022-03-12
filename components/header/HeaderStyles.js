@@ -14,6 +14,9 @@ export const Nav = styled.nav`
   @media (${breakpoint.device.sm}) {
     padding: 0.8rem 1.2rem;
   }
+  @media (${breakpoint.device.xs}) {
+    padding: 0 1.2rem;
+  }
 `;
 
 export const WrapperLeft = styled.div`
