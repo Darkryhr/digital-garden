@@ -8,6 +8,9 @@ export const Heading1 = styled(motion.h1)`
   text-align: center;
   cursor: default;
   padding: 0.7rem 0;
+  @media (${breakpoint.device.xs}) {
+    font-size: 3rem;
+  }
 `;
 
 export const Heading2 = styled.h2`
