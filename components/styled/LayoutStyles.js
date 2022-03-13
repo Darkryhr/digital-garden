@@ -14,7 +14,7 @@ export const SpacedRow = styled.div`
 export const ContentWrapper = styled(SpacedRow)`
   height: calc(100vh - 100px);
   width: 100%;
-  max-width: 768px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
 `;

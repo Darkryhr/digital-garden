@@ -34,6 +34,7 @@ export default PostPreview;
 
 const PreviewTitle = styled(Heading3)`
   cursor: pointer;
+  font-weight: 700;
 `;
 
 const BlogLink = styled(motion.button)`
@@ -45,5 +46,11 @@ const BlogLink = styled(motion.button)`
 `;
 
 const PreviewWrapper = styled.div`
-  padding: 1rem 0;
+  padding: 1rem 1.3rem;
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+  max-width: 768px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  border-left: 3px solid ${({ theme }) => theme.colors.accent};
 `;

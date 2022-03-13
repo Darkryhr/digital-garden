@@ -43,8 +43,7 @@ export const Heading4 = styled.h3`
 export const Subtitle = styled.p`
   opacity: 0.8;
   font-weight: 400;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.01rem;
   line-height: 2;
   @media (${breakpoint.device.sm}) {
     font-size: 0.7rem;
