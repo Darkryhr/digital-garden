@@ -71,4 +71,5 @@ const MarkdownWrapper = styled.article`
   padding: 1rem 0 5rem 0;
   min-height: calc(100vh - 100px);
   overflow: hidden;
+  list-style: circle;
 `;

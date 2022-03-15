@@ -44,12 +44,19 @@ const MarkdownStyles = styled.article`
     padding: 1.2rem 0 0.6rem 0;
     border-bottom: 2px solid ${({ theme }) => theme.colors.accent};
   }
+
   ul {
-    list-style: circle;
-    margin-bottom: 1rem;
+    list-style: disc !important;
   }
   li {
-    padding-bottom: 3px;
+    display: list-item;
+    display: block;
+    padding: 0.5rem;
+    line-height: 1.3;
+    &::before {
+      font-weight: 800;
+      content: '· ';
+    }
   }
   em {
     font-weight: 600;

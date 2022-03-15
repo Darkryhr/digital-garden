@@ -46,11 +46,11 @@ const Wrapper = styled.div`
   max-width: 1200px;
 
   @media (${breakpoint.device.sm}) {
-    padding: 0 7vw;
+    padding: 0 2vw;
     padding-top: 100px;
   }
   @media (${breakpoint.device.lg}) {
-    padding: 0 7vw;
+    padding: 0 2vw;
   }
 `;
 
