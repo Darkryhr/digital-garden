@@ -15,10 +15,7 @@ const Contact = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-
-    console.log(theme);
     setLoading(true);
-
     const loadingToast = toast.loading('Sending...');
     let data = {
       name,
@@ -28,21 +25,23 @@ const Contact = () => {
     const res = await fetch('/api/contact', {
       method: 'POST',
       headers: {
-        Accept: 'application/json, text/plain, */*',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
 
-    if (res.status === 200) {
+    const { error } = await res.json();
+    if (error) {
+      toast.error('Oops! looks like something went wrong...', {
+        id: loadingToast,
+      });
+      console.log(error);
+      return;
+    } else {
       setName('');
       setEmail('');
       setMessage('');
       toast.dismiss(loadingToast);
-    } else {
-      toast.error('Oops! looks like something went wrong...', {
-        id: loadingToast,
-      });
     }
 
     setLoading(false);
