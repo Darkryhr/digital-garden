@@ -13,9 +13,13 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [theme, themeToggler, mountedComponent] = useDarkMode();
 
+  const emailRegEx =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
   const handleSubmit = async e => {
     e.preventDefault();
     setLoading(true);
+
     const loadingToast = toast.loading('Sending...');
     let data = {
       name,
@@ -101,7 +105,7 @@ const Contact = () => {
           onClick={e => {
             handleSubmit(e);
           }}
-          disabled={loading || !name || !email}
+          disabled={loading || !name || !emailRegEx.test(email) || !message}
         >
           {loading ? 'Sending...' : 'Send'}
         </Submit>
