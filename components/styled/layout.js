@@ -43,7 +43,7 @@ const FooterWrapper = styled.footer`
 const Wrapper = styled.div`
   display: block;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: ${breakpoint.size.lg};
 
   @media (${breakpoint.device.sm}) {
     padding: 0 2vw;

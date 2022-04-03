@@ -5,11 +5,10 @@ import { breakpoint } from './breakpoints';
 export const Heading1 = styled(motion.h1)`
   font-weight: 700;
   font-size: 4rem;
-  text-align: center;
   cursor: default;
   padding: 0.7rem 0;
   @media (${breakpoint.device.xs}) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 `;
 
@@ -60,7 +59,6 @@ export const Lead = styled.p`
   letter-spacing: 3px;
   line-height: 2;
   color: ${({ theme }) => theme.colors.accent};
-  text-align: center;
 `;
 
 export const Text = styled.p`

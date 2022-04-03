@@ -9,8 +9,10 @@ export const Nav = styled.nav`
   padding: 0.8rem 4rem;
   min-height: 90px;
   width: 100%;
-  max-width: 1200px;
+  max-width: ${breakpoint.size.lg};
   margin: 0 auto;
+  background: ${props => props.theme.colors.primary};
+
   @media (${breakpoint.device.sm}) {
     padding: 0.8rem 1.2rem;
   }
@@ -92,7 +94,8 @@ export const LinkWrapper = styled(motion.div)`
   text-transform: capitalize;
   font-size: 18px;
   justify-content: flex-end;
-  color:${props => (props.currentTheme === 'dark' ? '#f4f4f4' : '#000000')}
+  opacity: ${props => (props.active ? 0.7 : 1)};
+  color: ${props => (props.currentTheme === 'dark' ? '#f4f4f4' : '#000000')};
   &:last-child {
     margin-right: 0;
   }

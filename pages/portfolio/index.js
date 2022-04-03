@@ -3,17 +3,8 @@ import Image from 'next/image';
 import { AnimatePresence } from 'framer-motion';
 
 import SectionWrapper from '@components/section-wrapper';
-import {
-  GradientButton,
-  GradientWrapper,
-  ProjectButton,
-} from '@components/styled/button';
-import {
-  Heading2,
-  Heading3,
-  Heading4,
-  Subtitle,
-} from '@components/styled/typography';
+import { GradientButton, ProjectButton } from '@components/styled/button';
+import { Heading2, Subtitle } from '@components/styled/typography';
 import { Grid, Row, Column, Container } from '@components/styled/LayoutStyles';
 import Modal from '@components/Modal';
 

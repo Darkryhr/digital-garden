@@ -12,11 +12,15 @@ export const Button = styled(motion.button)`
 
 export const StrokedButton = styled(Button)`
   border: 2px solid ${({ theme }) => theme.colors.secondary};
-  padding: 0.8rem 1.5rem;
+  padding: 0.6rem 1.2rem;
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   border-radius: 24px;
   margin: 0.4rem;
+  ${props =>
+    props.accented
+      ? `background: ${props.theme.colors.accent}; border:none;`
+      : ''}
 `;
 
 export const IconButton = styled(motion.button)`

@@ -21,4 +21,5 @@ const Section = styled(motion.section)`
   width: 100%;
   padding: 1.2rem 0 0.4rem 0;
   position: relative;
+  overflow-x: clip;
 `;

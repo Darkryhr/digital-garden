@@ -13,7 +13,8 @@ import {
   LinkWrapper,
   LinkStyled,
 } from './HeaderStyles';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 const Header = ({ toggleTheme }) => {
   const [open, setOpen] = useState(false);
@@ -82,29 +83,35 @@ const Header = ({ toggleTheme }) => {
 
 export default Header;
 
-const Menu = ({ mobile, themeIcon, toggleTheme }) => (
-  <MenuStyles mobile={mobile}>
-    <LinkWrapper
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      currentTheme={themeIcon}
-    >
-      <Link href='/blog'>Blog</Link>
-    </LinkWrapper>
-    <LinkWrapper
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      currentTheme={themeIcon}
-    >
-      <Link href='/portfolio' passHref>
-        Portfolio
-      </Link>
-    </LinkWrapper>
-    <LinkWrapper onClick={() => toggleTheme()} whileHover={{ scale: 1.1 }}>
-      {themeIcon === 'light' ? <BiMoon size={20} /> : <BiSun size={20} />}
-    </LinkWrapper>
-  </MenuStyles>
-);
+const Menu = ({ mobile, themeIcon, toggleTheme }) => {
+  const router = useRouter();
+  console.log(router.pathname);
+  return (
+    <MenuStyles mobile={mobile}>
+      <LinkWrapper
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        currentTheme={themeIcon}
+        active={router.pathname == '/blog' ? true : false}
+      >
+        <Link href='/blog'>Blog</Link>
+      </LinkWrapper>
+      <LinkWrapper
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        currentTheme={themeIcon}
+        active={router.pathname == '/portfolio' ? true : false}
+      >
+        <Link href='/portfolio' passHref>
+          Portfolio
+        </Link>
+      </LinkWrapper>
+      <LinkWrapper onClick={() => toggleTheme()} whileHover={{ scale: 1.1 }}>
+        {themeIcon === 'light' ? <BiMoon size={20} /> : <BiSun size={20} />}
+      </LinkWrapper>
+    </MenuStyles>
+  );
+};
 
 const Logo = ({ theme }) => {
   return (
