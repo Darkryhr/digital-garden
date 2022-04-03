@@ -7,6 +7,9 @@ export const Heading1 = styled(motion.h1)`
   font-size: 4rem;
   cursor: default;
   padding: 0.7rem 0;
+  @media (${breakpoint.device.sm}) {
+    font-size: 3rem;
+  }
   @media (${breakpoint.device.xs}) {
     font-size: 2rem;
   }
@@ -59,6 +62,9 @@ export const Lead = styled.p`
   letter-spacing: 3px;
   line-height: 2;
   color: ${({ theme }) => theme.colors.accent};
+  @media (${breakpoint.device.sm}) {
+    font-size: 0.65rem;
+  }
 `;
 
 export const Text = styled.p`

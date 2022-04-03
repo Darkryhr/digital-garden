@@ -12,32 +12,30 @@ const IntroSection = () => {
     <Container p='0 0 6.5rem 0'>
       <Rename>
         <SpacedContainer>
-          <div>
-            <Lead>Let&apos;s be unboring</Lead>
-            <Heading1>
-              MAKE THINGS <br />
-              WITH CHARACTER
-            </Heading1>
-            <ButtonRow>
-              <StrokedButton
-                accented
-                whileHover={{
-                  scale: 1.1,
-                }}
-              >
-                <Link href='/portfolio'>Portfolio</Link>
-              </StrokedButton>
-              <StrokedButton
-                whileHover={{
-                  backgroundColor: '#fb8b24',
-                }}
-              >
-                <a href='/assets/portfolio/resume.docx' download>
-                  Resume
-                </a>
-              </StrokedButton>
-            </ButtonRow>
-          </div>
+          <Lead>Let&apos;s be unboring</Lead>
+          <Heading1>
+            MAKE THINGS <br />
+            WITH CHARACTER
+          </Heading1>
+          <ButtonRow>
+            <StrokedButton
+              accented
+              whileHover={{
+                scale: 1.1,
+              }}
+            >
+              <Link href='/portfolio'>Portfolio</Link>
+            </StrokedButton>
+            <StrokedButton
+              whileHover={{
+                backgroundColor: '#fb8b24',
+              }}
+            >
+              <a href='/assets/portfolio/resume.docx' download>
+                Resume
+              </a>
+            </StrokedButton>
+          </ButtonRow>
         </SpacedContainer>
         <Blocks />
       </Rename>
@@ -71,6 +69,9 @@ const Rename = styled.div`
   justify-content: space-between;
   max-width: ${breakpoint.size.lg};
   padding: 0 5rem;
+  @media (${breakpoint.device.sm}) {
+    padding: 0;
+  }
 `;
 
 const SpacedContainer = styled.div`
@@ -79,11 +80,11 @@ const SpacedContainer = styled.div`
   width: 100%;
 
   @media (${breakpoint.device.sm}) {
-    padding: 3rem 2rem 0 2rem;
+    padding: 3rem 0 0 0;
+    align-items: flex-start;
   }
   @media (${breakpoint.device.xs}) {
     padding: 3rem 0 0 0;
-    align-items: center;
   }
 `;
 
@@ -97,11 +98,11 @@ const Block = styled.div`
   z-index: -999;
 
   @media (${breakpoint.device.sm}) {
-    top: -70px;
-    right: -150px;
+    top: 0;
+    right: -300px;
   }
   @media (${breakpoint.device.xs}) {
-    top: 0;
+    right: -150px;
   }
 `;
 
