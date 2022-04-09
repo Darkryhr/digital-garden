@@ -5,6 +5,7 @@ import { breakpoint } from './breakpoints';
 export const Heading1 = styled(motion.h1)`
   font-weight: 700;
   font-size: 4rem;
+  letter-spacing: 2px;
   cursor: default;
   padding: 0.7rem 0;
   @media (${breakpoint.device.sm}) {

@@ -37,7 +37,7 @@ const IntroSection = () => {
             </StrokedButton>
           </ButtonRow>
         </SpacedContainer>
-        <Blocks />
+        {/* <Circle /> */}
       </Rename>
     </Container>
   );
@@ -46,19 +46,6 @@ const IntroSection = () => {
 const ButtonRow = styled.div`
   display: flex;
 `;
-const Blocks = () => (
-  <Block>
-    <SquareStroked />
-    <SquareEmpty />
-    <SquareEmpty />
-    <SquareEmpty />
-    <SquareFilled />
-    <SquareEmpty />
-    <SquareStroked />
-    <SquareEmpty />
-    <SquareFilled />
-  </Block>
-);
 
 export default IntroSection;
 
@@ -88,44 +75,12 @@ const SpacedContainer = styled.div`
   }
 `;
 
-const Block = styled.div`
-  position: absolute;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  top: -95px;
-  right: -20px;
-  z-index: -999;
-
-  @media (${breakpoint.device.sm}) {
-    top: 0;
-    right: -300px;
-  }
-  @media (${breakpoint.device.xs}) {
-    right: -150px;
-  }
-`;
-
-const Square = styled.div`
-  width: 160px;
-  height: 160px;
-  @media (${breakpoint.device.xs}) {
-    width: 90px;
-    height: 90px;
-  }
-`;
-
-const SquareStroked = styled(Square)`
-  /* border: 1px solid ${({ theme }) => theme.colors.text}; */
+const Circle = styled.div`
   background: ${({ theme }) => theme.colors.secondary};
-
-  opacity: 0.5;
-`;
-
-const SquareFilled = styled(Square)`
-  background: ${({ theme }) => theme.colors.accent};
-`;
-
-const SquareEmpty = styled(Square)`
-  /* border: 1px solid ${({ theme }) => theme.colors.text}; */
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  right: 0;
+  border-radius: 50%;
+  z-index: -1;
 `;
