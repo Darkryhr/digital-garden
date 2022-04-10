@@ -6,9 +6,7 @@ export const SpacedRow = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 0.6rem;
-  @media (${breakpoint.device.sm}) {
-    flex-direction: column;
-  }
+  flex-direction: column;
 `;
 
 export const ContentWrapper = styled(SpacedRow)`
