@@ -25,6 +25,10 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
   }
 
+  strong {
+    font-weight: 500;
+  }
+
   ::-webkit-scrollbar {
     width:2px;
   }

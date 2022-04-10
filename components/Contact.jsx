@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Column } from './styled/LayoutStyles';
 import { breakpoint } from '@components/styled/breakpoints';
 import useDarkMode from './useDarkMode';
+import { BiSend } from 'react-icons/bi';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -91,7 +92,7 @@ const Contact = () => {
         <AreaContainer>
           <TextArea
             cols='30'
-            rows='3'
+            rows='2'
             placeholder='What do you have to say for yourself...'
             name='message'
             value={message}
@@ -100,15 +101,35 @@ const Contact = () => {
             }}
           />
         </AreaContainer>
-        <Submit
-          type='submit'
-          onClick={e => {
-            handleSubmit(e);
-          }}
-          disabled={loading || !name || !emailRegEx.test(email) || !message}
-        >
-          {loading ? 'Sending...' : 'Send'}
-        </Submit>
+        <SubmitWrapper>
+          <Submit
+            type='submit'
+            onClick={e => {
+              handleSubmit(e);
+            }}
+            disabled={loading || !name || !emailRegEx.test(email) || !message}
+          >
+            {loading ? (
+              'Sending...'
+            ) : (
+              <>
+                Send
+                <BiSend
+                  size={20}
+                  style={{
+                    fill: 'white',
+                  }}
+                />
+              </>
+            )}{' '}
+          </Submit>
+          <div>
+            <strong>/ email me: </strong>
+            <EmailLink href='mailto:info@gabriel-lellouche.com'>
+              info@gabriel-lellouche.com
+            </EmailLink>
+          </div>
+        </SubmitWrapper>
       </Form>
     </Column>
   );
@@ -123,23 +144,31 @@ const Form = styled.form`
   max-width: 714px;
   padding: 2rem 0;
 `;
+
+const EmailLink = styled.a`
+  padding-top: 0.2rem;
+  opacity: 0.8;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   margin-bottom: 1rem;
-  justify-content: space-between;
   @media (${breakpoint.device.sm}) {
-    flex-direction: column;
   }
 `;
 const InputContainer = styled.div`
-  width: 47%;
-  /* max-width: 280px; */
+  border-radius: 5px;
+  width: 45%;
+  margin-right: 1rem;
   flex-direction: column;
-  padding: 0.7rem 1rem;
-  /* margin: 0 1rem; */
+  padding: 0.7rem 0 0.5rem 1rem;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
+  background: ${({ theme }) => theme.colors.secondary};
   @media (${breakpoint.device.sm}) {
     width: 100%;
+  }
+  &:last-child {
+    margin-right: 0;
   }
 `;
 
@@ -155,15 +184,15 @@ const Input = styled(motion.input)`
 const Shout = styled.h4`
   letter-spacing: 0.03rem;
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 700;
   margin-bottom: 1.3rem;
 `;
 
 const AreaContainer = styled.div`
-  border: 1px solid ${({ theme }) => theme.colors.primary};
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
-
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 0 0.5rem 1rem;
+  border-radius: 5px;
+  background: ${({ theme }) => theme.colors.secondary};
 `;
 
 const TextArea = styled.textarea`
@@ -177,15 +206,27 @@ const TextArea = styled.textarea`
 
 const Submit = styled(motion.button)`
   background: none;
-  padding: 1rem 0;
+  padding: 1rem 2rem;
   background: ${({ theme }) => theme.colors.accent};
   color: white;
-  width: 100%;
   margin: 0.7rem 0;
+  display: flex;
+  align-items: center;
+  width: 150px;
+  font-weight: 600;
+  border-radius: 5px;
+  justify-content: space-around;
   cursor: pointer;
   &:disabled {
     cursor: default;
     filter: brightness(70%);
     background: ${({ theme }) => theme.colors.secondary};
   }
+`;
+
+const SubmitWrapper = styled.div`
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
