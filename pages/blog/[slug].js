@@ -1,15 +1,17 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import PostBody from '@components/post-body';
-import { getAllPosts, getPostBySlug } from 'lib/api';
-import markdownToHtml from 'lib/markdownToHtml';
-import DateFormatter from '@components/date-formatter';
-import { Heading3, Heading2 } from '@components/styled/typography';
-import SEO from '@components/SEO';
-import Loader from '@components/Loader';
-import { SpacedRow } from '@components/styled/LayoutStyles';
 import styled from 'styled-components';
+
+import markdownToHtml from 'lib/markdownToHtml';
+import { getAllPosts, getPostBySlug } from 'lib/api';
+import PostBody from '@components/post-body';
+import DateFormatter from '@components/date-formatter';
+import { Heading2 } from '@components/styled/typography';
+import SEO from '@components/SEO';
+import { SpacedRow } from '@components/styled/LayoutStyles';
+import Loader from '@components/Loader';
+import { breakpoint } from '@components/styled/breakpoints';
 
 const Post = ({ post }) => {
   const router = useRouter();
@@ -72,4 +74,8 @@ const MarkdownWrapper = styled.article`
   min-height: calc(100vh - 100px);
   overflow: hidden;
   list-style: circle;
+  @media (${breakpoint.device.sm}) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `;

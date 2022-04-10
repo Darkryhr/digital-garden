@@ -43,29 +43,7 @@ const FooterWrapper = styled.footer`
 const Wrapper = styled.div`
   display: block;
   margin: 0 auto;
-  max-width: ${breakpoint.size.lg};
-
-  @media (${breakpoint.device.sm}) {
-    padding: 0 2vw;
-    padding-top: 100px;
-  }
   @media (${breakpoint.device.lg}) {
-    padding: 0 2vw;
-  }
-`;
-
-const Fixed = styled.div`
-  position: fixed;
-  max-width: 1200px;
-  width: 100%;
-  z-index: 999;
-  top: 0;
-  backdrop-filter: blur(10px);
-  left: 50%;
-  margin-left: -600px;
-
-  @media (${breakpoint.device.lg}) {
-    left: 0;
-    margin-left: 0;
+    /* padding: 0 2vw; */
   }
 `;

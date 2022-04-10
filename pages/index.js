@@ -1,10 +1,11 @@
 import SectionWrapper from '@components/section-wrapper';
 import IntroSection from 'containers/intro-section';
 import styled from 'styled-components';
+import { breakpoint } from '@components/styled/breakpoints';
 
 export default function Home() {
   return (
-    <>
+    <Deflow>
       <CoolThing>
         UI &amp; UX DESIGN
         <br />
@@ -13,17 +14,22 @@ export default function Home() {
       <SectionWrapper delay={0.1}>
         <IntroSection />
       </SectionWrapper>
-    </>
+    </Deflow>
   );
 }
+
+const Deflow = styled.div`
+  position: relative;
+  overflow: hidden;
+`;
 
 const CoolThing = styled.h1`
   font-weight: 800;
   position: absolute;
   opacity: 0.03;
   letter-spacing: 1px;
-  z-index: -2;
   font-size: 15rem;
+  z-index: -999;
   text-overflow: clip;
   overflow: hidden;
   white-space: nowrap;
@@ -34,4 +40,7 @@ const CoolThing = styled.h1`
   text-align: end;
   /* transform: rotate(-90deg); */
   /* top: 0; */
+  @media (${breakpoint.device.sm}) {
+    opacity: 0;
+  }
 `;

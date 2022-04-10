@@ -85,7 +85,6 @@ export default Header;
 
 const Menu = ({ mobile, themeIcon, toggleTheme }) => {
   const router = useRouter();
-  console.log(router.pathname);
   return (
     <MenuStyles mobile={mobile}>
       <LinkWrapper

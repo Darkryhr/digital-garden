@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { breakpoint } from './styled/breakpoints';
 
 const SectionWrapper = ({ children, delay = 0 }) => {
   return (
@@ -19,7 +20,12 @@ export default SectionWrapper;
 
 const Section = styled(motion.section)`
   width: 100%;
+
   padding: 1.2rem 0 0.4rem 0;
   position: relative;
   overflow-x: clip;
+  @media (${breakpoint.device.sm}) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `;
