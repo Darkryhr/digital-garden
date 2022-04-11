@@ -88,7 +88,7 @@ export async function getStaticPaths() {
 const MarkdownWrapper = styled.article`
   margin: 0 auto;
   max-width: ${breakpoint.size.lg};
-  padding: 5rem 3vw 5rem 3vw;
+  padding: 3rem 3vw 5rem 3vw;
   min-height: calc(100vh - 100px);
   overflow: hidden;
   list-style: circle;
@@ -102,7 +102,7 @@ const HomeLink = styled.a`
   color: ${({ theme }) => theme.colors.accent};
   font-weight: 600;
   font-size: 1.1rem;
-  padding-bottom: 0.4rem;
+  padding-bottom: 2rem;
   display: flex;
   align-items: center;
   width: 85px;

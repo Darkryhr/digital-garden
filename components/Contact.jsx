@@ -123,12 +123,13 @@ const Contact = () => {
               </>
             )}{' '}
           </Submit>
-          <div>
-            <strong>/ email me: </strong>
+          <Span>or</Span>
+          <OrEmail>
+            <strong>email me: </strong>
             <EmailLink href='mailto:info@gabriel-lellouche.com'>
               info@gabriel-lellouche.com
             </EmailLink>
-          </div>
+          </OrEmail>
         </SubmitWrapper>
       </Form>
     </Column>
@@ -137,12 +138,34 @@ const Contact = () => {
 
 export default Contact;
 
+const Span = styled.span`
+  background: ${({ theme }) => theme.colors.primary};
+  padding: 10px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.accent};
+  border-radius: 50%;
+  margin: 0 1rem;
+`;
+
+const OrEmail = styled.div`
+  padding: 0;
+  margin: 0;
+  text-align: end;
+  width: fit-content;
+`;
+
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   width: 100%;
-  max-width: 714px;
   padding: 2rem 0;
+  min-width: 530px;
+  @media (${breakpoint.device.sm}) {
+    min-width: inherit;
+  }
 `;
 
 const EmailLink = styled.a`
@@ -152,13 +175,14 @@ const EmailLink = styled.a`
 
 const Wrapper = styled.div`
   display: flex;
-  margin-bottom: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
   @media (${breakpoint.device.sm}) {
   }
 `;
 const InputContainer = styled.div`
   border-radius: 5px;
-  width: 45%;
+  width: 49%;
   margin-right: 1rem;
   flex-direction: column;
   padding: 0.7rem 0 0.5rem 1rem;
@@ -185,7 +209,8 @@ const Shout = styled.h4`
   letter-spacing: 0.03rem;
   font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 1.3rem;
+  padding-bottom: 2rem;
+  text-align: start;
 `;
 
 const AreaContainer = styled.div`
