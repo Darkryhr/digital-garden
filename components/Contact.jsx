@@ -69,7 +69,7 @@ const Contact = () => {
           <InputContainer>
             <Input
               type='text'
-              placeholder='Your name...'
+              placeholder='Your name'
               name='name'
               value={name}
               onChange={e => {
@@ -80,7 +80,7 @@ const Contact = () => {
           <InputContainer>
             <Input
               type='text'
-              placeholder='Your E-mail...'
+              placeholder='Your E-mail'
               name='email'
               value={email}
               onChange={e => {
@@ -147,6 +147,9 @@ const Span = styled.span`
   color: ${({ theme }) => theme.colors.accent};
   border-radius: 50%;
   margin: 0 1rem;
+  @media (${breakpoint.device.sm}) {
+    margin: 1rem 0 0 0;
+  }
 `;
 
 const OrEmail = styled.div`
@@ -154,6 +157,10 @@ const OrEmail = styled.div`
   margin: 0;
   text-align: end;
   width: fit-content;
+  @media (${breakpoint.device.sm}) {
+    padding-top: 1rem;
+    text-align: center;
+  }
 `;
 
 const Form = styled.form`
@@ -161,10 +168,10 @@ const Form = styled.form`
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
+  max-width: 550px;
   padding: 2rem 0;
-  min-width: 530px;
+  /* min-width: 530px; */
   @media (${breakpoint.device.sm}) {
-    min-width: inherit;
   }
 `;
 
@@ -203,6 +210,7 @@ const Input = styled(motion.input)`
   width: 100%;
   color: ${({ theme }) => theme.colors.text};
   font-size: 1rem;
+  text-overflow: ellipsis;
 `;
 
 const Shout = styled.h4`
@@ -254,4 +262,8 @@ const SubmitWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (${breakpoint.device.sm}) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;

@@ -70,6 +70,7 @@ const Wrapper = styled.footer`
   padding: 2rem 4rem;
   @media (${breakpoint.device.sm}) {
     flex-direction: column-reverse;
+    padding: 2rem 1rem;
 
     /* flex-direction: column; */
   }
