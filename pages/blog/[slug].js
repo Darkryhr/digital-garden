@@ -2,6 +2,8 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import styled from 'styled-components';
+import Link from 'next/link';
+import { FaLongArrowAltLeft } from 'react-icons/fa';
 
 import markdownToHtml from 'lib/markdownToHtml';
 import { getAllPosts, getPostBySlug } from 'lib/api';
@@ -25,10 +27,26 @@ const Post = ({ post }) => {
       ) : (
         <>
           <SEO title={post.title} />
+          <Link href='/blog' passHref>
+            <HomeLink>
+              <FaLongArrowAltLeft
+                size={22}
+                style={{
+                  fill: '#fb8b24',
+                }}
+              />{' '}
+              Home
+            </HomeLink>
+          </Link>
           <SpacedRow>
             <Heading2 style={{ padding: '0.5rem 0' }}>{post.title}</Heading2>
             <DateFormatter dateString={post.date} />
           </SpacedRow>
+          <div
+            style={{
+              height: '2rem',
+            }}
+          ></div>
           <PostBody content={post.content} />
         </>
       )}
@@ -69,8 +87,8 @@ export async function getStaticPaths() {
 
 const MarkdownWrapper = styled.article`
   margin: 0 auto;
-  max-width: 768px;
-  padding: 1rem 0 5rem 0;
+  max-width: ${breakpoint.size.lg};
+  padding: 3rem 3vw 5rem 3vw;
   min-height: calc(100vh - 100px);
   overflow: hidden;
   list-style: circle;
@@ -78,4 +96,15 @@ const MarkdownWrapper = styled.article`
     padding-left: 1rem;
     padding-right: 1rem;
   }
+`;
+
+const HomeLink = styled.a`
+  color: ${({ theme }) => theme.colors.accent};
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  width: 85px;
+  justify-content: space-between;
 `;

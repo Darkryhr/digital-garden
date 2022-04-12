@@ -16,16 +16,6 @@ const PostPreview = ({ title, date, excerpt, slug }) => {
           <DateFormatter dateString={date} />
         </SpacedRow>
         <PreviewSubtitle>{excerpt}</PreviewSubtitle>
-        <Link href={`/blog/${slug}`} passHref>
-          <BlogLink
-            whileHover={{
-              color: '#fb8b24',
-              borderBottom: '2px solid #fb8b24',
-            }}
-          >
-            Read More
-          </BlogLink>
-        </Link>
       </PreviewWrapper>
     </Link>
   );
@@ -38,9 +28,9 @@ const PreviewTitle = styled(Heading3)`
 `;
 
 const PreviewSubtitle = styled(Subtitle)`
-  overflow: hidden;
-  max-height: 48px;
-
+  /* overflow: hidden; */
+  max-height: 40px;
+  text-overflow: ellipsis;
   line-height: normal;
 `;
 
@@ -54,7 +44,7 @@ const BlogLink = styled(motion.button)`
 
 const PreviewWrapper = styled.div`
   cursor: pointer;
-  padding: 1rem 1.3rem;
+  padding: 2rem 1.3rem;
   border: 1px solid ${({ theme }) => theme.colors.secondary};
   max-width: 768px;
   max-height: 180px;

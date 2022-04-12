@@ -1,15 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
+import { breakpoint } from './styled/breakpoints';
 
 const PostBody = ({ content }) => {
   return (
-    <>
+    <BodyWrapper>
       <MarkdownStyles dangerouslySetInnerHTML={{ __html: content }} />
-    </>
+    </BodyWrapper>
   );
 };
 
 export default PostBody;
+
+const BodyWrapper = styled.article`
+  padding: 4rem 3rem;
+  background-color: ${({ theme }) => theme.colors.secondary + '40'};
+  border-radius: 10px;
+  @media (${breakpoint.device.sm}) {
+    padding: 2rem 1rem;
+  }
+`;
 
 const MarkdownStyles = styled.article`
   * {

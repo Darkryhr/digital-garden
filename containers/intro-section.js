@@ -82,10 +82,11 @@ const SpacedContainer = styled.div`
 const Circle = styled.div`
   position: absolute;
   right: 0;
-  top: 0;
+  top: 80px;
   transform: rotate(15deg);
   width: 500px;
   fill: #fb8b24;
+  z-index: -999;
   @media (${breakpoint.device.sm}) {
     fill: ${({ theme }) => theme.colors.text};
     opacity: 0.05;
