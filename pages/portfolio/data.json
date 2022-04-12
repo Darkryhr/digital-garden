@@ -40,5 +40,12 @@
     "icon": "/assets/portfolio/firemart.svg",
     "desc": "MEAN stack app, dockerized express backend, frontend hosted w/ firebase. Features auth with JWT, admin CRUD w/ image upload, a real-time cart and printable invoices",
     "tags": ["Angular", "Material", "MongoDB", "Express", "JWT", "Docker"]
+  },
+  {
+    "name": "Bug Tracker",
+    "url": "https://github.com/Darkryhr/bugtrackr",
+    "icon": "/assets/portfolio/mylogo.svg",
+    "desc": "A bug tracking app, GraphQL backend API, Postgres database managed with prisma. deploy coming soon.",
+    "tags": ["GraphQL", "Next.js", "Prisma", "PostgreSQL", "JWT", "Docker"]
   }
 ]
