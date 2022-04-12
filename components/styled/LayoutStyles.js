@@ -10,7 +10,9 @@ export const SpacedRow = styled.div`
 `;
 
 export const ContentWrapper = styled(SpacedRow)`
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
+  max-height: 200vh;
+  overflow: scroll;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;

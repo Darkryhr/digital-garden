@@ -35,9 +35,10 @@ const MarkdownStyles = styled.article`
     }
   }
   h2 {
-    font-weight: 600;
-    font-size: 22px;
-    padding: 1rem 0;
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 2rem 0 0.5rem 0;
   }
   h1 {
     font-weight: 700;
@@ -51,8 +52,18 @@ const MarkdownStyles = styled.article`
     color: ${({ theme }) => theme.colors.accent};
     font-size: 20px;
     line-height: 1;
-    padding: 1.2rem 0 0.6rem 0;
-    border-bottom: 2px solid ${({ theme }) => theme.colors.accent};
+    padding: 1.2rem 0 0.3rem 0;
+  }
+
+  h2:after {
+    content: '';
+    display: block;
+    width: 15px;
+    margin-top: 1rem;
+    padding-top: 6px;
+    background: ${({ theme }) => theme.colors.accent};
+    border-radius: 3px;
+    margin-left: 3px;
   }
 
   ul {
