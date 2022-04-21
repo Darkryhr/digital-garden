@@ -5,6 +5,7 @@ import { Heading1, Lead } from '@components/styled/typography';
 import { StrokedButton } from '@components/styled/button';
 import styled from 'styled-components';
 import { breakpoint } from '@components/styled/breakpoints';
+import { BiDownload } from 'react-icons/bi';
 
 const IntroSection = () => {
   return (
@@ -30,7 +31,20 @@ const IntroSection = () => {
                 backgroundColor: '#fb8b24',
               }}
             >
-              <a href='/assets/portfolio/resume.docx' download>
+              <a
+                href='/assets/portfolio/resume.docx'
+                download
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                <BiDownload
+                  size={16}
+                  style={{
+                    marginRight: '5px',
+                  }}
+                />
                 Resume
               </a>
             </StrokedButton>

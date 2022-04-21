@@ -12,7 +12,7 @@ export const Button = styled(motion.button)`
 
 export const StrokedButton = styled(Button)`
   border: 2px solid ${({ theme }) => theme.colors.secondary};
-  padding: 0.6rem 1.2rem;
+  padding: 0.4rem 1.2rem;
   font-weight: 400;
   font-size: 0.8rem;
   border-radius: 24px;
