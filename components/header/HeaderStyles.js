@@ -95,7 +95,7 @@ export const LinkWrapper = styled(motion.div)`
   font-size: 18px;
   justify-content: flex-end;
   opacity: ${props => (props.$active ? 0.7 : 1)};
-  color: ${props => (props.currentTheme === 'dark' ? '#f4f4f4' : '#000000')};
+  color: ${props => (props.$currentTheme === 'dark' ? '#f4f4f4' : '#000000')};
   &:last-child {
     margin-right: 0;
   }

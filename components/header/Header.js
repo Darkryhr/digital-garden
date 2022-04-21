@@ -90,7 +90,7 @@ const Menu = ({ mobile, themeIcon, toggleTheme }) => {
       <LinkWrapper
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        currentTheme={themeIcon}
+        $currentTheme={themeIcon}
         $active={router.pathname.includes('/blog') ? true : false}
       >
         <Link href='/blog'>Blog</Link>
@@ -98,7 +98,7 @@ const Menu = ({ mobile, themeIcon, toggleTheme }) => {
       <LinkWrapper
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        currentTheme={themeIcon}
+        $currentTheme={themeIcon}
         $active={router.pathname == '/portfolio' ? true : false}
       >
         <Link href='/portfolio' passHref>
@@ -117,7 +117,7 @@ const Logo = ({ theme }) => {
     <svg
       version='1.2'
       width='100%'
-      height='auto'
+      height='100%'
       fill={theme === 'dark' || !theme ? '#f4f4f4' : '#000000'}
       viewBox='0 0 4134.483 1403.448'
     >

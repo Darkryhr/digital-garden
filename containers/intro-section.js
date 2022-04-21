@@ -112,7 +112,7 @@ const Graphic = () => {
     <svg
       version='1.2'
       width='100%'
-      height='auto'
+      height='100%'
       // fill='#fb8b24'
       viewBox='0 0 134.033 174'
     >
