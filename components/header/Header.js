@@ -47,7 +47,7 @@ const Header = ({ toggleTheme }) => {
         </Link>
       </WrapperLeft>
       <WrapperRight>
-        <Menu mobile={false} themeIcon={themeIcon} toggleTheme={toggleTheme} />
+        <Menu $mobile={false} themeIcon={themeIcon} toggleTheme={toggleTheme} />
       </WrapperRight>
       <MobileWrapper ref={ref}>
         {open ? (
@@ -86,12 +86,12 @@ export default Header;
 const Menu = ({ mobile, themeIcon, toggleTheme }) => {
   const router = useRouter();
   return (
-    <MenuStyles mobile={mobile}>
+    <MenuStyles $mobile={mobile}>
       <LinkWrapper
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         currentTheme={themeIcon}
-        active={router.pathname.includes('/blog') ? true : false}
+        $active={router.pathname.includes('/blog') ? true : false}
       >
         <Link href='/blog'>Blog</Link>
       </LinkWrapper>
@@ -99,7 +99,7 @@ const Menu = ({ mobile, themeIcon, toggleTheme }) => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         currentTheme={themeIcon}
-        active={router.pathname == '/portfolio' ? true : false}
+        $active={router.pathname == '/portfolio' ? true : false}
       >
         <Link href='/portfolio' passHref>
           Portfolio

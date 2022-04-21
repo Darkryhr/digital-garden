@@ -18,7 +18,7 @@ export const StrokedButton = styled(Button)`
   border-radius: 24px;
   margin: 0.4rem;
   ${props =>
-    props.accented
+    props.$accented
       ? `background: ${props.theme.colors.accent}; border:none;`
       : ''}
 `;

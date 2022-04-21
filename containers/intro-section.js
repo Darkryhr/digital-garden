@@ -19,7 +19,7 @@ const IntroSection = () => {
           </Heading1>
           <ButtonRow>
             <StrokedButton
-              accented
+              $accented
               whileHover={{
                 scale: 1.1,
               }}

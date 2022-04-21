@@ -40,7 +40,7 @@ export const LogoWrapper = styled.div`
 
 export const MenuStyles = styled(motion.div)`
   ${props =>
-    props.mobile
+    props.$mobile
       ? ''
       : `
 display: flex;
@@ -49,7 +49,7 @@ display: flex;
 `}
 
   @media (${breakpoint.device.sm}) {
-    ${props => (props.mobile ? '' : ' display: none;')}
+    ${props => (props.$mobile ? '' : ' display: none;')}
   }
 `;
 
@@ -94,7 +94,7 @@ export const LinkWrapper = styled(motion.div)`
   text-transform: capitalize;
   font-size: 18px;
   justify-content: flex-end;
-  opacity: ${props => (props.active ? 0.7 : 1)};
+  opacity: ${props => (props.$active ? 0.7 : 1)};
   color: ${props => (props.currentTheme === 'dark' ? '#f4f4f4' : '#000000')};
   &:last-child {
     margin-right: 0;
