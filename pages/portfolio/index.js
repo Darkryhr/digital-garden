@@ -38,11 +38,14 @@ const Portfolio = () => {
             Wanna get down to business? Click below to save time and download my
             resume
           </Subtitle>
-          <GradientButton whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-            <a href='/assets/portfolio/resume.docx' download>
+          <a href='/assets/portfolio/resume.docx' download>
+            <GradientButton
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               Resume
-            </a>
-          </GradientButton>
+            </GradientButton>
+          </a>
         </Column>
       </SectionWrapper>
       <SectionWrapper delay={0.3}>

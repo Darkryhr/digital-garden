@@ -47,15 +47,15 @@ const Modal = ({ handleClose, project }) => {
           {project.desc}
         </Subtitle>
 
-        <ModalButton
-          onClick={handleClose}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <a href={project.url} target='_blank' rel='noreferrer'>
+        <a href={project.url} target='_blank' rel='noreferrer'>
+          <ModalButton
+            onClick={handleClose}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Visit
-          </a>
-        </ModalButton>
+          </ModalButton>
+        </a>
       </ModalWrapper>
     </Backdrop>
   );

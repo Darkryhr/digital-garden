@@ -47,4 +47,6 @@ export const GradientButton = styled(motion.button)`
   border-radius: 24px;
   margin: 1.5rem 0 0.5rem 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 `;

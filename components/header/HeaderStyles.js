@@ -13,10 +13,10 @@ export const Nav = styled.nav`
   margin: 0 auto;
 
   @media (${breakpoint.device.sm}) {
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 1.4rem;
   }
   @media (${breakpoint.device.xs}) {
-    padding: 0 1.2rem;
+    padding: 0 1.4rem;
     min-height: none;
   }
 `;
@@ -34,7 +34,8 @@ export const LogoWrapper = styled.div`
   cursor: pointer;
   display: flex;
   color: '#fb8b24';
-  max-width: 105px;
+  max-width: 95px;
+  margin-left: 3px;
 `;
 
 export const MenuStyles = styled(motion.div)`
@@ -69,7 +70,7 @@ export const MobileMenu = styled(motion.div)`
   border-radius: 5px;
   /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); */
   border: 1px solid ${({ theme }) => theme.colors.secondary};
-
+  border-right: 2px solid ${({ theme }) => theme.colors.accent};
   @media (${breakpoint.device.sm}) {
     top: 20px;
   }
@@ -91,11 +92,11 @@ export const LinkWrapper = styled(motion.div)`
   border-radius: 5px;
   cursor: pointer;
   display: flex;
-  font-weight: 500;
+  font-weight: ${props => (props.$active ? 600 : 500)};
   text-transform: capitalize;
   font-size: 16px;
   justify-content: flex-end;
-  opacity: ${props => (props.$active ? 1 : 0.7)};
+  opacity: ${props => (props.$active ? 1 : 0.8)};
   color: ${props => (props.$currentTheme === 'dark' ? '#f4f4f4' : '#000000')};
   &:last-child {
     margin-right: 0;
