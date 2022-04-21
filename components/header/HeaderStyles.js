@@ -6,12 +6,11 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 4rem;
-  min-height: 90px;
+  padding: 1.2rem 4rem;
+  min-height: 80px;
   width: 100%;
   max-width: ${breakpoint.size.lg};
   margin: 0 auto;
-  background: ${props => props.theme.colors.primary};
 
   @media (${breakpoint.device.sm}) {
     padding: 0.8rem 1.2rem;
@@ -35,7 +34,7 @@ export const LogoWrapper = styled.div`
   cursor: pointer;
   display: flex;
   color: '#fb8b24';
-  max-width: 120px;
+  max-width: 105px;
 `;
 
 export const MenuStyles = styled(motion.div)`
@@ -87,14 +86,16 @@ export const MobileWrapper = styled(motion.div)`
 
 export const LinkWrapper = styled(motion.div)`
   line-height: 25px;
-  margin: 0 1rem;
+  margin: 0 0.3rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
   cursor: pointer;
   display: flex;
   font-weight: 500;
   text-transform: capitalize;
-  font-size: 18px;
+  font-size: 16px;
   justify-content: flex-end;
-  opacity: ${props => (props.$active ? 0.7 : 1)};
+  opacity: ${props => (props.$active ? 1 : 0.7)};
   color: ${props => (props.$currentTheme === 'dark' ? '#f4f4f4' : '#000000')};
   &:last-child {
     margin-right: 0;

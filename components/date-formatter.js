@@ -7,11 +7,12 @@ const DateFormatter = ({ dateString }) => {
   return (
     <Time dateTime={dateString}>
       <BiTimeFive
-        size={23}
+        size={20}
         style={{
           opacity: 0.5,
+          marginRight: '5px',
         }}
-      />{' '}
+      />
       {format(date, 'MMMM dd, yyyy')}
     </Time>
   );
@@ -24,7 +25,5 @@ const Time = styled.time`
   letter-spacing: 0.05rem;
   padding-top: 0.5rem;
   display: flex;
-  width: 160px;
   align-items: center;
-  justify-content: space-between;
 `;

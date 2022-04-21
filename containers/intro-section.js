@@ -6,7 +6,6 @@ import { StrokedButton } from '@components/styled/button';
 import styled from 'styled-components';
 import { breakpoint } from '@components/styled/breakpoints';
 import { BiDownload } from 'react-icons/bi';
-
 const IntroSection = () => {
   return (
     <Container p='0 0 6.5rem 0'>

@@ -40,7 +40,7 @@ export const Heading3 = styled.h3`
   }
 `;
 
-export const Heading4 = styled.h3`
+export const Heading4 = styled.h4`
   font-weight: 500;
   font-size: 1.2rem;
   line-height: 1.5;

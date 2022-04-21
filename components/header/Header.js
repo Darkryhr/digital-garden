@@ -11,7 +11,6 @@ import {
   MobileMenu,
   MenuStyles,
   LinkWrapper,
-  LinkStyled,
 } from './HeaderStyles';
 import { AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
@@ -85,6 +84,7 @@ export default Header;
 
 const Menu = ({ mobile, themeIcon, toggleTheme }) => {
   const router = useRouter();
+  console.log(themeIcon);
   return (
     <MenuStyles $mobile={mobile}>
       <LinkWrapper

@@ -29,17 +29,10 @@ const PreviewTitle = styled(Heading3)`
 
 const PreviewSubtitle = styled(Subtitle)`
   /* overflow: hidden; */
+  font-size: 0.9rem;
   max-height: 40px;
   text-overflow: ellipsis;
   line-height: normal;
-`;
-
-const BlogLink = styled(motion.button)`
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  margin: 0.8rem 0;
 `;
 
 const PreviewWrapper = styled.div`
@@ -52,4 +45,7 @@ const PreviewWrapper = styled.div`
   margin-bottom: 2rem;
   border-radius: 5px;
   border-left: 3px solid ${({ theme }) => theme.colors.accent};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
