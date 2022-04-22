@@ -11,15 +11,20 @@ export const Button = styled(motion.button)`
 `;
 
 export const StrokedButton = styled(Button)`
-  border: 2px solid ${({ theme }) => theme.colors.secondary};
-  padding: 0.4rem 1.2rem;
+  /* outline: 2px solid ${({ theme }) => theme.colors.secondary}; */
+  padding: 0.6rem 1.2rem;
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   border-radius: 24px;
   margin: 0.4rem;
+  margin-right: 0.6rem;
   ${props =>
     props.$accented
       ? `background: ${props.theme.colors.accent}; border:none;`
+      : ''}
+  ${props =>
+    !props.$accented
+      ? `outline: 2px solid ${props.theme.colors.secondary};`
       : ''}
 `;
 

@@ -36,7 +36,6 @@ async function sendEmail(req, res) {
       </html>`,
     });
   } catch (error) {
-    // console.log(error);
     return res.status(error.statusCode || 500).json({ error: error.message });
   }
   console.log('email sent!');

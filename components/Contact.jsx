@@ -40,7 +40,6 @@ const Contact = () => {
       toast.error('Oops! looks like something went wrong...', {
         id: loadingToast,
       });
-      console.log(error);
       return;
     } else {
       setName('');

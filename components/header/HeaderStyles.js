@@ -30,7 +30,7 @@ export const WrapperLeft = styled.div`
 
 export const WrapperRight = styled.div``;
 
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled(motion.div)`
   cursor: pointer;
   display: flex;
   color: '#fb8b24';

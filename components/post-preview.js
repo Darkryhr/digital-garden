@@ -10,7 +10,14 @@ import { SpacedRow } from './styled/LayoutStyles';
 const PostPreview = ({ title, date, excerpt, slug }) => {
   return (
     <Link href={`/blog/${slug}`} passHref>
-      <PreviewWrapper>
+      <PreviewWrapper
+        whileHover={{
+          translateX: 25,
+        }}
+        whileTap={{
+          translateX: -15,
+        }}
+      >
         <SpacedRow>
           <PreviewTitle>{title}</PreviewTitle>
           <DateFormatter dateString={date} />
@@ -35,7 +42,7 @@ const PreviewSubtitle = styled(Subtitle)`
   line-height: normal;
 `;
 
-const PreviewWrapper = styled.div`
+const PreviewWrapper = styled(motion.div)`
   cursor: pointer;
   padding: 2rem 1.3rem;
   border: 1px solid ${({ theme }) => theme.colors.secondary};

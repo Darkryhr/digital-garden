@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { BiSun, BiMoon } from 'react-icons/bi';
-import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
+import { RiMenu3Fill, RiMenu4Fill, RiCloseLine } from 'react-icons/ri';
 import {
   Nav,
   WrapperLeft,
@@ -40,7 +40,7 @@ const Header = ({ toggleTheme }) => {
     <Nav>
       <WrapperLeft>
         <Link href='/' passHref>
-          <LogoWrapper>
+          <LogoWrapper whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <Logo theme={themeIcon} />
           </LogoWrapper>
         </Link>
@@ -56,7 +56,7 @@ const Header = ({ toggleTheme }) => {
             onClick={() => setOpen(false)}
           />
         ) : (
-          <RiMenu3Line
+          <RiMenu4Fill
             color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
             size={27}
             onClick={() => setOpen(true)}
@@ -84,7 +84,6 @@ export default Header;
 
 const Menu = ({ mobile, themeIcon, toggleTheme }) => {
   const router = useRouter();
-  console.log(themeIcon);
   return (
     <MenuStyles $mobile={mobile}>
       <LinkWrapper

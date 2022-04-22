@@ -14,8 +14,41 @@ import SEO from '@components/SEO';
 import { SpacedRow } from '@components/styled/LayoutStyles';
 import Loader from '@components/Loader';
 import { breakpoint } from '@components/styled/breakpoints';
+import { motion } from 'framer-motion';
 
 const Post = ({ post }) => {
+  const lineMotion = {
+    rest: {
+      opacity: 0,
+      duration: 0.2,
+      type: 'spring',
+    },
+    hover: {
+      opacity: 1,
+      scaleX: 2,
+      transition: {
+        duration: 0.4,
+        type: 'spring',
+      },
+    },
+    tap: {
+      scale: 1.1,
+    },
+  };
+
+  const homeMotion = {
+    rest: {
+      opacity: 0.85,
+    },
+    hover: {
+      opacity: 1,
+      scale: 1.05,
+    },
+    tap: {
+      scale: 1.1,
+    },
+  };
+
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -28,15 +61,23 @@ const Post = ({ post }) => {
         <>
           <SEO title={post.title} />
           <Link href='/blog' passHref>
-            <HomeLink>
-              <FaLongArrowAltLeft
-                size={22}
-                style={{
-                  fill: '#fb8b24',
-                }}
-              />{' '}
-              Home
-            </HomeLink>
+            <HomeLinkWrapper
+              initial='rest'
+              whileHover='hover'
+              animate='rest'
+              whileTap='tap'
+            >
+              <HomeLink variants={homeMotion}>
+                <FaLongArrowAltLeft
+                  size={20}
+                  style={{
+                    fill: '#fb8b24',
+                  }}
+                />{' '}
+                Home
+              </HomeLink>
+              <Border variants={lineMotion} />
+            </HomeLinkWrapper>
           </Link>
           <SpacedRow>
             <Heading2 style={{ padding: '0.5rem 0' }}>{post.title}</Heading2>
@@ -98,13 +139,30 @@ const MarkdownWrapper = styled.article`
   }
 `;
 
-const HomeLink = styled.a`
+const HomeLink = styled(motion.a)`
   color: ${({ theme }) => theme.colors.accent};
   font-weight: 600;
   font-size: 1.1rem;
-  padding-bottom: 2rem;
   display: flex;
   align-items: center;
-  width: 85px;
+  width: 80px;
   justify-content: space-between;
+  padding-bottom: 0.5rem;
+`;
+
+const Border = styled(motion.div)`
+  height: 3px;
+  width: 47px;
+  margin-bottom: 1.5rem;
+  margin-left: 4px;
+  border-radius: 7px;
+  background: ${({ theme }) => theme.colors.accent};
+`;
+
+const HomeLinkWrapper = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 95px;
 `;

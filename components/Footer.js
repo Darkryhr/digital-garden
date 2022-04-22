@@ -8,12 +8,18 @@ import { Heading4 } from './styled/typography';
 import { breakpoint } from '@components/styled/breakpoints';
 
 const Footer = () => {
+  const iconMotion = {
+    rest: {},
+    hover: {
+      fill: '#fb8b24',
+    },
+  };
   return (
     <Wrapper>
       <ContentWrapper>
         <Heading4>Gabriel Lellouche &copy; {new Date().getFullYear()}</Heading4>
         <SocialWrapper>
-          <IconButton whileHover={{ scale: 1.1, color: '#fb8b24' }}>
+          <IconButton whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <a
               href='https://github.com/Darkryhr'
               rel='noreferrer'
@@ -22,7 +28,7 @@ const Footer = () => {
               <FaGithub />
             </a>
           </IconButton>
-          <IconButton whileHover={{ scale: 1.1, color: '#fb8b24' }}>
+          <IconButton whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <a
               href='https://www.linkedin.com/in/gabriel-lellouche'
               rel='noreferrer'
@@ -31,7 +37,7 @@ const Footer = () => {
               <FaLinkedin />
             </a>
           </IconButton>
-          <IconButton whileHover={{ scale: 1.1, color: '#fb8b24' }}>
+          <IconButton whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <a
               href='https://twitter.com/GabrielAintReal'
               rel='noreferrer'
