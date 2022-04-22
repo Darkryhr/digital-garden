@@ -1,23 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 import Contact from './Contact';
 import { IconButton } from './styled/button';
-import { Heading4 } from './styled/typography';
 import { breakpoint } from '@components/styled/breakpoints';
-
+import { Logo } from './header/Header';
+import { Muted } from './styled/typography';
 const Footer = () => {
-  const iconMotion = {
-    rest: {},
-    hover: {
-      fill: '#fb8b24',
-    },
-  };
+  const [themeIcon, setThemeIcon] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    setThemeIcon(savedTheme);
+  });
+
   return (
     <Wrapper>
       <ContentWrapper>
-        <Heading4>Gabriel Lellouche &copy; {new Date().getFullYear()}</Heading4>
+        <CopyWrapper>
+          <LogoWrapper>
+            <Logo theme={themeIcon} />
+          </LogoWrapper>
+          <Muted
+            style={{
+              marginBottom: '1rem',
+              marginLeft: '0.7rem',
+            }}
+          >
+            | &nbsp; Copyright &copy; {new Date().getFullYear()}
+          </Muted>
+        </CopyWrapper>
         <SocialWrapper>
           <IconButton whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <a
@@ -66,6 +79,10 @@ const ContentWrapper = styled.div`
   }
 `;
 
+const LogoWrapper = styled.div`
+  max-width: 80px;
+`;
+
 const Wrapper = styled.footer`
   display: flex;
   justify-content: space-between;
@@ -91,4 +108,10 @@ const SocialWrapper = styled.div`
   @media (${breakpoint.device.sm}) {
     padding: 1.4rem 0;
   }
+`;
+
+const CopyWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
 `;

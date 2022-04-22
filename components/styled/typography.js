@@ -73,3 +73,10 @@ export const Text = styled.p`
   font-weight: 400;
   font-size: 0.8rem;
 `;
+
+export const Muted = styled.p`
+  opacity: 0.8;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 1rem 0 0 0;
+`;

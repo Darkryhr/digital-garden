@@ -111,7 +111,7 @@ const Menu = ({ mobile, themeIcon, toggleTheme }) => {
   );
 };
 
-const Logo = ({ theme }) => {
+export const Logo = ({ theme }) => {
   return (
     <svg
       version='1.2'
