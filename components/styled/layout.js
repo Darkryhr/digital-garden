@@ -4,6 +4,7 @@ import Footer from '../Footer';
 import Header from '../header/Header';
 import { Container } from './LayoutStyles';
 import { breakpoint } from '@components/styled/breakpoints';
+import ScrollToTop from '@components/ScrollToTop';
 
 const Layout = ({ children, toggleTheme }) => {
   return (
@@ -17,6 +18,7 @@ const Layout = ({ children, toggleTheme }) => {
       <FooterWrapper>
         <Footer />
       </FooterWrapper>
+      <ScrollToTop />
     </Main>
   );
 };

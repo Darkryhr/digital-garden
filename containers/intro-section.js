@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { breakpoint } from '@components/styled/breakpoints';
 import { BiDownload } from 'react-icons/bi';
 import { HiDownload } from 'react-icons/hi';
+
 const IntroSection = () => {
   return (
     <Container p='0 0 6.5rem 0'>
