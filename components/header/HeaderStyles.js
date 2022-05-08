@@ -6,13 +6,13 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 4rem;
+  padding: 1.2rem 4rem;
   width: 100%;
   max-width: ${breakpoint.size.lg};
   margin: 0 auto;
 
   @media (${breakpoint.device.sm}) {
-    padding: 0.8rem 1.4rem;
+    padding: 1rem 1.4rem;
   }
   @media (${breakpoint.device.xs}) {
     padding: 0 1.4rem;

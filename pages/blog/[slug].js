@@ -130,8 +130,7 @@ const MarkdownWrapper = styled.article`
   overflow: hidden;
   list-style: circle;
   @media (${breakpoint.device.sm}) {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0;
   }
 `;
 
