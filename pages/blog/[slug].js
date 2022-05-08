@@ -125,7 +125,7 @@ export async function getStaticPaths() {
 const MarkdownWrapper = styled.article`
   margin: 3rem auto;
   max-width: 1000px;
-  /* padding: 3rem 3vw 5rem 3vw; */
+  padding-bottom: 3rem;
   min-height: calc(100vh - 100px);
   overflow: hidden;
   list-style: circle;
@@ -165,5 +165,8 @@ const HomeLinkWrapper = styled(motion.div)`
 `;
 
 const Wrapper = styled.div`
-  padding: 0 2rem;
+  padding: 0 3rem;
+  @media (${breakpoint.device.sm}) {
+    padding: 0 1.85rem;
+  }
 `;

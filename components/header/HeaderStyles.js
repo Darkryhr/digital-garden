@@ -12,11 +12,7 @@ export const Nav = styled.nav`
   margin: 0 auto;
 
   @media (${breakpoint.device.sm}) {
-    padding: 1rem 1.4rem;
-  }
-  @media (${breakpoint.device.xs}) {
-    padding: 0 1.4rem;
-    min-height: none;
+    padding: 1.4rem;
   }
 `;
 
@@ -55,6 +51,7 @@ display: flex;
 export const MobileMenu = styled(motion.div)`
   display: flex;
   justify-content: flex-end;
+
   align-items: flex-end;
   flex-direction: column;
   text-align: end;

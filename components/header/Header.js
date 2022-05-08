@@ -53,12 +53,18 @@ const Header = ({ toggleTheme }) => {
           <RiCloseLine
             color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
             size={27}
+            style={{
+              cursor: 'pointer',
+            }}
             onClick={() => setOpen(false)}
           />
         ) : (
           <RiMenu4Fill
             color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
             size={27}
+            style={{
+              cursor: 'pointer',
+            }}
             onClick={() => setOpen(true)}
           />
         )}

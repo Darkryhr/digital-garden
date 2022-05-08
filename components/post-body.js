@@ -48,7 +48,7 @@ const MarkdownStyles = styled.article`
       font-size: 1.5rem;
     }
     @media (${breakpoint.device.xs}) {
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
   }
   h1 {
@@ -61,9 +61,15 @@ const MarkdownStyles = styled.article`
   h3 {
     font-weight: 600 !important;
     color: ${({ theme }) => theme.colors.accent};
-    font-size: 20px;
     line-height: 1;
-    padding: 1.2rem 0 0.3rem 0;
+    padding: 2rem 0 0.5rem 0;
+    font-size: 1.5rem;
+    @media (${breakpoint.device.sm}) {
+      font-size: 1.2rem;
+    }
+    @media (${breakpoint.device.xs}) {
+      font-size: 0.9rem;
+    }
   }
 
   h2:after {

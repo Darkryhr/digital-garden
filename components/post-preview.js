@@ -36,18 +36,16 @@ const PreviewTitle = styled(Heading3)`
 
 const PreviewSubtitle = styled(Subtitle)`
   /* overflow: hidden; */
-  font-size: 0.9rem;
-  max-height: 40px;
+  font-size: 0.8rem;
   text-overflow: ellipsis;
   line-height: normal;
 `;
 
 const PreviewWrapper = styled(motion.div)`
   cursor: pointer;
-  padding: 2rem 1.3rem;
+  padding: 1.6rem 1.3rem;
   border: 1px solid ${({ theme }) => theme.colors.secondary};
   max-width: 768px;
-  max-height: 180px;
   margin: 0 auto;
   margin-bottom: 2rem;
   border-radius: 5px;

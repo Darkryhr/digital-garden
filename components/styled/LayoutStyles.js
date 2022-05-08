@@ -17,6 +17,7 @@ export const ContentWrapper = styled(SpacedRow)`
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  padding: 3rem 0;
   @media (${breakpoint.device.sm}) {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -44,6 +45,12 @@ export const Row = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+`;
+
+export const Box = styled.div`
+  /* display: flex; */
+  margin: 0 auto;
+  max-width: ${breakpoint.size.sm};
 `;
 
 export const Column = styled.div`
