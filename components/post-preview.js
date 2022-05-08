@@ -20,7 +20,7 @@ const PostPreview = ({ title, date, excerpt, slug }) => {
       >
         <SpacedRow>
           <PreviewTitle>{title}</PreviewTitle>
-          <DateFormatter dateString={date} />
+          <DateFormatter dateString={date} light={true} />
         </SpacedRow>
         <PreviewSubtitle>{excerpt}</PreviewSubtitle>
       </PreviewWrapper>

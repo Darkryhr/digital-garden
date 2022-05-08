@@ -19,9 +19,9 @@ export const Heading1 = styled(motion.h1)`
 export const Heading2 = styled.h2`
   font-weight: 700;
   line-height: 1.16;
-  font-size: 3.2rem;
+  font-size: 3rem;
   @media (${breakpoint.device.sm}) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   @media (${breakpoint.device.xs}) {
     font-size: 1.8rem;

@@ -13,32 +13,43 @@ const PostBody = ({ content }) => {
 export default PostBody;
 
 const BodyWrapper = styled.article`
-  padding: 4rem 3rem;
+  padding: 1.6rem 3rem;
+  margin-top: 2rem;
   background-color: ${({ theme }) => theme.colors.secondary + '40'};
-  border-radius: 10px;
+  border-radius: 5px;
   @media (${breakpoint.device.sm}) {
-    padding: 2rem 1rem;
+    padding: 0;
+    background-color: ${({ theme }) => theme.colors.primary};
+    margin-top: 0;
   }
 `;
 
 const MarkdownStyles = styled.article`
-  * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
   p {
     color: ${({ theme }) => theme.colors.text};
-    line-height: 25px;
-    font-size: 16px;
+    line-height: 1.65em;
+    font-size: 1.05em;
     padding-top: 0.4rem;
+    letter-spacing: 0.4px;
     &:last-child {
       padding-bottom: 0;
+    }
+    @media (${breakpoint.device.sm}) {
+      font-size: 0.85em;
     }
   }
   h2 {
     font-family: Poppins, sans-serif;
     font-weight: 700;
-    font-size: 2rem;
     padding: 2rem 0 0.5rem 0;
+    font-size: 2rem;
+    line-height: 1.4;
+    @media (${breakpoint.device.sm}) {
+      font-size: 1.5rem;
+    }
+    @media (${breakpoint.device.xs}) {
+      font-size: 1rem;
+    }
   }
   h1 {
     font-weight: 700;
@@ -58,12 +69,15 @@ const MarkdownStyles = styled.article`
   h2:after {
     content: '';
     display: block;
-    width: 15px;
-    margin-top: 1rem;
-    padding-top: 6px;
+    width: 25px;
+    margin: 1.45rem 0 0.25rem 0;
+    padding-top: 4px;
     background: ${({ theme }) => theme.colors.accent};
     border-radius: 3px;
-    margin-left: 3px;
+    margin-left: 1px;
+    @media (${breakpoint.device.sm}) {
+      margin: 1rem 0 0 0;
+    }
   }
 
   ul {

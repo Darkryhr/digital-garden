@@ -58,7 +58,7 @@ const Post = ({ post }) => {
       {router.isFallback ? (
         <Loader />
       ) : (
-        <>
+        <Wrapper>
           <SEO title={post.title} />
           <Link href='/blog' passHref>
             <HomeLinkWrapper
@@ -81,15 +81,11 @@ const Post = ({ post }) => {
           </Link>
           <SpacedRow>
             <Heading2 style={{ padding: '0.5rem 0' }}>{post.title}</Heading2>
-            <DateFormatter dateString={post.date} />
+            <DateFormatter dateString={post.date} light={false} />
           </SpacedRow>
-          <div
-            style={{
-              height: '2rem',
-            }}
-          ></div>
+
           <PostBody content={post.content} />
-        </>
+        </Wrapper>
       )}
     </MarkdownWrapper>
   );
@@ -127,9 +123,9 @@ export async function getStaticPaths() {
 }
 
 const MarkdownWrapper = styled.article`
-  margin: 0 auto;
-  max-width: ${breakpoint.size.lg};
-  padding: 3rem 3vw 5rem 3vw;
+  margin: 3rem auto;
+  max-width: 1000px;
+  /* padding: 3rem 3vw 5rem 3vw; */
   min-height: calc(100vh - 100px);
   overflow: hidden;
   list-style: circle;
@@ -142,18 +138,20 @@ const MarkdownWrapper = styled.article`
 const HomeLink = styled(motion.a)`
   color: ${({ theme }) => theme.colors.accent};
   font-weight: 600;
-  font-size: 1.1rem;
   display: flex;
   align-items: center;
   width: 80px;
   justify-content: space-between;
   padding-bottom: 0.5rem;
+  @media (${breakpoint.device.xs}) {
+    font-size: 0.9em;
+  }
 `;
 
 const Border = styled(motion.div)`
   height: 3px;
-  width: 47px;
-  margin-bottom: 1.5rem;
+  width: 45px;
+  margin-bottom: 0.2rem;
   margin-left: 4px;
   border-radius: 7px;
   background: ${({ theme }) => theme.colors.accent};
@@ -165,4 +163,8 @@ const HomeLinkWrapper = styled(motion.div)`
   align-items: center;
   cursor: pointer;
   width: 95px;
+`;
+
+const Wrapper = styled.div`
+  padding: 0 2rem;
 `;

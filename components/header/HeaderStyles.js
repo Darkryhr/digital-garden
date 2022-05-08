@@ -6,8 +6,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 4rem;
-  min-height: 80px;
+  padding: 1rem 4rem;
   width: 100%;
   max-width: ${breakpoint.size.lg};
   margin: 0 auto;
