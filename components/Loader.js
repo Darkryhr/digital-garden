@@ -32,6 +32,10 @@ const Loader = () => {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     document.body.style.height = '100vh';
+    return function cleanup() {
+      document.body.style.overflow = 'scroll';
+      document.body.style.height = '100%';
+    };
   }, []);
 
   return (
