@@ -8,10 +8,25 @@ import { GlobalStyles } from '@components/styled/globalStyles';
 import Layout from '../components/styled/layout';
 import SEO from '@components/SEO';
 import { Toaster } from 'react-hot-toast';
+import Loader from '@components/Loader';
 
 function App({ Component, pageProps, router }) {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
+  const [pageLoading, setPageLoading] = useState(false);
+  useEffect(() => {
+    const handleStart = () => {
+      setPageLoading(true);
+    };
+    const handleComplete = () => {
+      setPageLoading(false);
+    };
+
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+  }, [router]);
+
   if (!mountedComponent) return <div />;
 
   return (
@@ -34,7 +49,7 @@ function App({ Component, pageProps, router }) {
               },
             }}
           >
-            <Component {...pageProps} />
+            {pageLoading ? <Loader /> : <Component {...pageProps} />}
           </motion.div>
           <Toaster position='bottom-center' reverseOrder={false} />
         </AnimatePresence>

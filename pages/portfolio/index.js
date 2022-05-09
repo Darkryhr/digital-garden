@@ -50,7 +50,7 @@ const Portfolio = () => {
       </SectionWrapper>
       <SectionWrapper delay={0.3}>
         <Grid>
-          {projects.map(({ name, url, icon, desc, tags }) => (
+          {projects.map(({ name, url, icon, desc, tags, blurUrl }) => (
             <ProjectButton
               key={name}
               onClick={() => {
@@ -62,7 +62,14 @@ const Portfolio = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Image src={icon} alt={desc} width={48} height={48} />
+              <Image
+                src={icon}
+                alt={desc}
+                width={48}
+                height={48}
+                placeholder='blur'
+                blurDataURL={blurUrl}
+              />
             </ProjectButton>
           ))}
         </Grid>

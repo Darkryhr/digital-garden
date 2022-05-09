@@ -10,7 +10,8 @@ export const Nav = styled.nav`
   width: 100%;
   max-width: ${breakpoint.size.lg};
   margin: 0 auto;
-
+  position: relative;
+  z-index: 999;
   @media (${breakpoint.device.sm}) {
     padding: 1.4rem;
   }
