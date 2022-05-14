@@ -1,4 +1,4 @@
-describe('first e2e test', () => {
+describe('First e2e test', () => {
   it('actually works', () => {
     cy.visit('/');
     cy.contains('unboring');
