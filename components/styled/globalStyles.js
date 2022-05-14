@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
     background-image: radial-gradient(${({ theme }) =>
       theme.colors.secondary} 1px, transparent 0);
     background-size: 40px 40px;
-    background-position: 22px 22px
+    background-position: 22px 22px;
   }
 
   a {
