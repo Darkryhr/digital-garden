@@ -11,6 +11,7 @@ const PostPreview = ({ title, date, excerpt, slug }) => {
   return (
     <Link href={`/blog/${slug}`} passHref>
       <PreviewWrapper
+        data-cy='blog-post'
         whileHover={{
           translateX: 25,
         }}

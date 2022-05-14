@@ -52,6 +52,7 @@ const Portfolio = () => {
         <Grid>
           {projects.map(({ name, url, icon, desc, tags, blurUrl }) => (
             <ProjectButton
+              data-cy='portfolio-project'
               key={name}
               onClick={() => {
                 !modalOpen
