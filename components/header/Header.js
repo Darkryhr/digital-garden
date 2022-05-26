@@ -96,7 +96,7 @@ const Menu = ({ mobile, themeIcon, toggleTheme }) => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         $currentTheme={themeIcon}
-        $active={router.pathname.includes('/') ? true : false}
+        $active={router.pathname === '/' ? true : false}
       >
         <Link href='/'>Home</Link>
       </LinkWrapper>
