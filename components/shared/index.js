@@ -54,6 +54,7 @@ export const GradientButton = styled(motion.button)`
   background: ${props => props.theme.colors.gradient};
   border-radius: 24px;
   cursor: pointer;
+  border: none;
 `;
 
 //* Wrappers
@@ -77,9 +78,6 @@ export const Column = styled.section`
 
   ${props => (props.end ? 'align-items: flex-end' : '')};
   ${props => (props.center ? 'align-items: center' : '')};
-  @media (${breakpoint.device.sm}) {
-    padding: 0 1rem;
-  }
 `;
 
 export const Grid = styled.div`
