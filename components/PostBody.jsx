@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoint } from './styled/breakpoints';
+
+import { breakpoint } from '@styled/breakpoints.css';
 
 const PostBody = ({ content }) => {
   return (

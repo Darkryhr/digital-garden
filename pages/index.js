@@ -1,7 +1,8 @@
-import SectionWrapper from '@components/section-wrapper';
-import IntroSection from 'containers/intro-section';
 import styled from 'styled-components';
-import { breakpoint } from '@components/styled/breakpoints';
+
+import SectionWrapper from '@components/SectionWrapper';
+import IntroSection from 'containers/IntroSection';
+import { breakpoint } from '@styled/breakpoints.css';
 
 export default function Home() {
   return (

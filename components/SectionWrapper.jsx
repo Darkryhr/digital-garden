@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { breakpoint } from './styled/breakpoints';
 
+import { breakpoint } from '@styled/breakpoints.css';
 const SectionWrapper = ({ children, delay = 0 }) => {
   return (
     <Section

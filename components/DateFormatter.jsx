@@ -1,7 +1,8 @@
 import { parseISO, format } from 'date-fns';
 import styled from 'styled-components';
 import { BiTimeFive } from 'react-icons/bi';
-import { breakpoint } from './styled/breakpoints';
+
+import { breakpoint } from '@styled/breakpoints.css';
 
 const DateFormatter = ({ dateString, light }) => {
   const date = parseISO(dateString);

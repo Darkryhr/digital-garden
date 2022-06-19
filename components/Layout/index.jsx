@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Footer from '../Footer';
-import Header from '../header/Header';
-import { Container } from './LayoutStyles';
-import { breakpoint } from '@components/styled/breakpoints';
+
+import Footer from '@components/Footer';
+import Header from '@components/Header';
+import { Container } from '@components/shared';
 import ScrollToTop from '@components/ScrollToTop';
 
 const Layout = ({ children, toggleTheme }) => {
@@ -45,7 +45,4 @@ const FooterWrapper = styled.footer`
 const Wrapper = styled.div`
   display: block;
   margin: 0 auto;
-  @media (${breakpoint.device.lg}) {
-    /* padding: 0 2vw; */
-  }
 `;

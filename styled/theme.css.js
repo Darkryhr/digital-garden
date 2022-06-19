@@ -5,8 +5,8 @@ export const darkTheme = {
     accent: '#FEA520',
     text: '#f7f7f7',
     gradient: `
-linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%)
-    `,
+  linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%)
+      `,
   },
 };
 export const lightTheme = {
@@ -16,7 +16,7 @@ export const lightTheme = {
     accent: '#FEA520',
     text: '#262626',
     gradient: `
-    linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%)
-        `,
+      linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%)
+          `,
   },
 };

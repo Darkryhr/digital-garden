@@ -2,10 +2,11 @@ import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import styled from 'styled-components';
-import { Column } from './styled/LayoutStyles';
-import { breakpoint } from '@components/styled/breakpoints';
-import useDarkMode from './useDarkMode';
+
+import { Column } from '@components/shared';
+import useDarkMode from '../../hooks/useDarkMode';
 import { BiSend } from 'react-icons/bi';
+import { breakpoint } from '@styled/breakpoints.css';
 
 const Contact = () => {
   const [name, setName] = useState('');

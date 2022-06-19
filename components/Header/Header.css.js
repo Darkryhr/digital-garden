@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { breakpoint } from '@components/styled/breakpoints';
-
+import { breakpoint } from '@styled/breakpoints.css';
 export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -86,14 +85,17 @@ export const LinkWrapper = styled(motion.div)`
   line-height: 25px;
   margin: 0 0.3rem;
   padding: 0.3rem 0.7rem;
-  border-radius: 5px;
+  border-radius: 3px;
+  border: none;
   cursor: pointer;
   display: flex;
-  font-weight: ${props => (props.$active ? 600 : 500)};
+  font-weight: 600;
+  background-color: ${props =>
+    props.$active ? props.theme.colors.accent : 'none'};
+
   text-transform: capitalize;
   font-size: 16px;
   justify-content: flex-end;
-  opacity: ${props => (props.$active ? 1 : 0.8)};
   color: ${props => (props.$currentTheme === 'dark' ? '#f4f4f4' : '#000000')};
   &:last-child {
     margin-right: 0;
@@ -104,5 +106,8 @@ export const LinkWrapper = styled(motion.div)`
       margin: 0 1rem;
       margin-top: 1.1rem;
     }
+  }
+  a {
+    color: ${props => (props.$active ? '#000000' : props.theme.colors.text)};
   }
 `;

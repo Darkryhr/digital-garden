@@ -1,12 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import { Container } from '@components/styled/LayoutStyles';
-import { Heading1, Lead } from '@components/styled/typography';
-import { StrokedButton } from '@components/styled/button';
 import styled from 'styled-components';
-import { breakpoint } from '@components/styled/breakpoints';
-import { BiDownload } from 'react-icons/bi';
 import { HiDownload } from 'react-icons/hi';
+
+import { Container, Heading1, Lead, StrokedButton } from '@components/shared';
+import { breakpoint } from '@styled/breakpoints.css';
 
 const IntroSection = () => {
   return (

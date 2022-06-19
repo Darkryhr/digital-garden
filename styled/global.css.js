@@ -1,8 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
+
 export const GlobalStyles = createGlobalStyle`
   * {
   color: ${({ theme }) => theme.colors.text};
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   }
 
   body {

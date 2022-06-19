@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import React, { useEffect } from 'react';
+
 const rotate360 = keyframes`
   from {
     transform: rotate(0deg);

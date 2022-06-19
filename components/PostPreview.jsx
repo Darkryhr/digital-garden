@@ -3,9 +3,9 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Heading3, Subtitle, Text } from './styled/typography';
-import DateFormatter from '@components/date-formatter';
-import { SpacedRow } from './styled/LayoutStyles';
+import { Heading3, Subtitle } from '@components/shared';
+import DateFormatter from '@components/DateFormatter';
+import { SpacedRow } from '@components/shared';
 
 const PostPreview = ({ title, date, excerpt, slug }) => {
   return (

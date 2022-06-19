@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ThemeProvider } from 'styled-components';
-import useDarkMode from '@components/useDarkMode';
-import { lightTheme, darkTheme } from '../components/styled/theme';
-import '../styles/globals.css';
-import { GlobalStyles } from '@components/styled/globalStyles';
-import Layout from '../components/styled/layout';
+import useDarkMode from 'hooks/useDarkMode';
+import { lightTheme, darkTheme } from '@styled/theme.css';
+import { GlobalStyles } from 'styled/global.css';
+import Layout from '@components/Layout';
 import SEO from '@components/SEO';
 import { Toaster } from 'react-hot-toast';
 import Loader from '@components/Loader';
+import 'normalize.css';
 
 function App({ Component, pageProps, router }) {
   const [theme, themeToggler, mountedComponent] = useDarkMode();

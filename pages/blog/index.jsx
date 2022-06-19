@@ -1,9 +1,9 @@
-import { getAllPosts } from 'lib/api';
 import React from 'react';
-import PostPreview from '@components/post-preview';
-import SectionWrapper from '@components/section-wrapper';
-import { Box, ContentWrapper, Row } from '@components/styled/LayoutStyles';
-import { Heading2 } from '@components/styled/typography';
+
+import { getAllPosts } from 'lib/api';
+import PostPreview from '@components/PostPreview';
+import SectionWrapper from '@components/SectionWrapper';
+import { Box, ContentWrapper, Heading2 } from '@components/shared';
 
 const PostFeed = ({ allPosts }) => {
   return (

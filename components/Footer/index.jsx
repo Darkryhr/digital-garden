@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
-import Contact from './Contact';
-import { IconButton } from './styled/button';
-import { breakpoint } from '@components/styled/breakpoints';
-import { Logo } from './header/Header';
-import { Muted } from './styled/typography';
+import Contact from '@components/Contact';
+import { IconButton, Muted } from '@components/shared';
+import { Logo } from '@components/Header';
+import { breakpoint } from '@styled/breakpoints.css';
+
 const Footer = () => {
   const [themeIcon, setThemeIcon] = useState(false);
 

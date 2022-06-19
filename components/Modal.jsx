@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 import Backdrop from './Backdrop';
-import { Heading3, Subtitle } from './styled/typography';
+import { Heading3, Subtitle } from '@components/shared';
 
 const Modal = ({ handleClose, project }) => {
   const dropIn = {

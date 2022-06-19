@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { BiUpArrow } from 'react-icons/bi';
-import { IconButton } from './styled/button';
 import { motion, AnimatePresence } from 'framer-motion';
+
+import { IconButton } from '@components/shared';
 
 const variants = {
   hidden: { opacity: 0, y: 100 },

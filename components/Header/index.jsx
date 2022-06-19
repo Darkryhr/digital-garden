@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/router';
 import { BiSun, BiMoon } from 'react-icons/bi';
-import { RiMenu3Fill, RiMenu4Fill, RiCloseLine } from 'react-icons/ri';
+import { RiMenu4Fill, RiCloseLine } from 'react-icons/ri';
+
 import {
   Nav,
   WrapperLeft,
@@ -11,9 +14,7 @@ import {
   MobileMenu,
   MenuStyles,
   LinkWrapper,
-} from './HeaderStyles';
-import { AnimatePresence } from 'framer-motion';
-import { useRouter } from 'next/router';
+} from './Header.css';
 
 const Header = ({ toggleTheme }) => {
   const [open, setOpen] = useState(false);

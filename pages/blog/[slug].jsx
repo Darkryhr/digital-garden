@@ -1,20 +1,19 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import styled from 'styled-components';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FaLongArrowAltLeft } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 import markdownToHtml from 'lib/markdownToHtml';
-import { getAllPosts, getPostBySlug } from 'lib/api';
-import PostBody from '@components/post-body';
-import DateFormatter from '@components/date-formatter';
-import { Heading2 } from '@components/styled/typography';
+import PostBody from '@components/PostBody';
+import DateFormatter from '@components/DateFormatter';
 import SEO from '@components/SEO';
-import { SpacedRow } from '@components/styled/LayoutStyles';
 import Loader from '@components/Loader';
-import { breakpoint } from '@components/styled/breakpoints';
-import { motion } from 'framer-motion';
+import { breakpoint } from '@styled/breakpoints.css';
+import { getAllPosts, getPostBySlug } from 'lib/api';
+import { Heading2, SpacedRow } from '@components/shared';
 
 const Post = ({ post }) => {
   const lineMotion = {
