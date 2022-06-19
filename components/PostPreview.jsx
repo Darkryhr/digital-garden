@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { Heading3, Subtitle } from '@components/shared';
 import DateFormatter from '@components/DateFormatter';
 import { SpacedRow } from '@components/shared';
+import { breakpoint } from '@styled/breakpoints.css';
 
 const PostPreview = ({ title, date, excerpt, slug }) => {
   return (
@@ -19,10 +20,10 @@ const PostPreview = ({ title, date, excerpt, slug }) => {
           translateX: -15,
         }}
       >
-        <SpacedRow>
+        <div>
           <PreviewTitle>{title}</PreviewTitle>
           <DateFormatter dateString={date} light={true} />
-        </SpacedRow>
+        </div>
         <PreviewSubtitle>{excerpt}</PreviewSubtitle>
       </PreviewWrapper>
     </Link>
@@ -46,7 +47,8 @@ const PreviewWrapper = styled(motion.div)`
   cursor: pointer;
   padding: 1.6rem 1.3rem;
   border: 1px solid ${({ theme }) => theme.colors.secondary};
-  max-width: 768px;
+  max-width: ${breakpoint.size.md};
+  width: 100%;
   margin: 0 auto;
   margin-bottom: 2rem;
   border-radius: 5px;

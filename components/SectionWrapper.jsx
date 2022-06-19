@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 import { breakpoint } from '@styled/breakpoints.css';
+import { Column } from './shared';
+
 const SectionWrapper = ({ children, delay = 0 }) => {
   return (
     <Section
@@ -11,7 +13,7 @@ const SectionWrapper = ({ children, delay = 0 }) => {
       transition={{ duration: 0.8, delay }}
       mb={6}
     >
-      {children}
+      <Column center>{children}</Column>
     </Section>
   );
 };
@@ -20,10 +22,9 @@ export default SectionWrapper;
 
 const Section = styled(motion.section)`
   width: 100%;
-
-  padding: 1.2rem 0 0.4rem 0;
   position: relative;
   overflow-x: clip;
+  padding: 1.2rem 0 0.4rem 0;
   @media (${breakpoint.device.sm}) {
     padding-left: 1rem;
     padding-right: 1rem;

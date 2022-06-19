@@ -3,14 +3,20 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { HiDownload } from 'react-icons/hi';
 
-import { Container, Heading1, Lead, StrokedButton } from '@components/shared';
+import {
+  Column,
+  Container,
+  Heading1,
+  Lead,
+  StrokedButton,
+} from '@components/shared';
 import { breakpoint } from '@styled/breakpoints.css';
 
 const IntroSection = () => {
   return (
-    <Container p='0 0 6.5rem 0'>
+    <Container>
       <Rename>
-        <SpacedContainer>
+        <Column>
           <Lead>Let&apos;s be unboring</Lead>
           <Heading1>
             MAKE THINGS <br />
@@ -49,7 +55,7 @@ const IntroSection = () => {
               </a>
             </StrokedButton>
           </ButtonRow>
-        </SpacedContainer>
+        </Column>
         <Circle>
           <Graphic />
         </Circle>
@@ -58,17 +64,18 @@ const IntroSection = () => {
   );
 };
 
+export default IntroSection;
+
 const ButtonRow = styled.div`
   display: flex;
   padding-top: 0.5rem;
 `;
 
-export default IntroSection;
-
 const Rename = styled.div`
   position: relative;
   display: flex;
   width: 100%;
+  margin: 0 auto;
   justify-content: space-between;
   align-items: center;
   max-width: ${breakpoint.size.lg};
@@ -77,20 +84,6 @@ const Rename = styled.div`
   @media (${breakpoint.device.sm}) {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-`;
-
-const SpacedContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-
-  @media (${breakpoint.device.sm}) {
-    padding: 3rem 0 0 0;
-    align-items: flex-start;
-  }
-  @media (${breakpoint.device.xs}) {
-    padding: 3rem 0 0 0;
   }
 `;
 

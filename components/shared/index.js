@@ -41,6 +41,7 @@ export const ProjectButton = styled(motion.button)`
   border-radius: 12px;
   cursor: pointer;
   max-width: 80px;
+  min-width: 50px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 `;
@@ -49,76 +50,35 @@ export const GradientButton = styled(motion.button)`
   padding: 0.7rem 2rem;
   font-size: medium;
   font-weight: 500;
+  margin-top: 1.5rem;
   background: ${props => props.theme.colors.gradient};
   border-radius: 24px;
-  margin: 1.5rem 0 0.5rem 0;
   cursor: pointer;
-  display: flex;
-  align-items: center;
 `;
 
 //* Wrappers
-export const SpacedRow = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.6rem;
-  flex-direction: column;
-`;
-
-export const ContentWrapper = styled(SpacedRow)`
+export const Container = styled.section`
   min-height: calc(100vh - 100px);
-  max-height: 200vh;
-  overflow: scroll;
-  width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  padding: 3rem 0;
-  @media (${breakpoint.device.sm}) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-`;
-
-export const Container = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
-  min-height: calc(100vh - 100px);
-  padding: ${props => (props.p ? props.p : '0')};
-  /* @media (${breakpoint.device.sm}) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  } */
-`;
-
-export const Row = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
 `;
 
 export const Box = styled.div`
-  /* display: flex; */
-  margin: 0 auto;
-  max-width: ${breakpoint.size.sm};
+  width: 100%;
+  max-width: ${breakpoint.size.md};
 `;
 
-export const Column = styled.div`
+export const Column = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
+
+  ${props => (props.end ? 'align-items: flex-end' : '')};
+  ${props => (props.center ? 'align-items: center' : '')};
   @media (${breakpoint.device.sm}) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    text-align: center;
+    padding: 0 1rem;
   }
 `;
 
@@ -132,7 +92,7 @@ export const Grid = styled.div`
   margin: 0 auto;
   justify-content: center;
   justify-items: center;
-  /* width: 100%; */
+  width: 100%;
   max-width: ${breakpoint.size.lg};
 `;
 

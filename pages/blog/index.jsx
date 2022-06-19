@@ -3,15 +3,19 @@ import React from 'react';
 import { getAllPosts } from 'lib/api';
 import PostPreview from '@components/PostPreview';
 import SectionWrapper from '@components/SectionWrapper';
-import { Box, ContentWrapper, Heading2 } from '@components/shared';
+import { Box, Column, Heading2 } from '@components/shared';
 
 const PostFeed = ({ allPosts }) => {
   return (
-    <ContentWrapper>
+    <Column
+      style={{
+        padding: '3rem 0',
+      }}
+    >
       <SectionWrapper delay={0.1}>
         <Box
           style={{
-            margin: '0.5rem auto 0.7rem auto',
+            padding: '1rem 0',
           }}
         >
           <Heading2>Blog</Heading2>
@@ -28,7 +32,7 @@ const PostFeed = ({ allPosts }) => {
           />
         ))}
       </SectionWrapper>
-    </ContentWrapper>
+    </Column>
   );
 };
 

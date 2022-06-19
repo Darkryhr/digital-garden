@@ -26,7 +26,7 @@ const Time = styled.time`
   font-weight: ${props => (props.$light ? 400 : 700)};
   opacity: ${props => (props.$light ? 0.8 : 1)};
   font-size: ${props => (props.$light ? '0.9rem' : '1rem')};
-  padding-top: 0.5rem;
+  padding: 0.5rem 0;
   display: flex;
   align-items: center;
   @media (${breakpoint.device.sm}) {

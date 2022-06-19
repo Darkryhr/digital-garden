@@ -7,8 +7,6 @@ import {
   GradientButton,
   ProjectButton,
   Grid,
-  Row,
-  Column,
   Container,
   Heading2,
   Subtitle,
@@ -33,27 +31,24 @@ const Portfolio = () => {
   };
 
   return (
-    <Container>
+    <Container
+      style={{
+        padding: '3rem 0',
+      }}
+    >
       <SectionWrapper delay={0.1}>
-        <Row>
-          <Heading2>Projects</Heading2>
-        </Row>
+        <Heading2>Projects</Heading2>
       </SectionWrapper>
       <SectionWrapper delay={0.2}>
-        <Column>
-          <Subtitle>
-            Wanna get down to business? Click below to save time and download my
-            resume
-          </Subtitle>
-          <a href='/assets/portfolio/resume.docx' download>
-            <GradientButton
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              Resume
-            </GradientButton>
-          </a>
-        </Column>
+        <Subtitle>
+          Wanna get down to business? Click below to save time and download my
+          resume
+        </Subtitle>
+        <a href='/assets/portfolio/resume.docx' download>
+          <GradientButton whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            Resume
+          </GradientButton>
+        </a>
       </SectionWrapper>
       <SectionWrapper delay={0.3}>
         <Grid>
