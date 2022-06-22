@@ -40,11 +40,7 @@ const Portfolio = () => {
         <Heading2>Projects</Heading2>
       </SectionWrapper>
       <SectionWrapper delay={0.2}>
-        <Subtitle
-          style={{
-            textAlign: 'center',
-          }}
-        >
+        <Subtitle>
           Wanna get down to business? Click below to save time and download my
           resume
         </Subtitle>

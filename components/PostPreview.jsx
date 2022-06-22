@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 import { Heading3, Subtitle } from '@components/shared';
 import DateFormatter from '@components/DateFormatter';
+import { SpacedRow } from '@components/shared';
 import { breakpoint } from '@styled/breakpoints.css';
 
 const PostPreview = ({ title, date, excerpt, slug }) => {
