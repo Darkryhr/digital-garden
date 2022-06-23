@@ -75,7 +75,6 @@ const Paragraph = styled.p`
 const Article = styled.article`
   margin-top: 1rem;
   font-family: 'IBM Plex Sans', Tahoma, Geneva, Verdana, sans-serif;
-
   font-size: 1rem;
   line-height: 1.75;
   @media (${breakpoint.device.sm}) {
@@ -118,7 +117,8 @@ const Article = styled.article`
     margin-left: -16px;
     margin-right: -16px;
     background-color: rgba(55, 65, 81, 0.5); /* Set highlight bg color */
-    border-left-width: 4px;
+    border-left-style: solid;
+    border-left-width: 5px;
     border-left-color: rgb(
       59,
       130,
