@@ -13,7 +13,7 @@ const SectionWrapper = ({ children, delay = 0 }) => {
       transition={{ duration: 0.8, delay }}
       mb={6}
     >
-      <Column center>{children}</Column>
+      <Column>{children}</Column>
     </Section>
   );
 };

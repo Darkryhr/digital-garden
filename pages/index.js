@@ -7,11 +7,11 @@ import { breakpoint } from '@styled/breakpoints.css';
 export default function Home() {
   return (
     <Deflow>
-      <CoolThing>
+      {/* <CoolThing>
         UI &amp; UX DESIGN
         <br />
         WEB DEVELOPER
-      </CoolThing>
+      </CoolThing> */}
       <SectionWrapper delay={0.1}>
         <IntroSection />
       </SectionWrapper>
@@ -22,6 +22,29 @@ export default function Home() {
 const Deflow = styled.div`
   position: relative;
   overflow: hidden;
+  /* height: 100%;
+  opacity: 50%;
+
+   background: linear-gradient(175deg, #1c1d21 50%, #212a30 50%);*/
+`;
+
+export const Split = styled.div`
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 50%;
+  background: linear-gradient(100deg, #212a30 50%, #1c1d21 50%);
+`;
+
+export const Split2 = styled.div`
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(175deg, #1c1d21 50%, #212a30 50%);
 `;
 
 const CoolThing = styled.h1`

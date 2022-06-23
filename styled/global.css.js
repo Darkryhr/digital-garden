@@ -7,20 +7,21 @@ export const GlobalStyles = createGlobalStyle`
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
-  font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
   }
 
   body {
     color: ${({ theme }) => theme.colors.text};
     transition: all 0.50s linear;
     background:${({ theme }) => theme.colors.primary};
-    
     background-image: radial-gradient(${({ theme }) =>
       theme.colors.secondary} 1px, transparent 0);
     background-size: 40px 40px;
     background-position: 22px 22px;
+    overflow-x: hidden;
+  font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+
   }
 
   a {
@@ -33,7 +34,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   strong {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   ::-webkit-scrollbar {

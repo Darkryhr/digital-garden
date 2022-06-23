@@ -90,10 +90,9 @@ const Wrapper = styled.footer`
   width: 100%;
   max-width: ${breakpoint.size.lg};
   margin: 0 auto;
-  padding: 2rem 4rem;
+  padding: 2rem 0;
   @media (${breakpoint.device.sm}) {
     flex-direction: column-reverse;
-    padding: 2rem 1rem;
 
     /* flex-direction: column; */
   }

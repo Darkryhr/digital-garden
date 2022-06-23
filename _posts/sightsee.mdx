@@ -5,19 +5,24 @@ date: '2022-03-10T11:01:01.597Z'
 tags: [Fullstack]
 ---
 
+# Sightsee
+
+<DateFormatter date={'2022-03-10T11:01:01.597Z'} light={true} />
+
+<Article>
 So this is a posthumous post regarding my first big standalone project—well—revamp of a pre-existing project dubbed sightsee. For this one, I felt like splitting into its elements, and exploring what each one added to this project, whilst occasionally comparing it to the original.
 
 The stack in question is as follows: **S**QL, **E**xpress, **R**eact & **N**ode, or **SERN** for short.
 
 So in no particular order let’s start:
 
-### Node & Express
+## Node & Express
 
 I’m gonna put these together cause let’s be honest, they need no introduction, everybody knows what node and express are, I use the two almost interchangeably in conversation(imagine me conversing if it helps) because honestly, I find it hard to imagine what you would do with node if not make a web server with Express, at least at first.
 
 Not much has changed between projects here, Express is Express, and my approach to APIs remains the same.
 
-### SQL
+## SQL
 
 Now, this is where the first significant divergence occurs, whereas in the original project I was instructed, nay mandated! to use the mysql2 package, this time around I figured I’d look for greener pastures and opted to use the popular Sequelize package, Honestly, at the time I didn’t even know what an ORM meant, I just knew anyone who used SQL used Sequelize.
 
@@ -27,13 +32,13 @@ The broad strokes are you define your schema through models, which you then inst
 
 Granted in this case I did not take advantage of many of Sequelize’s features, such as seeding and migrations, which to be honest I would have used if documentation and resources were more useful.
 
-### React
+## React
 
 React is well, React, again I see no reason to introduce it, (In fact, most of this project relied on some pretty og resources), but I did find a way to make it more interesting and that is Vite.
 
 Vite is an excellent build tool, made by the same mind behind Vue.
 
-Picture this: you wanna start a React app, what do you do? `npx create-react-app some-name`, right? Wrong! You use `npm create vite@latest`  and let it handle the rest.
+Picture this: you wanna start a React app, what do you do? `npx create-react-app some-name`, right? Wrong! You use `npm create vite@latest` and let it handle the rest.
 
 Vite creates your initial files, dev server, and dependencies in much the same way as CRA does, except it’s very fast, and it feels light as a feather.
 
@@ -41,9 +46,9 @@ My go-to react scaffolder is next.js, but for vanilla projects and things like s
 
 Its lightness and convenience, coupled with some great integrations make it one of my favorite tools.
 
-Speaking of integrations, tailwind (B+ Segway, I know, sue me) tailwind works wonders with Vite, well, tailwind works wonders in general. It is such a great compromise between unique, personal aesthetic and minimizing CSS overhead.  
+Speaking of integrations, tailwind (B+ Segway, I know, sue me) tailwind works wonders with Vite, well, tailwind works wonders in general. It is such a great compromise between unique, personal aesthetic and minimizing CSS overhead.
 
-### RTK and Query
+## RTK and Query
 
 The big deal, the reason I wanted a redo in the first place is redux toolkit - the currently recommended approach to global state management by the redux team themselves.
 
@@ -52,3 +57,5 @@ What is RTK query? think of it as a replacement for redux-thunk in this instance
 Much can be said about RTK, but for sake of brevity all I’ll say is: give it a shot. I know it won’t be to everyone’s liking, especially if you already worked hard to implement previous approaches to redux, but personally, I like it, redux takes the wheel when it comes to state management and my overheads are lower. Not to mention RTK Query is pretty great too.
 
 > 💡 If you’re just getting started with RTK Query, it’s considered best practice to create a single API slice and inject it with endpoints, rather than different slices for different endpoints.
+
+</Article>

@@ -79,8 +79,8 @@ const Rename = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: ${breakpoint.size.lg};
-  padding: 0 5rem;
   height: calc(100vh - 200px);
+
   @media (${breakpoint.device.sm}) {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -89,16 +89,13 @@ const Rename = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  right: 0;
+  right: 20px;
   top: 80px;
   transform: rotate(15deg);
   width: 500px;
-  fill: #fb8b24;
   z-index: -999;
-  @media (${breakpoint.device.sm}) {
-    fill: ${({ theme }) => theme.colors.text};
-    opacity: 0.05;
-  }
+  fill: ${({ theme }) => theme.colors.text};
+  opacity: 0.04;
 `;
 
 const Graphic = () => {

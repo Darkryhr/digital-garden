@@ -10,6 +10,7 @@ import {
   Container,
   Heading2,
   Subtitle,
+  Box,
 } from '@components/shared';
 import Modal from '@components/Modal';
 
@@ -31,67 +32,75 @@ const Portfolio = () => {
   };
 
   return (
-    <Container
-      style={{
-        padding: '3rem 0',
-      }}
-    >
-      <SectionWrapper delay={0.1}>
-        <Heading2>Projects</Heading2>
-      </SectionWrapper>
-      <SectionWrapper delay={0.2}>
-        <Subtitle>
-          Wanna get down to business? Click below to save time and download my
-          resume
-        </Subtitle>
-        <a href='/assets/portfolio/resume.docx' download>
-          <GradientButton whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-            Resume
-          </GradientButton>
-        </a>
-      </SectionWrapper>
-      <SectionWrapper delay={0.3}>
-        <Grid>
-          {projects.map(({ name, url, icon, desc, tags, blurUrl }) => (
-            <ProjectButton
-              data-cy='portfolio-project'
-              key={name}
-              onClick={() => {
-                !modalOpen
-                  ? setModalProject({ name, url, icon, desc, tags })
-                  : setModalProject({});
-                modalOpen ? close() : open();
-              }}
+    <>
+      <Container
+        style={{
+          padding: '3rem 0',
+        }}
+      >
+        <SectionWrapper delay={0.1}>
+          <Box>
+            <Heading2>Projects</Heading2>
+          </Box>
+        </SectionWrapper>
+        <SectionWrapper delay={0.2}>
+          <Subtitle>
+            Wanna get down to business? Click below to save time and download my
+            resume
+          </Subtitle>
+          <a href='/assets/portfolio/resume.docx' download>
+            <GradientButton
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Image
-                src={icon}
-                alt={desc}
-                width={48}
-                height={48}
-                placeholder='blur'
-                blurDataURL={blurUrl}
-              />
-            </ProjectButton>
-          ))}
-        </Grid>
-      </SectionWrapper>
+              Resume
+            </GradientButton>
+          </a>
+        </SectionWrapper>
 
-      <AnimatePresence
-        initial={false}
-        exitBeforeEnter={true}
-        onExitComplete={() => null}
-      >
-        {modalOpen && (
-          <Modal
-            modalOpen={modalOpen}
-            handleClose={close}
-            project={modalProject}
-          />
-        )}
-      </AnimatePresence>
-    </Container>
+        <SectionWrapper delay={0.3}>
+          <Grid>
+            {projects.map(({ name, url, icon, desc, tags, blurUrl }) => (
+              <ProjectButton
+                data-cy='portfolio-project'
+                key={name}
+                onClick={() => {
+                  !modalOpen
+                    ? setModalProject({ name, url, icon, desc, tags })
+                    : setModalProject({});
+                  modalOpen ? close() : open();
+                }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Image
+                  src={icon}
+                  alt={desc}
+                  width={48}
+                  height={48}
+                  placeholder='blur'
+                  blurDataURL={blurUrl}
+                />
+              </ProjectButton>
+            ))}
+          </Grid>
+        </SectionWrapper>
+
+        <AnimatePresence
+          initial={false}
+          exitBeforeEnter={true}
+          onExitComplete={() => null}
+        >
+          {modalOpen && (
+            <Modal
+              modalOpen={modalOpen}
+              handleClose={close}
+              project={modalProject}
+            />
+          )}
+        </AnimatePresence>
+      </Container>
+    </>
   );
 };
 

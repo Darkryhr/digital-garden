@@ -157,6 +157,7 @@ const OrEmail = styled.div`
   margin: 0;
   text-align: end;
   width: fit-content;
+  max-width: 125px;
   @media (${breakpoint.device.sm}) {
     padding-top: 1rem;
     text-align: center;
@@ -245,10 +246,13 @@ const Submit = styled(motion.button)`
   margin: 0.7rem 0;
   display: flex;
   align-items: center;
-  width: 150px;
+  width: 100%;
+  max-width: 125px;
   font-weight: 600;
   border-radius: 5px;
   justify-content: space-around;
+  border: none;
+  outline: none;
   cursor: pointer;
   &:disabled {
     cursor: default;

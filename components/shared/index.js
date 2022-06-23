@@ -42,6 +42,8 @@ export const ProjectButton = styled(motion.button)`
   cursor: pointer;
   max-width: 80px;
   min-width: 50px;
+  border: none;
+
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 `;
@@ -53,7 +55,11 @@ export const GradientButton = styled(motion.button)`
   margin-top: 1.5rem;
   background: ${props => props.theme.colors.gradient};
   border-radius: 24px;
+  border: none;
+  color: #fff;
   cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 `;
 
 //* Wrappers
@@ -74,7 +80,7 @@ export const Column = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
-
+  padding: 0 1rem;
   ${props => (props.end ? 'align-items: flex-end' : '')};
   ${props => (props.center ? 'align-items: center' : '')};
   @media (${breakpoint.device.sm}) {
@@ -87,7 +93,7 @@ export const Grid = styled.div`
   gap: 1rem;
   row-gap: 4rem;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   grid-template-rows: auto;
   margin: 0 auto;
   justify-content: center;
@@ -96,8 +102,13 @@ export const Grid = styled.div`
   max-width: ${breakpoint.size.lg};
 `;
 
+export const BlogLayout = styled.div`
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+`;
+
 //* Typography
 export const Heading1 = styled(motion.h1)`
+  margin: 0;
   font-weight: 700;
   font-size: 4rem;
   letter-spacing: 2px;

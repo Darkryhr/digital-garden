@@ -5,6 +5,11 @@ date: '2022-03-15T09:59:11.253Z'
 tags: [Fullstack]
 ---
 
+# Sightsee, in-depth
+
+<DateFormatter dateString={'2022-03-15T09:59:11.253Z'} light={true} />
+
+<Article>
 I’d like to take a closer look at the different aspects of this app a little closer, generally speaking, this is a pretty standard template for a full-stack app, with crud functionality, environment variables, and a react app with global state management. So this may prove useful for someone looking for a rough guideline, or starting template of sorts.
 
 ## Backend
@@ -19,7 +24,7 @@ In my approach, I like to split the API into:
 - **Models** which the schema for the various entities in the app; user, vacation, and follow.
 - **Server and app**, index files, one which handles building up the API and one that handles the server itself.
 
-### Database
+## Database
 
 In this case, I decided to—at least on paper—make life easier for myself by utilizing the popular ORM sequelize. I must admit I ran into some challenges when it came to getting started, since the package has been around for quite a while, and has been through many revisions (I think it was v7) it might be difficult to get up to date, accurate resources. Now I'd say this is a minor inconvenience at most, since the library hasn't changed **that** much, but it can lead to some irksome errors when you realize a method has been renamed between versions, and now your code is spitting out errors. Not to mention I don't particularly like sequelizes documentation, I found its search function specifically to be a bit janky, spitting not super relevant results, and even when you find what you're looking, poor typographic hierarchy makes it difficult to discern where what you're looking for starts and ends.
 
@@ -27,13 +32,13 @@ But once I got the ball rolling I must admit this was a much nicer way to work w
 
 Last time around I used the mysql2 package with the sqltools vs code extension to test them out.
 
-### Authentication & authorization
+## Authentication & authorization
 
 This is a pretty big topic, and one I'm not planning to delve too deep into, this isn't a tutorial as much as it is a rough process map.
 
 But here are some general tips
 
-1. Probably the most important and accurate wisdom I can impart; we developers are bad at security.
+Probably the most important and accurate wisdom I can impart; we developers are bad at security.
 
 This is a universal truth, and the reason you'll always use a separate, dedicated service to handle the heavy lifting. In my case, this was jwts and bcrypt.
 
@@ -53,11 +58,11 @@ I'd describe the front as a pretty modern implementation of a very common front 
 
 So everything is pretty well established, so let's run by it real quick
 
-### React
+## React
 
 React is react, as I said previously this is not a tutorial, I'm not gonna delve into what react is and how it works here. Instead let's take a closer look at something you might be less familiar with, namely Vite.
 
-### Vite
+## Vite
 
 As I mentioned before Vite is hecka fast, and if you’re not familiar with stuff like build tools you might not even know what it is and why that matters.
 
@@ -67,13 +72,13 @@ That’s essentially all you need to know about it, it makes scaffolding project
 
 And while personally my preferred react ‘flavor’ is nextjs, vite has quite a few options, such as: react, preact, vite, vanilla, and more. It’s the preferred method of scaffolding a Vue app at this point(which makes sense, since it’s from the same guy), and if you’ve ever needed a vanilla project and shuddered at the thought of having to mess with a bundler like webpack, then is your best friend.
 
-### Redux
+## Redux
 
 This here is one of the two biggest reasons—along with sequelize—that I wanted to redo this project, I really wanted to explore this new way of using redux, that I haven't heard much of, but has already replaced previous versions as the recommended go-to approach by the redux team.
 
 The most important part to understand is that this approach is redux taking the wheel, handling the logic for anything from store creation to
 
-### react-hook-form & react-router-dom
+## react-hook-form & react-router-dom
 
 I don’t think there’s much to say about these two separately, they’ve both changed rather recently, but still, they’re among the most used and integral libraries when it comes to react development—well, at least if you’re using CRA—and the changes made to them are probably known to anyone working with react at the time of writing.
 
@@ -83,7 +88,7 @@ react-router-dom I must imagine has been struggling since the new kids—next an
 
 react-hook-form hasn’t honestly changed that much, the syntax has changed—into a stranger one—but other than that has stayed quite familiar.
 
-### Tailwind CSS
+## Tailwind CSS
 
 The utility-first CSS framework; Pretty everyone knows what tailwind is at this point, I must say that for me, while I prefer something like styled-components for absolute control, and chakra-ui for a hands-off approach, tailwind offers probably the best compromise between these two states: control and customization, and simplifying the process of actually writing CSS.
 
@@ -91,8 +96,10 @@ The utility-first CSS framework; Pretty everyone knows what tailwind is at this 
 - Implementing is easy as pie, two CLI commands, and a quick config and you’re good to go.
 - Its documentation and community support are excellent, so there’s no shortage of info on how to implement components and extend/change its style to suit your brand.
 
-### So to conclude:
+## So to conclude:
 
 the tl;dr is this - you could say this project is a test of the latest and greatest web development has to offer, RTK, Vite, Tailwind, etc. And the verdict is: it’s great. While I have improved significantly since the first rendition of this project, it’s staggering the difference modern tools have on developer experience, and so keeping up-to-date on what the tools behind your app are up to, can make your life easier.
 
 Or break all your shit, c’est la vie[🤷](https://emojipedia.org/person-shrugging/).
+
+</Article>
