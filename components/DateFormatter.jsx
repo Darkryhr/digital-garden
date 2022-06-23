@@ -4,10 +4,10 @@ import { BiTimeFive } from 'react-icons/bi';
 
 import { breakpoint } from '@styled/breakpoints.css';
 
-const DateFormatter = ({ dateString, light }) => {
+const DateFormatter = ({ dateString, light, nonMdx }) => {
   const date = parseISO(dateString);
   return (
-    <Time dateTime={dateString} $light={light}>
+    <Time dateTime={dateString} $light={light} $nonMdx={nonMdx}>
       <BiTimeFive
         size={20}
         style={{
@@ -31,5 +31,6 @@ const Time = styled.time`
   align-items: center;
   @media (${breakpoint.device.sm}) {
     font-size: 0.8rem;
+    ${props => (props.$nonMdx ? '' : 'margin-left: 1rem;')}
   }
 `;

@@ -12,7 +12,7 @@ export const Nav = styled.nav`
   position: relative;
   z-index: 999;
   @media (${breakpoint.device.sm}) {
-    padding: 1.4rem;
+    padding: 1rem;
   }
 `;
 

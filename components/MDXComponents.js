@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import DateFormatter from '@components/DateFormatter';
+import { breakpoint } from '@styled/breakpoints.css';
 
 const Heading2 = styled.h2`
   scroll-margin-top: 8rem;
@@ -22,6 +23,10 @@ const Heading1 = styled.h1`
   padding: 4rem 0 0 0;
   scroll-margin-top: 3rem;
   font-family: 'Poppins', sans-serif;
+  @media (${breakpoint.device.sm}) {
+    font-size: 2.5rem;
+    padding: 3rem 1rem 0 1rem;
+  }
 `;
 
 const CustomLink = props => {
@@ -70,6 +75,9 @@ const Paragraph = styled.p`
 const Article = styled.article`
   margin-top: 1rem;
   font-family: 'IBM Plex Sans', Tahoma, Geneva, Verdana, sans-serif;
+  @media (${breakpoint.device.sm}) {
+    padding: 0 1rem;
+  }
 `;
 
 const MDXComponents = {

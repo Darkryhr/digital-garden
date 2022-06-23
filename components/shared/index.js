@@ -84,7 +84,7 @@ export const Column = styled.section`
   ${props => (props.end ? 'align-items: flex-end' : '')};
   ${props => (props.center ? 'align-items: center' : '')};
   @media (${breakpoint.device.sm}) {
-    padding: 0 1rem;
+    padding: 0 0.2rem;
   }
 `;
 
@@ -156,9 +156,6 @@ export const Subtitle = styled.p`
   font-weight: 400;
   letter-spacing: 0.01rem;
   line-height: 2;
-  @media (${breakpoint.device.sm}) {
-    font-size: 0.7rem;
-  }
 `;
 
 export const Lead = styled.p`

@@ -80,11 +80,6 @@ const Rename = styled.div`
   align-items: center;
   max-width: ${breakpoint.size.lg};
   height: calc(100vh - 200px);
-
-  @media (${breakpoint.device.sm}) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
 `;
 
 const Circle = styled.div`

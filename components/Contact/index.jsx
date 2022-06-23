@@ -161,6 +161,7 @@ const OrEmail = styled.div`
   @media (${breakpoint.device.sm}) {
     padding-top: 1rem;
     text-align: center;
+    max-width: none;
   }
 `;
 
@@ -173,6 +174,7 @@ const Form = styled.form`
   padding: 2rem 0;
   /* min-width: 530px; */
   @media (${breakpoint.device.sm}) {
+    padding: 0 2rem;
   }
 `;
 

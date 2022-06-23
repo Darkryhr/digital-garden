@@ -23,7 +23,7 @@ const PostPreview = ({ title, date, excerpt, slug }) => {
       >
         <div>
           <PreviewTitle>{title}</PreviewTitle>
-          <DateFormatter dateString={date} light={true} />
+          <DateFormatter dateString={date} light={true} nonMdx={true} />
         </div>
         <PreviewSubtitle>{excerpt}</PreviewSubtitle>
       </PreviewWrapper>
