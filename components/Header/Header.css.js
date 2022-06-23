@@ -91,7 +91,7 @@ export const LinkWrapper = styled(motion.div)`
   display: flex;
   font-weight: 600;
   background-color: ${props =>
-    props.$active ? props.theme.colors.accent : 'none'};
+    props.$active ? props.theme.colors.accent : 'none'} !important;
 
   text-transform: capitalize;
   font-size: 16px;

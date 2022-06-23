@@ -81,7 +81,7 @@ export const Column = styled.section`
   flex-direction: column;
   width: 100%;
   padding: 0 1rem;
-  ${props => (props.end ? 'align-items: flex-end' : '')};
+  ${props => (props.$end ? 'align-items: flex-end' : '')};
   ${props => (props.center ? 'align-items: center' : '')};
   @media (${breakpoint.device.sm}) {
     padding: 0 0.2rem;

@@ -62,7 +62,7 @@ const Contact = () => {
   };
 
   return (
-    <Column end>
+    <Column $end>
       <Form>
         <Shout>Give me a shout</Shout>
         <Wrapper>

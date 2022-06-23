@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 import Contact from '@components/Contact';
 import { IconButton, Muted } from '@components/shared';
-import { Logo } from '@components/Header';
+import { Logo } from '@components/Logo';
 import { breakpoint } from '@styled/breakpoints.css';
 
 const Footer = () => {
