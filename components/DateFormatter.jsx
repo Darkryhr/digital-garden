@@ -9,10 +9,10 @@ const DateFormatter = ({ dateString, light, nonMdx }) => {
   return (
     <Time dateTime={dateString} $light={light} $nonMdx={nonMdx}>
       <BiTimeFive
-        size={20}
+        size={18}
         style={{
           opacity: 0.5,
-          marginRight: '7px',
+          marginRight: '5px',
         }}
       />
       {format(date, 'MMMM dd, yyyy')}
@@ -25,7 +25,7 @@ export default DateFormatter;
 const Time = styled.time`
   font-weight: ${props => (props.$light ? 400 : 700)};
   opacity: ${props => (props.$light ? 0.8 : 1)};
-  font-size: 1rem;
+  font-size: 0.83rem;
   padding: 0.5rem 0;
   display: flex;
   align-items: center;

@@ -80,7 +80,7 @@ export const Column = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 0.3rem;
   ${props => (props.$end ? 'align-items: flex-end' : '')};
   ${props => (props.center ? 'align-items: center' : '')};
   @media (${breakpoint.device.sm}) {
