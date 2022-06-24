@@ -31,6 +31,8 @@ const Time = styled.time`
   align-items: center;
   @media (${breakpoint.device.sm}) {
     font-size: 0.8rem;
+    padding: 0.7rem 0;
+
     ${props => (props.$nonMdx ? '' : 'margin-left: 1rem;')}
   }
 `;

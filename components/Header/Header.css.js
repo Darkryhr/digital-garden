@@ -12,7 +12,7 @@ export const Nav = styled.nav`
   position: relative;
   z-index: 999;
   @media (${breakpoint.device.sm}) {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
   }
 `;
 
@@ -55,7 +55,7 @@ export const MobileMenu = styled(motion.div)`
   align-items: flex-end;
   flex-direction: column;
   text-align: end;
-  padding: 0.7rem 0.7rem 1.7rem 0;
+  padding: 0.2rem 0.7rem 1.5rem 0;
   position: absolute;
   z-index: 999;
   right: 0;
@@ -64,9 +64,7 @@ export const MobileMenu = styled(motion.div)`
   margin-top: 1rem;
   min-width: 180px;
   border-radius: 5px;
-  /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); */
-  border: 1px solid ${({ theme }) => theme.colors.secondary};
-  border-right: 2px solid ${({ theme }) => theme.colors.accent};
+  border: 2px solid ${({ theme }) => theme.colors.secondary};
   @media (${breakpoint.device.sm}) {
     top: 20px;
   }

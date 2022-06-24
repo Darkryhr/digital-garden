@@ -41,14 +41,15 @@ const PreviewSubtitle = styled(Subtitle)`
   text-overflow: ellipsis;
   line-height: 1.5;
   padding-top: 0.7em;
+  @media (${breakpoint.device.sm}) {
+    padding: 0 !important;
+  }
 `;
 
 const PreviewWrapper = styled(motion.div)`
   cursor: pointer;
-  padding: 0 0.5rem;
   width: 100%;
-  margin: 0 auto;
-  margin-bottom: 2rem;
+  margin: 1em auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,4 +59,8 @@ const Row = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (${breakpoint.device.sm}) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;

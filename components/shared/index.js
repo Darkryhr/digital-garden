@@ -10,10 +10,15 @@ export const Button = styled(motion.button)`
   border: none;
   background: none;
   border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+
+  ${props =>
+    props.$filled
+      ? `background: ${props.theme.colors.text}; color: ${props.theme.colors.primary};`
+      : ''}
 `;
 
 export const StrokedButton = styled(Button)`
-  padding: 0.6rem 1.2rem;
   font-weight: 400;
   font-size: 0.85rem;
   border-radius: 24px;
@@ -74,17 +79,19 @@ export const Container = styled.section`
 export const Box = styled.div`
   width: 100%;
   max-width: ${breakpoint.size.md};
+  @media (${breakpoint.device.sm}) {
+    padding: 0;
+  }
 `;
 
 export const Column = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 0.3rem;
+  padding: 0 0.2rem;
   ${props => (props.$end ? 'align-items: flex-end' : '')};
   ${props => (props.center ? 'align-items: center' : '')};
   @media (${breakpoint.device.sm}) {
-    padding: 0 0.2rem;
   }
 `;
 
@@ -155,7 +162,13 @@ export const Subtitle = styled.p`
   opacity: 0.8;
   font-weight: 400;
   letter-spacing: 0.01rem;
-  line-height: 2;
+  line-height: 1.5;
+  padding: 1rem 0 0 0;
+
+  @media (${breakpoint.device.sm}) {
+    font-size: 0.9rem;
+    padding: 0.5rem 0 0 0;
+  }
 `;
 
 export const Lead = styled.p`

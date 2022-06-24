@@ -11,6 +11,7 @@ import {
   Heading2,
   Subtitle,
   Box,
+  Column,
 } from '@components/shared';
 import Modal from '@components/Modal';
 
@@ -33,7 +34,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <Container
+      <Column
         style={{
           padding: '3rem 0',
         }}
@@ -99,7 +100,7 @@ const Portfolio = () => {
             />
           )}
         </AnimatePresence>
-      </Container>
+      </Column>
     </>
   );
 };

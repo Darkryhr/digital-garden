@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PostPreview from '@components/PostPreview';
 import SectionWrapper from '@components/SectionWrapper';
-import { Box, Column, Heading2, Button } from '@components/shared';
+import { Box, Column, Heading2, Button, Subtitle } from '@components/shared';
 import { getPosts } from 'lib/utils';
 
 const PostFeed = ({ posts }) => {
@@ -22,12 +22,16 @@ const PostFeed = ({ posts }) => {
       }}
     >
       <SectionWrapper delay={0.1}>
-        <Box
-          style={{
-            padding: '1rem 0',
-          }}
-        >
+        <Box>
           <Heading2>Blog</Heading2>
+        </Box>
+      </SectionWrapper>
+      <SectionWrapper delay={0.2}>
+        <Box>
+          <Subtitle>
+            Wanna get down to business? Click below to save time and download my
+            resume
+          </Subtitle>
         </Box>
       </SectionWrapper>
 
@@ -41,8 +45,25 @@ const PostFeed = ({ posts }) => {
             excerpt={data.excerpt}
           />
         ))}
+        <Box
+          style={{
+            padding: '1.7rem 0',
+          }}
+        >
+          <Button
+            onClick={loadMorePosts}
+            $filled
+            whileHover={{
+              scale: 1.1,
+            }}
+            whileTap={{
+              scale: 0.9,
+            }}
+          >
+            Load more
+          </Button>
+        </Box>
       </SectionWrapper>
-      <Button onClick={loadMorePosts}>Load more</Button>
     </Column>
   );
 };
