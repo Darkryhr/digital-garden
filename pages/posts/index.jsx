@@ -29,8 +29,8 @@ const PostFeed = ({ posts }) => {
       <SectionWrapper delay={0.2}>
         <Box>
           <Subtitle>
-            Wanna get down to business? Click below to save time and download my
-            resume
+            My thoughts(I swear i have them), on stuff, mostly from projects
+            I&apos;ve worked on.
           </Subtitle>
         </Box>
       </SectionWrapper>
