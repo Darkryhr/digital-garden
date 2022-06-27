@@ -9,6 +9,9 @@
     "lint": "next lint",
     "e2e": "cypress open"
   },
+  "engines": {
+    "node": ">=16"
+  },
   "dependencies": {
     "@mdx-js/loader": "^2.1.2",
     "@mdx-js/react": "^2.1.2",
