@@ -12,7 +12,7 @@ const Footer = () => {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    setThemeIcon(savedTheme);
+    setThemeIcon(!!savedTheme);
   });
 
   return (

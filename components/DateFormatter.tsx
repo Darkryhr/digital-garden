@@ -4,7 +4,7 @@ import { BiTimeFive } from 'react-icons/bi';
 
 import { breakpoint } from '@styled/breakpoints.css';
 
-const DateFormatter = ({ dateString, light, nonMdx }) => {
+const DateFormatter = ({ dateString, light = false, nonMdx }) => {
   const date = parseISO(dateString);
   return (
     <Time dateTime={dateString} $light={light} $nonMdx={nonMdx}>
@@ -22,7 +22,7 @@ const DateFormatter = ({ dateString, light, nonMdx }) => {
 
 export default DateFormatter;
 
-const Time = styled.time`
+const Time = styled.time<{ $light: boolean; $nonMdx: boolean }>`
   font-weight: ${props => (props.$light ? 400 : 700)};
   opacity: ${props => (props.$light ? 0.8 : 1)};
   font-size: 0.83rem;

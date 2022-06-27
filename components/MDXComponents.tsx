@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import DateFormatter from '@components/DateFormatter';
 import { breakpoint } from '@styled/breakpoints.css';
+import { useState, useRef } from 'react';
+import { FiCopy } from 'react-icons/fi';
 
 const Heading2 = styled.h2`
   scroll-margin-top: 8rem;
@@ -83,8 +85,22 @@ const Article = styled.article`
 
   pre {
     overflow: hidden;
+    border: 1px solid ${({ theme }) => theme.colors.border};
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    margin-bottom: 1em;
   }
 
+  .rehype-code-title {
+    background-color: ${({ theme }) => theme.colors.secondary};
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 1px solid ${({ theme }) => theme.colors.border};
+    border-bottom: none;
+  }
   /**
  * Inspired by gatsby remark prism - https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/
  * 1. Make the element just wide enough to fit its content.
@@ -116,7 +132,7 @@ const Article = styled.article`
   .highlight-line {
     margin-left: -16px;
     margin-right: -16px;
-    background-color: rgba(55, 65, 81, 0.5); /* Set highlight bg color */
+    background-color: rgba(122, 122, 122, 0.164); /* Set highlight bg color */
     border-left-style: solid;
     border-left-width: 5px;
     border-left-color: rgb(
@@ -149,7 +165,7 @@ const Article = styled.article`
     white-space: pre;
     word-spacing: normal;
     word-break: normal;
-
+    padding: 1rem;
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
@@ -163,7 +179,7 @@ const Article = styled.article`
   }
 
   pre > code[class*='language-'] {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 
   pre[class*='language-']::-moz-selection,
@@ -250,12 +266,12 @@ const Article = styled.article`
   .token.statement,
   .token.regex,
   .token.atrule {
-    color: #f4e466;
+    color: #11b44d;
   }
 
   .token.placeholder,
   .token.variable {
-    color: #f4e466;
+    color: #11b44d;
   }
 
   .token.deleted {
@@ -318,12 +334,72 @@ const Article = styled.article`
   }
 `;
 
+const CopyButton = styled.button<{ $copied: boolean }>`
+  position: absolute;
+  top: 0.3em;
+  right: 0.25em;
+  padding: 0.5em;
+  outline: none;
+  transition: ease all 100ms;
+  border: 1px solid
+    ${props =>
+      props.$copied ? props.theme.colors.accent : props.theme.colors.border};
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: ${({ theme }) => theme.colors.secondary};
+  svg {
+    stroke: ${props =>
+      props.$copied ? props.theme.colors.accent : props.theme.colors.text};
+  }
+`;
+
+const Pre = props => {
+  const textInput = useRef(null);
+  const [hovered, setHovered] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const onEnter = () => {
+    setHovered(true);
+  };
+
+  const onExit = () => {
+    setHovered(false);
+    setCopied(false);
+  };
+
+  const onCopy = () => {
+    setCopied(true);
+    navigator.clipboard.writeText(textInput.current.textContent);
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
+  };
+
+  return (
+    <div
+      ref={textInput}
+      style={{
+        position: 'relative',
+      }}
+      onMouseEnter={onEnter}
+      onMouseLeave={onExit}
+    >
+      {hovered && (
+        <CopyButton onClick={onCopy} $copied={copied}>
+          <FiCopy size={14} />
+        </CopyButton>
+      )}
+      <pre>{props.children}</pre>
+    </div>
+  );
+};
+
 const MDXComponents = {
   h1: props => <Heading1 {...props} />,
   h2: props => <Heading2 {...props} />,
   a: props => <CustomLink {...props} />,
   ul: props => <Ul {...props} />,
   p: props => <Paragraph {...props} />,
+  pre: Pre,
   Article,
   DateFormatter,
 };

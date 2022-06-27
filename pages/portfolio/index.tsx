@@ -49,6 +49,8 @@ const Portfolio = () => {
             Wanna get down to business? Click below to save time and download my
             resume
           </Subtitle>
+        </SectionWrapper>
+        <SectionWrapper delay={0.3}>
           <a href='/assets/portfolio/resume.docx' download>
             <GradientButton
               whileHover={{ scale: 1.1 }}
@@ -58,8 +60,7 @@ const Portfolio = () => {
             </GradientButton>
           </a>
         </SectionWrapper>
-
-        <SectionWrapper delay={0.3}>
+        <SectionWrapper delay={0.4}>
           <Grid>
             {projects.map(({ name, url, icon, desc, tags, blurUrl }) => (
               <ProjectButton
@@ -71,7 +72,7 @@ const Portfolio = () => {
                     : setModalProject({});
                   modalOpen ? close() : open();
                 }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.9 }}
               >
                 <Image

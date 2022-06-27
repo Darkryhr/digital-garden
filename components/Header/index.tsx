@@ -16,7 +16,7 @@ import {
 
 const Header = ({ toggleTheme }) => {
   const [open, setOpen] = useState(false);
-  const [themeIcon, setThemeIcon] = useState(false);
+  const [themeIcon, setThemeIcon] = useState('');
   let ref = useRef(null);
 
   const handleClickOutside = event => {
@@ -45,7 +45,7 @@ const Header = ({ toggleTheme }) => {
         </Link>
       </WrapperLeft>
       <WrapperRight>
-        <Menu $mobile={false} themeIcon={themeIcon} toggleTheme={toggleTheme} />
+        <Menu mobile={false} themeIcon={themeIcon} toggleTheme={toggleTheme} />
       </WrapperRight>
       <MobileWrapper ref={ref}>
         {open ? (
@@ -76,7 +76,7 @@ const Header = ({ toggleTheme }) => {
               exit='hidden'
               onClick={() => setOpen(false)}
             >
-              <Menu mobile toggleTheme={toggleTheme} />
+              <Menu mobile toggleTheme={toggleTheme} themeIcon={themeIcon} />
             </MobileMenu>
           )}
         </AnimatePresence>

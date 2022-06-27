@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { LinkWrapper } from './Header.css';
 import { useRouter } from 'next/router';
 
-export const LinkContainer = ({ href, children, exact, theme }) => {
+export const LinkContainer = ({ href, children, exact = false, theme }) => {
   const router = useRouter();
   const [active, setActive] = useState(false);
   useEffect(() => {

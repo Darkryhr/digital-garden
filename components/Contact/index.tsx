@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import styled from 'styled-components';
 
 import { Column } from '@components/shared';
-import useDarkMode from '../../hooks/useDarkMode';
+import { useDarkMode } from '../../hooks/useDarkMode';
 import { BiSend } from 'react-icons/bi';
 import { breakpoint } from '@styled/breakpoints.css';
 
@@ -91,8 +91,8 @@ const Contact = () => {
         </Wrapper>
         <AreaContainer>
           <TextArea
-            cols='30'
-            rows='2'
+            cols={30}
+            rows={2}
             placeholder='What do you have to say for yourself...'
             name='message'
             value={message}

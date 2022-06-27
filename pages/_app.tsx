@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ThemeProvider } from 'styled-components';
-import useDarkMode from 'hooks/useDarkMode';
+import { useDarkMode } from 'hooks/useDarkMode';
 import { lightTheme, darkTheme } from '@styled/theme.css';
 import { GlobalStyles } from 'styled/global.css';
 import Layout from '@components/Layout';
@@ -10,11 +10,12 @@ import { Toaster } from 'react-hot-toast';
 import Loader from '@components/Loader';
 import 'normalize.css';
 import { MDXProvider } from '@mdx-js/react';
+import type { AppProps } from 'next/app';
 
 import { Split, Split2 } from 'pages';
 import MDXComponents from '@components/MDXComponents';
 
-function App({ Component, pageProps, router }) {
+function App({ Component, pageProps, router }: AppProps) {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
   const [pageLoading, setPageLoading] = useState(false);
@@ -56,8 +57,8 @@ function App({ Component, pageProps, router }) {
             >
               {pageLoading ? <Loader /> : <Component {...pageProps} />}
             </motion.div>
-            <Toaster position='bottom-center' reverseOrder={false} />
           </AnimatePresence>
+          <Toaster position='bottom-center' reverseOrder={false} />
         </Layout>
       </MDXProvider>
     </ThemeProvider>

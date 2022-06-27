@@ -7,11 +7,15 @@ export const Menu = ({ mobile, themeIcon, toggleTheme }) => {
   const router = useRouter();
   return (
     <MenuStyles $mobile={mobile}>
-      <LinkContainer href='/' exact>
+      <LinkContainer href='/' exact theme={themeIcon}>
         Home
       </LinkContainer>
-      <LinkContainer href='/posts'>Blog</LinkContainer>
-      <LinkContainer href='/portfolio'>Portfolio</LinkContainer>
+      <LinkContainer href='/posts' theme={themeIcon}>
+        Blog
+      </LinkContainer>
+      <LinkContainer href='/portfolio' theme={themeIcon}>
+        Portfolio
+      </LinkContainer>
       <LinkWrapper
         onClick={() => toggleTheme()}
         whileHover={{
@@ -21,6 +25,9 @@ export const Menu = ({ mobile, themeIcon, toggleTheme }) => {
         transition={{
           duration: 0.1,
         }}
+        whileTap={{ scale: 0.9 }}
+        $currentTheme={themeIcon}
+        $active={false}
       >
         {themeIcon === 'light' ? <BiMoon size={20} /> : <BiSun size={20} />}
       </LinkWrapper>
