@@ -40,7 +40,9 @@ function App({ Component, pageProps, router }: AppProps) {
         <SEO />
         <GlobalStyles />
         <Layout toggleTheme={themeToggler}>
-          <AnimatePresence exitBeforeEnter initial={true}>
+          {/* 
+  // @ts-ignore */}
+          <AnimatePresence exitBeforeEnter={true} initial={false}>
             <motion.div
               style={{ width: '100%' }}
               key={router.route}

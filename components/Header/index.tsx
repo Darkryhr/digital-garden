@@ -66,7 +66,9 @@ const Header = ({ toggleTheme }) => {
             }}
             onClick={() => setOpen(true)}
           />
-        )}
+        )}{' '}
+        {/* 
+      // @ts-ignore */}
         <AnimatePresence>
           {open && (
             <MobileMenu

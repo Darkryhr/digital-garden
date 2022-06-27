@@ -35,29 +35,33 @@ const ScrollToTop = () => {
   }, []);
 
   return (
-    <AnimatePresence>
-      {visible ? (
-        <Scroll
-          onClick={ScrollToTop}
-          whileHover={{
-            scale: 1.1,
-          }}
-          whileTap={{
-            scale: 0.9,
-          }}
-          variants={variants}
-          initial='hidden'
-          animate='visible'
-          exit='hidden'
-        >
-          <IconButton type='button'>
-            <BiUpArrow size={28} fill='#fb8b24' />
-          </IconButton>
-        </Scroll>
-      ) : (
-        ''
-      )}
-    </AnimatePresence>
+    <>
+      {/* 
+    // @ts-ignore */}
+      <AnimatePresence>
+        {visible ? (
+          <Scroll
+            onClick={ScrollToTop}
+            whileHover={{
+              scale: 1.1,
+            }}
+            whileTap={{
+              scale: 0.9,
+            }}
+            variants={variants}
+            initial='hidden'
+            animate='visible'
+            exit='hidden'
+          >
+            <IconButton type='button'>
+              <BiUpArrow size={28} fill='#fb8b24' />
+            </IconButton>
+          </Scroll>
+        ) : (
+          ''
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
