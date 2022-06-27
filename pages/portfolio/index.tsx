@@ -87,19 +87,14 @@ const Portfolio = () => {
             ))}
           </Grid>
         </SectionWrapper>
-
+        {/*
+ // @ts-ignore */}
         <AnimatePresence
           initial={false}
           exitBeforeEnter={true}
           onExitComplete={() => null}
         >
-          {modalOpen && (
-            <Modal
-              modalOpen={modalOpen}
-              handleClose={close}
-              project={modalProject}
-            />
-          )}
+          {modalOpen && <Modal handleClose={close} project={modalProject} />}
         </AnimatePresence>
       </Column>
     </>
