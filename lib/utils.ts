@@ -49,13 +49,15 @@ export const getPostSlugs = () => {
   return posts;
 };
 
-export const getPostBySlug = (slug, fields = []) => {
+export const getPostBySlug = (
+  slug,
+  fields = []
+): { title: string; date: string; content: string } => {
   const fullPath = path.join(postsDir, `${slug}.mdx`);
 
   const fileContents = fs.readFileSync(fullPath, 'utf-8');
   const { data, content } = matter(fileContents);
-
-  const items = {};
+  const items = { title: '', date: '', content: '' };
 
   fields.forEach(field => {
     if (field === 'content') items[field] = content;
@@ -63,7 +65,6 @@ export const getPostBySlug = (slug, fields = []) => {
       items[field] = data[field];
     }
   });
-
   return items;
 };
 

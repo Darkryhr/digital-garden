@@ -25,6 +25,5 @@ export default async function mdxToHtml(source) {
       format: 'mdx',
     },
   });
-
   return mdxSource;
 }
