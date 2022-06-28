@@ -33,6 +33,7 @@ export default PostPreview;
 
 const PreviewTitle = styled(Heading4)`
   font-weight: 700;
+  font-size: 1.5rem;
 `;
 
 const PreviewSubtitle = styled(Subtitle)`

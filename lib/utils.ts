@@ -1,51 +1,25 @@
+import {
+  getDirFiles,
+  getSlugs,
+  getAllContent,
+  filterPostsByPageIndex,
+} from './helpers';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
 const postsDir = path.join(process.cwd(), '_posts');
+const snipsDir = path.join(process.cwd(), '_snippets');
 
 export const getPosts = pageIndex => {
-  const dirFiles = fs.readdirSync(postsDir, {
-    withFileTypes: true,
-  });
-
-  const posts = dirFiles
-    .map(file => {
-      if (!file.name.endsWith('.mdx')) return;
-
-      const fileContent = fs.readFileSync(
-        path.join(postsDir, file.name),
-        'utf-8'
-      );
-      const { data, content } = matter(fileContent);
-
-      const slug = file.name.replace(/.mdx$/, '');
-      return { data, content, slug };
-    })
-    .filter(post => post);
-
+  const dirFiles = getDirFiles(postsDir);
+  const posts = getAllContent(dirFiles, postsDir);
   return filterPostsByPageIndex(posts, pageIndex);
 };
 
 export const getPostSlugs = () => {
-  const dirFiles = fs.readdirSync(postsDir, {
-    withFileTypes: true,
-  });
-
-  const posts = dirFiles
-    .map(file => {
-      if (!file.name.endsWith('.mdx')) return;
-
-      const fileContent = fs.readFileSync(
-        path.join(postsDir, file.name),
-        'utf-8'
-      );
-
-      const slug = file.name.replace(/.mdx$/, '');
-      return { slug };
-    })
-    .filter(post => post);
-
+  const dirFiles = getDirFiles(postsDir);
+  const posts = getSlugs(dirFiles);
   return posts;
 };
 
@@ -54,7 +28,6 @@ export const getPostBySlug = (
   fields = []
 ): { title: string; date: string; content: string } => {
   const fullPath = path.join(postsDir, `${slug}.mdx`);
-
   const fileContents = fs.readFileSync(fullPath, 'utf-8');
   const { data, content } = matter(fileContents);
   const items = { title: '', date: '', content: '' };
@@ -65,18 +38,36 @@ export const getPostBySlug = (
       items[field] = data[field];
     }
   });
+
   return items;
 };
 
-export const filterPostsByPageIndex = (posts, pageIndex) => {
-  const postPerPage = 5;
-  // get the total posts from page 1 to current page
-  const totalPagePosts = +pageIndex * postPerPage;
+export const getSnippets = () => {
+  const dirFiles = getDirFiles(snipsDir);
+  const snippets = getAllContent(dirFiles, snipsDir);
 
-  // get the total posts from page 1 to previous page
-  const prevPagePosts = totalPagePosts - postPerPage;
+  return snippets;
+};
 
-  return posts.filter(
-    (post, index) => index < totalPagePosts && index >= prevPagePosts
-  );
+export const getSnippetSlugs = () => {
+  const dirFiles = getDirFiles(snipsDir);
+  const snippets = getSlugs(dirFiles);
+
+  return snippets;
+};
+
+export const getSnippetBySlug = (slug, fields) => {
+  const fullPath = path.join(snipsDir, `${slug}.mdx`);
+  const fileContents = fs.readFileSync(fullPath, 'utf-8');
+  const { data, content } = matter(fileContents);
+  const items = { title: '', date: '', content: '' };
+
+  fields.forEach(field => {
+    if (field === 'content') items[field] = content;
+    if (typeof data[field] !== 'undefined') {
+      items[field] = data[field];
+    }
+  });
+
+  return items;
 };

@@ -64,6 +64,13 @@ export const GradientButton = styled(motion.button)`
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 `;
 
+export const Divider = styled.div`
+  height: 1px;
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.border};
+  margin: 1em 0;
+`;
+
 //* Wrappers
 export const Container = styled.section`
   min-height: calc(100vh - 100px);
@@ -81,12 +88,14 @@ export const Box = styled.div`
   }
 `;
 
-export const Column = styled.section<{ $end?: boolean }>`
+export const Column = styled.section<{ $end?: boolean; $layout?: boolean }>`
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 0 0.2rem;
   ${props => (props.$end ? 'align-items: flex-end' : '')};
+  ${props => (props.$layout ? 'padding: 3rem 0' : '')};
+
   @media (${breakpoint.device.sm}) {
   }
 `;
@@ -105,8 +114,25 @@ export const Grid = styled.div`
   max-width: ${breakpoint.size.lg};
 `;
 
-export const BlogLayout = styled.div`
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+export const SnippetsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+`;
+
+export const Row = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const BlogLayout = styled.main`
+  font-family: 'IBM Plex sans', Tahoma, Geneva, Verdana, sans-serif !important;
+`;
+
+export const SnippetLayout = styled.main`
+  font-family: 'IBM Plex sans', Tahoma, Geneva, Verdana, sans-serif !important;
 `;
 
 //* Typography
@@ -128,6 +154,7 @@ export const Heading2 = styled.h2`
   font-weight: 700;
   line-height: 1.16;
   font-size: 3rem;
+  padding: 0 0 1rem 0;
   @media (${breakpoint.device.sm}) {
     font-size: 2rem;
   }
@@ -149,7 +176,6 @@ export const Heading3 = styled.h3`
 `;
 
 export const Heading4 = styled.h4`
-  font-weight: 500;
   font-size: 1.2rem;
   line-height: 1.5;
 `;
@@ -159,8 +185,7 @@ export const Subtitle = styled.p`
   font-weight: 400;
   letter-spacing: 0.01rem;
   line-height: 1.5;
-  padding: 1rem 0 0 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   .bot {
     margin-bottom: 2rem;
   }

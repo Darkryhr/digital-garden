@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import PostPreview from '@components/PostPreview';
 import SectionWrapper from '@components/SectionWrapper';
-import { Box, Column, Heading2, Button, Subtitle } from '@components/shared';
+import {
+  Box,
+  Column,
+  Heading2,
+  Button,
+  Subtitle,
+  Divider,
+} from '@components/shared';
 import { getPosts } from 'lib/utils';
 
 const PostFeed = ({ posts }) => {
@@ -16,11 +23,7 @@ const PostFeed = ({ posts }) => {
     setCurrentPageIndex(_pageIndex => _pageIndex + 1);
   };
   return (
-    <Column
-      style={{
-        padding: '3rem 0',
-      }}
-    >
+    <Column $layout>
       <SectionWrapper delay={0.1}>
         <Box>
           <Heading2>Blog</Heading2>
@@ -29,12 +32,12 @@ const PostFeed = ({ posts }) => {
       <SectionWrapper delay={0.2}>
         <Box>
           <Subtitle>
-            My thoughts(I swear i have them), on stuff, mostly from projects
+            My thoughts (I swear I have them), on stuff, mostly from projects
             I&apos;ve worked on.
           </Subtitle>
         </Box>
       </SectionWrapper>
-
+      <Divider />
       <SectionWrapper delay={0.3}>
         {filteredPosts.map(({ data, slug }) => (
           <PostPreview

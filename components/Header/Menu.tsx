@@ -16,6 +16,9 @@ export const Menu = ({ mobile, themeIcon, toggleTheme }) => {
       <LinkContainer href='/portfolio' theme={themeIcon}>
         Portfolio
       </LinkContainer>
+      {/* <LinkContainer href='/snippets' theme={themeIcon}>
+        Snippets
+      </LinkContainer> */}
       <LinkWrapper
         onClick={() => toggleTheme()}
         whileHover={{

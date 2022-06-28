@@ -8,13 +8,12 @@ import { Logo } from '@components/Logo';
 import { breakpoint } from '@styled/breakpoints.css';
 
 const Footer = () => {
-  const [themeIcon, setThemeIcon] = useState(false);
+  const [themeIcon, setThemeIcon] = useState('');
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    setThemeIcon(!!savedTheme);
+    setThemeIcon(savedTheme);
   });
-
   return (
     <Wrapper>
       <ContentWrapper>
