@@ -67,6 +67,7 @@ export const GradientButton = styled(motion.button)`
 export const Divider = styled.div`
   height: 1px;
   width: 100%;
+  opacity: 0.6;
   background-color: ${({ theme }) => theme.colors.border};
   margin: 1em 0;
 `;

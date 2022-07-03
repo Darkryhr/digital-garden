@@ -36,8 +36,8 @@ const PostFeed = ({ posts }) => {
             I&apos;ve worked on.
           </Subtitle>
         </Box>
+        <Divider />
       </SectionWrapper>
-      <Divider />
       <SectionWrapper delay={0.3}>
         {filteredPosts.map(({ data, slug }) => (
           <PostPreview

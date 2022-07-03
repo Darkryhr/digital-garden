@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { BiUpArrow } from 'react-icons/bi';
+import { FaArrowUp, FaChevronUp } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { IconButton } from '@components/shared';
@@ -53,8 +53,13 @@ const ScrollToTop = () => {
             animate='visible'
             exit='hidden'
           >
-            <IconButton type='button'>
-              <BiUpArrow size={28} fill='#fb8b24' />
+            <IconButton
+              type='button'
+              style={{
+                marginTop: '0.09em',
+              }}
+            >
+              <FaChevronUp size={28} fill='#fb8b24' />
             </IconButton>
           </Scroll>
         ) : (
@@ -73,7 +78,8 @@ const Scroll = styled(motion.div)`
   bottom: 0;
   right: 10px;
   margin: 2rem;
-  background: ${({ theme }) => theme.colors.secondary};
+  background: ${({ theme }) => theme.colors.primary};
+  border: 2px solid ${({ theme }) => theme.colors.border};
   width: 50px;
   height: 50px;
   padding: 2rem;

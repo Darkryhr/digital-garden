@@ -96,13 +96,12 @@ export const LinkWrapper = styled(motion.div)<{
 
   text-transform: capitalize;
   justify-content: flex-end;
-  &:last-child {
-    margin-right: 0;
-    padding-right: 0;
-  }
+
   @media (${breakpoint.device.sm}) {
     margin-top: 1rem;
     &:last-child {
+      margin-right: 0;
+      padding-right: 0;
       margin: 0 1rem;
       margin-top: 1.1rem;
     }

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Footer from '@components/Footer';
 import Header from '@components/Header';
-import { Container } from '@components/shared';
+import { Container, Divider } from '@components/shared';
 import ScrollToTop from '@components/ScrollToTop';
 import { Split, Split2 } from 'pages';
 import { breakpoint } from '@styled/breakpoints.css';
@@ -17,6 +17,7 @@ const Layout = ({ children, toggleTheme }) => {
       <Container>{children}</Container>
       {/* <Wrapper>
       </Wrapper> */}
+      <Divider />
       <Footer />
       {/* <FooterWrapper>
       </FooterWrapper> */}

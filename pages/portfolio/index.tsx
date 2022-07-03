@@ -4,7 +4,6 @@ import { AnimatePresence } from 'framer-motion';
 
 import SectionWrapper from '@components/SectionWrapper';
 import {
-  GradientButton,
   ProjectButton,
   Grid,
   Heading2,
@@ -57,11 +56,11 @@ const Portfolio = () => {
         </SectionWrapper>
         <SectionWrapper delay={0.2}>
           <Subtitle>
-            Wanna get down to business? Click below to save time and download my
-            resume
+            Wanna get down to business? Click the button to save time and
+            download my resume
           </Subtitle>
+          <Divider />
         </SectionWrapper>
-        <Divider />
         <SectionWrapper delay={0.4}>
           <Grid>
             {projects.map(({ name, url, icon, desc, tags, blurUrl }) => (
