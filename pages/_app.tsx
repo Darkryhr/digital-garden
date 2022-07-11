@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import type { AppProps } from 'next/app';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ThemeProvider } from 'styled-components';
+import { Toaster } from 'react-hot-toast';
+import 'normalize.css';
+
 import { useDarkMode } from 'hooks/useDarkMode';
 import { lightTheme, darkTheme } from '@styled/theme.css';
-import { GlobalStyles } from 'styled/global.css';
+import { GlobalStyles } from '@styled/global.css';
 import Layout from '@components/Layout';
 import SEO from '@components/SEO';
-import { Toaster } from 'react-hot-toast';
 import Loader from '@components/Loader';
-import 'normalize.css';
 import { MDXProvider } from '@mdx-js/react';
-import type { AppProps } from 'next/app';
-
-import { Split, Split2 } from 'pages';
-import MDXComponents from '@components/MDXComponents';
+import MDXComponents from '@components/mdx';
 
 function App({ Component, pageProps, router }: AppProps) {
   const [theme, themeToggler, mountedComponent] = useDarkMode();

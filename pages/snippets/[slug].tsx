@@ -1,10 +1,10 @@
-import { SnippetLayout } from '@components/shared';
-import { MDXRemote } from 'next-mdx-remote';
-import { getSnippetBySlug, getSnippetSlugs } from 'lib/utils';
-
 import React from 'react';
+import { MDXRemote } from 'next-mdx-remote';
+
 import mdxToHtml from 'lib/mdxToHtml';
-import MDXComponents from '@components/MDXComponents';
+import { getSnippetBySlug, getSnippetSlugs } from 'lib/utils';
+import { SnippetLayout } from '@components/shared';
+import MDXComponents from '@components/mdx';
 
 const SnippetPage = ({ snippet }) => {
   return (

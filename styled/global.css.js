@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     color: ${({ theme }) => theme.colors.text};
-    transition: all 0.50s linear;
+    transition: all 0.30s linear;
     background:${({ theme }) => theme.colors.primary};
     background-image: radial-gradient(${({ theme }) =>
       theme.colors.secondary} 1px, transparent 0);

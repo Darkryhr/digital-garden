@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import SectionWrapper from '@components/SectionWrapper';
 import {
@@ -41,7 +41,11 @@ const Portfolio = () => {
           <Box>
             <Row>
               <Heading2>Projects</Heading2>
-              <ResumeButton>
+              <ResumeButton
+                whileHover={{
+                  scale: 1.1,
+                }}
+              >
                 <a href='/assets/portfolio/resume.docx' download>
                   <AiOutlineArrowDown
                     size={22}
@@ -73,7 +77,9 @@ const Portfolio = () => {
                     : setModalProject({});
                   modalOpen ? close() : open();
                 }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{
+                  translateY: '-10px',
+                }}
                 whileTap={{ scale: 0.9 }}
               >
                 <Image
@@ -104,7 +110,7 @@ const Portfolio = () => {
 
 export default Portfolio;
 
-export const ResumeButton = styled.button`
+export const ResumeButton = styled(motion.button)`
   background: none;
   border: 2px solid ${({ theme }) => theme.colors.border};
   width: 50px;

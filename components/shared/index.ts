@@ -5,7 +5,6 @@ import { breakpoint } from '@styled/breakpoints.css';
 //* Button Styles
 export const Button = styled(motion.button)<{ $filled?: boolean }>`
   font-weight: 500;
-  letter-spacing: 0.02rem;
   cursor: pointer;
   border: none;
   background: none;
@@ -19,7 +18,7 @@ export const Button = styled(motion.button)<{ $filled?: boolean }>`
 `;
 
 export const StrokedButton = styled(Button)<{ $accented?: boolean }>`
-  font-weight: 400;
+  font-weight: 500;
   font-size: 0.85rem;
   border-radius: 24px;
   margin: 0.4rem;
@@ -69,7 +68,7 @@ export const Divider = styled.div`
   width: 100%;
   opacity: 0.6;
   background-color: ${({ theme }) => theme.colors.border};
-  margin: 1em 0;
+  margin: 1.35em 0 1em 0;
 `;
 
 //* Wrappers

@@ -1,7 +1,8 @@
 import { MDXRemote } from 'next-mdx-remote';
-import components from 'components/MDXComponents';
-import mdxToHtml from '../../lib/mdxToHtml';
-import { getPostSlugs, getPostBySlug } from 'lib/utils';
+
+import components from '@components/mdx';
+import mdxToHtml from '@lib/mdxToHtml';
+import { getPostSlugs, getPostBySlug } from '@lib/utils';
 import { BlogLayout } from '@components/shared';
 
 export default function PostPage({ post }) {

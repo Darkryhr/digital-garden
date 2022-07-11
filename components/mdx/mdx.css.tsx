@@ -1,11 +1,7 @@
 import styled from 'styled-components';
-import Link from 'next/link';
-import DateFormatter from '@components/DateFormatter';
 import { breakpoint } from '@styled/breakpoints.css';
-import { useState, useRef } from 'react';
-import { FiCopy } from 'react-icons/fi';
 
-const Heading2 = styled.h2`
+export const Heading2 = styled.h2`
   scroll-margin-top: 8rem;
   font-weight: 700;
   font-size: 1.5em;
@@ -19,7 +15,7 @@ const Heading2 = styled.h2`
   }
 `;
 
-const Heading1 = styled.h1`
+export const Heading1 = styled.h1`
   margin-bottom: 0.2em;
   font-size: 4rem;
   padding: 4rem 0 0 0;
@@ -31,15 +27,7 @@ const Heading1 = styled.h1`
   }
 `;
 
-const CustomLink = props => {
-  return (
-    <Link href={props.href} passHref>
-      <A {...props}>{props.children}</A>
-    </Link>
-  );
-};
-
-const A = styled.a`
+export const A = styled.a`
   visibility: hidden;
   position: absolute;
   margin-left: -1.1em;
@@ -59,7 +47,7 @@ const A = styled.a`
   }
 `;
 
-const Ul = styled.ul`
+export const Ul = styled.ul`
   list-style-type: disc;
   padding-left: 1.625em;
 
@@ -69,18 +57,88 @@ const Ul = styled.ul`
   }
 `;
 
-const Paragraph = styled.p`
+export const Ol = styled.ol`
+  counter-reset: counter-val;
+  list-style: none;
+  padding-left: 53px;
+  li {
+    counter-increment: counter-val;
+    position: relative;
+    margin: 0 0 2.5rem 0;
+    &::before {
+      content: counter(counter-val);
+      color: ${({ theme }) => theme.colors.accent};
+      font-weight: 600;
+      border: 2px solid ${({ theme }) => theme.colors.border};
+      outline: none;
+      position: absolute;
+      top: -2px;
+      --size: 32px;
+      left: calc(-1 * var(--size) - 23px);
+      line-height: var(--size);
+      width: var(--size);
+      height: var(--size);
+      padding: 0.2rem;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+  }
+`;
+
+export const Paragraph = styled.p`
   margin-bottom: 1.25em;
   line-height: 1.65;
 `;
 
-const Article = styled.article`
+export const Tip = styled.div`
+  display: flex;
+  padding: 1.5rem 1.5rem 1.8rem 1rem;
+  align-items: center;
+  p {
+    margin: 0;
+  }
+  /* border: 1px solid ${({ theme }) => theme.colors.border}; */
+  background-color: ${({ theme }) => theme.colors.secondary};
+  border-radius: 5px;
+  &::before {
+    content: '💡';
+    padding-right: 0.85rem;
+  }
+`;
+
+export const CopyButton = styled.button<{ $copied: boolean }>`
+  position: absolute;
+  top: 0.3em;
+  right: 0.25em;
+  padding: 0.5em;
+  outline: none;
+  transition: ease all 100ms;
+  border: 1px solid
+    ${props =>
+      props.$copied ? props.theme.colors.accent : props.theme.colors.border};
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: ${({ theme }) => theme.colors.secondary};
+  svg {
+    stroke: ${props =>
+      props.$copied ? props.theme.colors.accent : props.theme.colors.text};
+  }
+`;
+
+export const Article = styled.article`
   margin-top: 1rem;
   font-family: 'IBM Plex Sans', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1rem;
   line-height: 1.75;
   @media (${breakpoint.device.sm}) {
     padding: 0 1rem;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
   pre {
@@ -333,75 +391,3 @@ const Article = styled.article`
     );
   }
 `;
-
-const CopyButton = styled.button<{ $copied: boolean }>`
-  position: absolute;
-  top: 0.3em;
-  right: 0.25em;
-  padding: 0.5em;
-  outline: none;
-  transition: ease all 100ms;
-  border: 1px solid
-    ${props =>
-      props.$copied ? props.theme.colors.accent : props.theme.colors.border};
-  cursor: pointer;
-  border-radius: 4px;
-  background-color: ${({ theme }) => theme.colors.secondary};
-  svg {
-    stroke: ${props =>
-      props.$copied ? props.theme.colors.accent : props.theme.colors.text};
-  }
-`;
-
-const Pre = props => {
-  const textInput = useRef(null);
-  const [hovered, setHovered] = useState(false);
-  const [copied, setCopied] = useState(false);
-  const onEnter = () => {
-    setHovered(true);
-  };
-
-  const onExit = () => {
-    setHovered(false);
-    setCopied(false);
-  };
-
-  const onCopy = () => {
-    setCopied(true);
-    navigator.clipboard.writeText(textInput.current.textContent);
-    setTimeout(() => {
-      setCopied(false);
-    }, 2000);
-  };
-
-  return (
-    <div
-      ref={textInput}
-      style={{
-        position: 'relative',
-      }}
-      onMouseEnter={onEnter}
-      onMouseLeave={onExit}
-    >
-      {hovered && (
-        <CopyButton onClick={onCopy} $copied={copied}>
-          <FiCopy size={14} />
-        </CopyButton>
-      )}
-      <pre>{props.children}</pre>
-    </div>
-  );
-};
-
-const MDXComponents = {
-  h1: props => <Heading1 {...props} />,
-  h2: props => <Heading2 {...props} />,
-  a: props => <CustomLink {...props} />,
-  ul: props => <Ul {...props} />,
-  p: props => <Paragraph {...props} />,
-  pre: Pre,
-  Article,
-  DateFormatter,
-};
-
-export default MDXComponents;
