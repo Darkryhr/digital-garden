@@ -43,8 +43,8 @@ const SEO = ({
       <meta property='og:description' content={desc} />
       <meta name='twitter:site' content='@GabrielAintReal' />
       <meta name='twitter:creator' content='@GabrielAintReal' />
-      <meta name='twitter:image' content='/card.png' />
-      <meta property='og:image' content='/card.png' />
+      <meta name='twitter:image' content='https://imgur.com/xQcr8X8' />
+      <meta property='og:image' content='https://imgur.com/xQcr8X8' />
       <title>
         {title === '| Gabriel does a thing'
           ? title
