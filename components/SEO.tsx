@@ -44,8 +44,14 @@ const SEO = ({
       <meta name='twitter:site' content='@GabrielAintReal' />
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={desc} />
-      <meta name='twitter:image' content='https://i.imgur.com/xQcr8X8.png' />
-      <meta property='og:image' content='https://i.imgur.com/xQcr8X8.png' />
+      <meta
+        name='twitter:image'
+        content='https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg'
+      />
+      <meta
+        property='og:image'
+        content='https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg'
+      />
       <title>
         {title === '| Gabriel does a thing'
           ? title
