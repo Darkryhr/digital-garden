@@ -40,18 +40,12 @@ const SEO = ({
       <meta property='og:description' content={desc} />
       <meta property='og:site_name' content='Gabriel does a thing' />
       <meta property='og:type' content='website' />
-      <meta name='twitter:card' content='summary' />
+      <meta property='og:image' content='https://i.imgur.com/xQcr8X8.png' />
+      <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:site' content='@GabrielAintReal' />
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={desc} />
-      <meta
-        name='twitter:image'
-        content='https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg'
-      />
-      <meta
-        property='og:image'
-        content='https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg'
-      />
+      <meta name='twitter:image' content='https://i.imgur.com/xQcr8X8.png' />
       <title>
         {title === '| Gabriel does a thing'
           ? title
