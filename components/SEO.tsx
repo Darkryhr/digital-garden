@@ -17,20 +17,34 @@ const SEO = ({
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta name='description' content={desc} />
       <meta name='author' content='Gabriel Lellouche' />
-      <link rel='apple-touch-icon' href='apple-touch-icon.jpg' />
+      <link
+        rel='apple-touch-icon'
+        sizes='180x180'
+        href='/apple-touch-icon.png'
+      />
+      <link
+        rel='icon'
+        type='image/png'
+        sizes='32x32'
+        href='/favicon-32x32.png'
+      />
+      <link
+        rel='icon'
+        type='image/png'
+        sizes='16x16'
+        href='/favicon-16x16.png'
+      />
+      <link rel='manifest' href='/site.webmanifest' />
       <link rel='shortcut icon' href='/favicon.ico' />
-      <meta name='twitter:title' content={title} />
-      <meta name='twitter:site' content='@GabrielAintReal' />
-      <meta name='twitter:creator' content='@GabrielAintReal' />
-      <meta name='twitter:image' content='https://imgur.com/xQcr8X8' />
       <meta property='og:title' content={title} />
       <meta property='og:site_name' content='Gabriel does a thing' />
       <meta property='og:type' content='website' />
-      <meta
-        property='og:image:secure_url'
-        content='https://imgur.com/xQcr8X8'
-      />
+      <meta name='twitter:title' content={title} />
       <meta property='og:description' content={desc} />
+      <meta name='twitter:site' content='@GabrielAintReal' />
+      <meta name='twitter:creator' content='@GabrielAintReal' />
+      <meta name='twitter:image' content='/card.png' />
+      <meta property='og:image' content='/card.png' />
       <title>
         {title === '| Gabriel does a thing'
           ? title
