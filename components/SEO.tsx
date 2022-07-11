@@ -37,15 +37,15 @@ const SEO = ({
       <link rel='manifest' href='/site.webmanifest' />
       <link rel='shortcut icon' href='/favicon.ico' />
       <meta property='og:title' content={title} />
+      <meta property='og:description' content={desc} />
       <meta property='og:site_name' content='Gabriel does a thing' />
       <meta property='og:type' content='website' />
-      <meta property='og:description' content={desc} />
       <meta name='twitter:card' content='summary' />
       <meta name='twitter:site' content='@GabrielAintReal' />
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={desc} />
-      <meta name='twitter:image' content='https://imgur.com/xQcr8X8' />
-      <meta property='og:image' content='https://imgur.com/xQcr8X8' />
+      <meta name='twitter:image' content='https://i.imgur.com/xQcr8X8.png' />
+      <meta property='og:image' content='https://i.imgur.com/xQcr8X8.png' />
       <title>
         {title === '| Gabriel does a thing'
           ? title
