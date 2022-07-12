@@ -5,14 +5,14 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 0;
+  padding: 1rem 0;
   width: 100%;
   max-width: ${breakpoint.size.lg};
   margin: 0 auto;
   position: relative;
-  z-index: 999;
+
   @media (${breakpoint.device.sm}) {
-    padding: 1.5rem 1rem;
+    padding: 1.4rem 1rem;
   }
 `;
 

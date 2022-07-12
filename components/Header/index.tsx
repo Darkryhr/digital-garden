@@ -13,6 +13,7 @@ import {
   MobileWrapper,
   MobileMenu,
 } from './Header.css';
+import { BreakpointWrapper } from '@components/Layout';
 
 const Header = ({ toggleTheme }) => {
   const [open, setOpen] = useState(false);
@@ -36,54 +37,66 @@ const Header = ({ toggleTheme }) => {
     visible: { opacity: 1, y: 0 },
   };
   return (
-    <Nav>
-      <WrapperLeft>
-        <Link href='/' passHref>
-          <LogoWrapper whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-            <Logo theme={themeIcon} />
-          </LogoWrapper>
-        </Link>
-      </WrapperLeft>
-      <WrapperRight>
-        <Menu mobile={false} themeIcon={themeIcon} toggleTheme={toggleTheme} />
-      </WrapperRight>
-      <MobileWrapper ref={ref}>
-        {open ? (
-          <RiCloseLine
-            color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
-            size={27}
-            style={{
-              cursor: 'pointer',
-            }}
-            onClick={() => setOpen(false)}
-          />
-        ) : (
-          <RiMenu4Fill
-            color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
-            size={27}
-            style={{
-              cursor: 'pointer',
-            }}
-            onClick={() => setOpen(true)}
-          />
-        )}{' '}
-        {/* 
-      // @ts-ignore */}
-        <AnimatePresence>
-          {open && (
-            <MobileMenu
-              variants={menuVariants}
-              initial='hidden'
-              animate='visible'
-              exit='hidden'
-              onClick={() => setOpen(false)}
+    <BreakpointWrapper>
+      <Nav>
+        <WrapperLeft>
+          <Link href='/' passHref>
+            <LogoWrapper
+              whileHover={{ scale: 1.05, opacity: 0.7 }}
+              transition={{
+                duration: 0.2,
+              }}
+              whileTap={{ scale: 0.95 }}
             >
-              <Menu mobile toggleTheme={toggleTheme} themeIcon={themeIcon} />
-            </MobileMenu>
-          )}
-        </AnimatePresence>
-      </MobileWrapper>
-    </Nav>
+              <Logo theme={themeIcon} />
+            </LogoWrapper>
+          </Link>
+        </WrapperLeft>
+        <WrapperRight>
+          <Menu
+            mobile={false}
+            themeIcon={themeIcon}
+            toggleTheme={toggleTheme}
+          />
+        </WrapperRight>
+        <MobileWrapper ref={ref}>
+          {open ? (
+            <RiCloseLine
+              color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
+              size={27}
+              style={{
+                cursor: 'pointer',
+              }}
+              onClick={() => setOpen(false)}
+            />
+          ) : (
+            <RiMenu4Fill
+              color={themeIcon === 'dark' ? '#f4f4f4' : '#000000'}
+              size={27}
+              style={{
+                cursor: 'pointer',
+              }}
+              onClick={() => setOpen(true)}
+            />
+          )}{' '}
+          {/* 
+      // @ts-ignore */}
+          <AnimatePresence>
+            {open && (
+              <MobileMenu
+                variants={menuVariants}
+                initial='hidden'
+                animate='visible'
+                exit='hidden'
+                onClick={() => setOpen(false)}
+              >
+                <Menu mobile toggleTheme={toggleTheme} themeIcon={themeIcon} />
+              </MobileMenu>
+            )}
+          </AnimatePresence>
+        </MobileWrapper>
+      </Nav>
+    </BreakpointWrapper>
   );
 };
 
