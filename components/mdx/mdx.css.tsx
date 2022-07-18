@@ -9,7 +9,7 @@ export const Heading2 = styled.h2`
   margin-bottom: 1em;
   line-height: 1.3333333;
   font-family: 'Poppins', sans-serif;
-
+  cursor: pointer;
   &:hover a {
     visibility: visible;
   }

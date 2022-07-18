@@ -91,10 +91,9 @@ export const LinkWrapper = styled(motion.div)<{
   border: none;
   cursor: pointer;
   display: flex;
-  font-weight: 1.2rem;
-  font-weight: ${props => (props.$active ? 700 : 500)};
+  font-weight: ${props => (props.$active ? 600 : 400)};
   opacity: ${props => (props.$active ? 1 : 0.8)};
-
+  font-size: 0.98rem;
   text-transform: capitalize;
   justify-content: flex-end;
 
