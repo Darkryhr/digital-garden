@@ -5,7 +5,7 @@ import Footer from '@components/Footer';
 import Header from '@components/Header';
 import { Container, Divider } from '@components/shared';
 import ScrollToTop from '@components/ScrollToTop';
-import { breakpoint } from '@styled/breakpoints.css';
+import { BreakpointWrapper } from '@components/shared';
 
 const Layout = ({ children, toggleTheme }) => {
   return (
@@ -13,12 +13,12 @@ const Layout = ({ children, toggleTheme }) => {
       <HeaderWrapper>
         <Header toggleTheme={toggleTheme} />
       </HeaderWrapper>
+      <MainContentContainer>{children}</MainContentContainer>
       <BreakpointWrapper>
-        <MainContentContainer>{children}</MainContentContainer>
         <Divider />
         <Footer />
-        <ScrollToTop />
       </BreakpointWrapper>
+      <ScrollToTop />
     </Main>
   );
 };
@@ -26,7 +26,7 @@ const Layout = ({ children, toggleTheme }) => {
 export default Layout;
 
 const MainContentContainer = styled(Container)`
-  padding-top: 70px;
+  padding-top: 67px;
   min-height: 100vh;
 `;
 
@@ -37,12 +37,6 @@ const Main = styled.main`
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-`;
-
-export const BreakpointWrapper = styled.div`
-  max-width: ${breakpoint.size.sm};
-  width: 100%;
-  margin: 0 auto;
 `;
 
 const HeaderWrapper = styled.header`

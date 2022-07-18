@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { FaArrowUp, FaChevronUp } from 'react-icons/fa';
+import { TiArrowUpThick } from 'react-icons/ti';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { IconButton } from '@components/shared';
@@ -56,10 +56,10 @@ const ScrollToTop = () => {
             <IconButton
               type='button'
               style={{
-                marginTop: '0.09em',
+                marginTop: '0.25em',
               }}
             >
-              <FaChevronUp size={28} fill='#fb8b24' />
+              <TiArrowUpThick size={36} fill='#07080E' />
             </IconButton>
           </Scroll>
         ) : (
@@ -77,12 +77,13 @@ const Scroll = styled(motion.div)`
   z-index: 999;
   bottom: 0;
   right: 10px;
-  margin: 2rem;
-  background: ${({ theme }) => theme.colors.primary};
-  border: 2px solid ${({ theme }) => theme.colors.border};
+  margin: 1rem;
+  margin-bottom: 1.6rem;
+  background: ${({ theme }) => theme.colors.accent};
+  /* border: 2px solid ${({ theme }) => theme.colors.border}; */
   width: 50px;
   height: 50px;
-  padding: 2rem;
+  padding: 1.8rem;
   display: flex;
   border-radius: 50%;
   justify-content: center;

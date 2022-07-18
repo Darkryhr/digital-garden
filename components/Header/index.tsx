@@ -13,7 +13,7 @@ import {
   MobileWrapper,
   MobileMenu,
 } from './Header.css';
-import { BreakpointWrapper } from '@components/Layout';
+import { BreakpointWrapper } from '@components/shared';
 
 const Header = ({ toggleTheme }) => {
   const [open, setOpen] = useState(false);
@@ -44,7 +44,7 @@ const Header = ({ toggleTheme }) => {
             <LogoWrapper
               whileHover={{ scale: 1.05, opacity: 0.7 }}
               transition={{
-                duration: 0.2,
+                duration: 0.15,
               }}
               whileTap={{ scale: 0.95 }}
             >

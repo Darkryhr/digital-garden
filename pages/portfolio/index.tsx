@@ -12,6 +12,7 @@ import {
   Column,
   Divider,
   Row,
+  BreakpointWrapper,
 } from '@components/shared';
 import Modal from '@components/Modal';
 import { AiOutlineArrowDown } from 'react-icons/ai';
@@ -35,7 +36,7 @@ const Portfolio = () => {
   };
 
   return (
-    <>
+    <BreakpointWrapper>
       <Column $layout>
         <SectionWrapper delay={0.1}>
           <Box>
@@ -104,7 +105,7 @@ const Portfolio = () => {
           {modalOpen && <Modal handleClose={close} project={modalProject} />}
         </AnimatePresence>
       </Column>
-    </>
+    </BreakpointWrapper>
   );
 };
 

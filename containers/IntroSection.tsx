@@ -85,7 +85,7 @@ const Rename = styled.div`
 const Circle = styled.div`
   position: absolute;
   right: 20px;
-  top: 80px;
+  top: 95px;
   transform: rotate(15deg);
   width: 500px;
   z-index: -999;

@@ -135,6 +135,12 @@ export const SnippetLayout = styled.main`
   font-family: 'IBM Plex sans', Tahoma, Geneva, Verdana, sans-serif !important;
 `;
 
+export const BreakpointWrapper = styled.div`
+  max-width: ${breakpoint.size.sm};
+  width: 100%;
+  margin: 0 auto;
+`;
+
 //* Typography
 export const Heading1 = styled(motion.h1)`
   margin: 0;

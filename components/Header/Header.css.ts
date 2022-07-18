@@ -13,6 +13,7 @@ export const Nav = styled.nav`
 
   @media (${breakpoint.device.sm}) {
     padding: 1.4rem 1rem;
+    background: ${({ theme }) => `${theme.colors.primary}80`};
   }
 `;
 
