@@ -3,13 +3,15 @@ import { MDXRemote } from 'next-mdx-remote';
 import components from '@components/mdx';
 import mdxToHtml from '@lib/mdxToHtml';
 import { getPostSlugs, getPostBySlug } from '@lib/utils';
-import { BlogLayout } from '@components/shared';
+import { BlogLayout, BreakpointWrapper } from '@components/shared';
 
 export default function PostPage({ post }) {
   return (
-    <BlogLayout>
-      <MDXRemote {...post.content} components={components} />
-    </BlogLayout>
+    <BreakpointWrapper>
+      <BlogLayout>
+        <MDXRemote {...post.content} components={components} />
+      </BlogLayout>
+    </BreakpointWrapper>
   );
 }
 

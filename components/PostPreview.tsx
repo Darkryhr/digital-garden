@@ -13,10 +13,10 @@ const PostPreview = ({ title, date, excerpt, slug }) => {
       <PreviewWrapper
         data-cy='blog-post'
         whileHover={{
-          translateX: 15,
+          translateY: -5,
         }}
         whileTap={{
-          translateX: -10,
+          translateY: 2,
         }}
       >
         <Row>

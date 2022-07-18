@@ -26,7 +26,7 @@ const IntroSection = () => {
             <StrokedButton
               $accented
               whileHover={{
-                scale: 1.1,
+                scale: 1.05,
               }}
             >
               <Link href='/portfolio'>Portfolio</Link>
@@ -48,7 +48,7 @@ const IntroSection = () => {
                 <HiDownload
                   size={16}
                   style={{
-                    marginRight: '5px',
+                    marginRight: '6px',
                   }}
                 />
                 Resume
@@ -68,7 +68,7 @@ export default IntroSection;
 
 const ButtonRow = styled.div`
   display: flex;
-  padding-top: 0.5rem;
+  padding-top: 1rem;
 `;
 
 const Rename = styled.div`

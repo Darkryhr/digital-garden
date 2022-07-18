@@ -18,11 +18,16 @@ export const Button = styled(motion.button)<{ $filled?: boolean }>`
 `;
 
 export const StrokedButton = styled(Button)<{ $accented?: boolean }>`
-  font-weight: 500;
-  font-size: 0.85rem;
+  font-size: 0.89rem;
+  font-weight: 600;
   border-radius: 24px;
   margin: 0.4rem;
   margin-right: 0.6rem;
+
+  a {
+    ${props => (props.$accented ? `color: black` : '')}
+  }
+
   ${props =>
     props.$accented
       ? `background: ${props.theme.colors.accent}; border:none;`
@@ -204,12 +209,12 @@ export const Subtitle = styled.p`
 export const Lead = styled.p`
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.76rem;
-  letter-spacing: 3px;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
   line-height: 2;
   color: ${({ theme }) => theme.colors.accent};
   @media (${breakpoint.device.sm}) {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
   }
 `;
 
