@@ -12,6 +12,7 @@ import Layout from '@components/Layout';
 import Loader from '@components/Loader';
 import { MDXProvider } from '@mdx-js/react';
 import MDXComponents from '@components/mdx';
+import SEO from '@components/SEO';
 
 function App({ Component, pageProps, router }: AppProps) {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
