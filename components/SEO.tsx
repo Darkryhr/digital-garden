@@ -45,7 +45,10 @@ const SEO = ({
       <meta name='twitter:site' content='@GabrielAintReal' />
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={desc} />
-      <meta name='twitter:image' content='https://i.imgur.com/xQcr8X8.png' />
+      <meta
+        name='twitter:image'
+        content='https://www.gabriel-lellouche.com/card.png'
+      />
       <title>
         {title === '| Gabriel does a thing'
           ? title
