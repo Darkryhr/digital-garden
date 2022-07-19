@@ -1,3 +1,4 @@
+import SEO from '@components/SEO';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
@@ -14,6 +15,7 @@ class MyDocument extends Document {
             rel='stylesheet'
           />
         </Head>
+        <SEO />
         <body>
           <Main />
           <NextScript />

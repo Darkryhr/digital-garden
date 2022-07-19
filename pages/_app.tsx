@@ -9,7 +9,6 @@ import { useDarkMode } from 'hooks/useDarkMode';
 import { lightTheme, darkTheme } from '@styled/theme.css';
 import { GlobalStyles } from '@styled/global.css';
 import Layout from '@components/Layout';
-import SEO from '@components/SEO';
 import Loader from '@components/Loader';
 import { MDXProvider } from '@mdx-js/react';
 import MDXComponents from '@components/mdx';
@@ -36,7 +35,6 @@ function App({ Component, pageProps, router }: AppProps) {
   return (
     <ThemeProvider theme={themeMode}>
       <MDXProvider components={MDXComponents}>
-        <SEO />
         <GlobalStyles />
         <Layout toggleTheme={themeToggler}>
           {/* 
