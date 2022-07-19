@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
+import NowPlaying from '@components/NowPlaying';
 import Contact from '@components/Contact';
 import { IconButton, Muted } from '@components/shared';
 import { Logo } from '@components/Logo';
@@ -59,6 +60,7 @@ const Footer = () => {
             </a>
           </IconButton>
         </SocialWrapper>
+        <NowPlaying />
       </ContentWrapper>
       <Contact />
     </Wrapper>
@@ -71,7 +73,6 @@ const ContentWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 1.4rem;
   @media (${breakpoint.device.sm}) {
     align-items: center;
     padding-top: 0;
@@ -89,7 +90,7 @@ const Wrapper = styled.footer`
   width: 100%;
   max-width: ${breakpoint.size.lg};
   margin: 0 auto;
-  padding: 1rem 0 2.2rem 0;
+  padding: 1rem 0 1.5rem 0;
   @media (${breakpoint.device.sm}) {
     flex-direction: column-reverse;
 
@@ -100,7 +101,7 @@ const Wrapper = styled.footer`
 const SocialWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 1.4rem 0;
+  padding: 1rem 0 1.5rem 0;
   max-width: 150px;
   width: 100%;
   @media (${breakpoint.device.sm}) {
@@ -111,5 +112,5 @@ const SocialWrapper = styled.div`
 const CopyWrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 1rem 0;
+  padding: 0 0 1rem 0;
 `;
