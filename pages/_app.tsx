@@ -35,6 +35,7 @@ function App({ Component, pageProps, router }: AppProps) {
   return (
     <ThemeProvider theme={themeMode}>
       <MDXProvider components={MDXComponents}>
+        <SEO />
         <GlobalStyles />
         <Layout toggleTheme={themeToggler}>
           {/* 
