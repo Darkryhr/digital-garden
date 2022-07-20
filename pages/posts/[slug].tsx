@@ -4,11 +4,13 @@ import components from '@components/mdx';
 import mdxToHtml from '@lib/mdxToHtml';
 import { getPostSlugs, getPostBySlug } from '@lib/utils';
 import { BlogLayout, BreakpointWrapper } from '@components/shared';
+import { BackButton } from '@components/mdx/BackButton';
 
 export default function PostPage({ post }) {
   return (
     <BreakpointWrapper>
       <BlogLayout>
+        <BackButton />
         <MDXRemote {...post.content} components={components} />
       </BlogLayout>
     </BreakpointWrapper>

@@ -134,6 +134,7 @@ export const Row = styled.div`
 
 export const BlogLayout = styled.main`
   font-family: 'IBM Plex sans', Tahoma, Geneva, Verdana, sans-serif !important;
+  position: relative;
 `;
 
 export const SnippetLayout = styled.main`

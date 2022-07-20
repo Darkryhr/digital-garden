@@ -3,6 +3,7 @@ import { Divider } from '../shared';
 import { CustomLink } from './CustomLink';
 import { Pre } from './Pre';
 import { Article, Heading1, Heading2, Ul, Ol, Paragraph, Tip } from './mdx.css';
+import { StyledImage } from './StyledImage';
 
 const MDXComponents = {
   h1: props => <Heading1 {...props} />,
@@ -12,6 +13,7 @@ const MDXComponents = {
   p: props => <Paragraph {...props} />,
   ol: props => <Ol {...props} />,
   hr: props => <Divider {...props} />,
+  Image: StyledImage,
   pre: Pre,
   Article,
   DateFormatter,

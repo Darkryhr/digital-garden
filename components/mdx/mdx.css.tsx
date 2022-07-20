@@ -135,11 +135,11 @@ export const Article = styled.article`
     padding: 0 1rem;
   }
 
-  img {
+  /* img {
     width: 100%;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
+  } */
 
   pre {
     overflow: hidden;
