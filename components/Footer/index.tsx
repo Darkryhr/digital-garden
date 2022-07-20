@@ -70,7 +70,7 @@ const Footer = () => {
 export default Footer;
 
 const ContentWrapper = styled.div`
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   @media (${breakpoint.device.sm}) {
@@ -91,6 +91,9 @@ const Wrapper = styled.footer`
   max-width: ${breakpoint.size.lg};
   margin: 0 auto;
   padding: 1rem 0 1.5rem 0;
+  @media (${breakpoint.device.md}) {
+    padding: 1rem 1rem 1.5rem 1rem;
+  }
   @media (${breakpoint.device.sm}) {
     flex-direction: column-reverse;
 

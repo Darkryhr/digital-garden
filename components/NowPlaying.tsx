@@ -13,6 +13,7 @@ export default function NowPlaying() {
         viewBox='0 0 168 168'
         style={{
           width: '16px',
+          minWidth: '16px',
           marginRight: '8px',
         }}
       >
@@ -47,7 +48,7 @@ const Wrapper = styled.div`
   font-size: 0.9rem;
   margin: 0 auto;
   padding-top: 1rem;
-
+  padding-right: 2rem;
   @media (${breakpoint.device.md}) {
     align-items: center;
     justify-content: center;
@@ -60,11 +61,14 @@ const Wrapper = styled.div`
 const SongData = styled.div`
   display: flex;
   align-items: flex-end;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  max-width: 100%;
 `;
 
 const SongTitle = styled.a`
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
@@ -73,4 +77,7 @@ const NotPlaying = styled.p``;
 
 const Artist = styled.p`
   opacity: 0.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;

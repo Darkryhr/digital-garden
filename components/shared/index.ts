@@ -102,6 +102,7 @@ export const Column = styled.section<{ $end?: boolean; $layout?: boolean }>`
   ${props => (props.$layout ? 'padding: 3rem 0' : '')};
 
   @media (${breakpoint.device.sm}) {
+    align-items: center;
   }
 `;
 

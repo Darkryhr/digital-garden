@@ -113,13 +113,13 @@ const Contact = () => {
               'Sending...'
             ) : (
               <>
-                Send
                 <BiSend
                   size={20}
                   style={{
                     fill: 'white',
                   }}
                 />
+                Send
               </>
             )}{' '}
           </Submit>
@@ -252,14 +252,23 @@ const Submit = styled(motion.button)`
   max-width: 125px;
   font-weight: 600;
   border-radius: 5px;
-  justify-content: space-around;
   border: none;
+  justify-content: center;
   outline: none;
   cursor: pointer;
   &:disabled {
     cursor: default;
     filter: brightness(70%);
     background: ${({ theme }) => theme.colors.secondary};
+  }
+  svg {
+    min-width: 20px;
+    margin-right: 5px;
+  }
+  @media (${breakpoint.device.sm}) {
+    max-width: none;
+
+    width: 100%;
   }
 `;
 
