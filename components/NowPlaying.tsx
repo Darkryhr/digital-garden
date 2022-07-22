@@ -2,13 +2,15 @@ import useSWR from 'swr';
 
 import { NowPlayingSong } from '@lib/types';
 import fetcher from '@lib/fetcher';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { breakpoint } from '@styled/breakpoints.css';
 
 export default function NowPlaying() {
   const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher);
   return (
     <Wrapper>
+      {data?.songUrl && <PlayingBars />}
+
       <svg
         viewBox='0 0 168 168'
         style={{
@@ -43,17 +45,27 @@ export default function NowPlaying() {
 
 const Wrapper = styled.div`
   display: flex;
-
   width: 100%;
+  max-width: 260px;
   font-size: 0.9rem;
-  margin: 0 auto;
-  padding-top: 1rem;
-  padding-right: 2rem;
+  margin-top: 1rem;
+  margin-right: 2rem;
+
+  border-radius: 10px;
+
   @media (${breakpoint.device.md}) {
+    /* flex-direction: column; */
+  }
+  @media (${breakpoint.device.sm}) {
     align-items: center;
     justify-content: center;
-    padding-bottom: 1rem;
+    padding-right: 0;
+    padding: 0.85rem;
+    margin-right: 0;
+    max-width: none;
+    margin: 0 auto;
 
+    background-color: ${({ theme }) => theme.colors.secondary + '90'};
     /* flex-direction: column; */
   }
 `;
@@ -80,4 +92,64 @@ const Artist = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+`;
+
+const PlayingBars = () => {
+  return (
+    <Icon>
+      <span />
+      <span />
+      <span />
+    </Icon>
+  );
+};
+
+const bounce = keyframes`
+  10% {
+    transform: scaleY(0.3); /* start by scaling to 30% */
+  }
+
+  30% {
+    transform: scaleY(1); /* scale up to 100% */
+  }
+
+  60% {
+    transform: scaleY(0.5); /* scale down to 50% */
+  }
+
+  80% {
+    transform: scaleY(0.75); /* scale up to 75% */
+  }
+
+  100% {
+    transform: scaleY(0.6); /* scale down to 60% */
+  }
+`;
+
+const Icon = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 13px;
+  min-width: 13px;
+  height: 13px;
+
+  margin-right: 0.6rem;
+  span {
+    width: 3px;
+    height: 100%;
+    background-color: ${({ theme }) => theme.colors.accent};
+    border-radius: 3px;
+    content: '';
+    transform-origin: bottom;
+    animation: ${bounce} 2.2s ease infinite alternate;
+
+    &:nth-of-type(2) {
+      animation-delay: -2.2s; /* Start at the end of animation */
+    }
+
+    &:nth-of-type(3) {
+      animation-delay: -3.7s; /* Start mid-way of return of animation */
+    }
+  }
 `;

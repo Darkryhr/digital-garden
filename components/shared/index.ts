@@ -100,10 +100,6 @@ export const Column = styled.section<{ $end?: boolean; $layout?: boolean }>`
   padding: 0 0.2rem;
   ${props => (props.$end ? 'align-items: flex-end' : '')};
   ${props => (props.$layout ? 'padding: 3rem 0' : '')};
-
-  @media (${breakpoint.device.sm}) {
-    align-items: center;
-  }
 `;
 
 export const Grid = styled.div`

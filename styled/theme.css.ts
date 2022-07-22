@@ -1,4 +1,6 @@
-export const darkTheme = {
+import { Theme } from 'models/styled';
+
+export const darkTheme: Theme = {
   colors: {
     primary: '#07080E',
     secondary: '#1D1C21',
@@ -10,7 +12,7 @@ export const darkTheme = {
       `,
   },
 };
-export const lightTheme = {
+export const lightTheme: Theme = {
   colors: {
     primary: '#FAFAFF',
     secondary: '#E0E0E0',

@@ -70,12 +70,14 @@ const Footer = () => {
 export default Footer;
 
 const ContentWrapper = styled.div`
-  width: 50%;
+  min-width: 50%;
   display: flex;
   flex-direction: column;
   @media (${breakpoint.device.sm}) {
     align-items: center;
     padding-top: 0;
+    width: 100%;
+    max-width: 360px;
   }
 `;
 

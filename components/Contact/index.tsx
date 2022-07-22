@@ -62,7 +62,7 @@ const Contact = () => {
   };
 
   return (
-    <Column $end>
+    <CustomColumn $end>
       <Form>
         <Shout>Give me a shout</Shout>
         <Wrapper>
@@ -132,11 +132,17 @@ const Contact = () => {
           </OrEmail>
         </SubmitWrapper>
       </Form>
-    </Column>
+    </CustomColumn>
   );
 };
 
 export default Contact;
+
+const CustomColumn = styled(Column)`
+  @media (${breakpoint.device.sm}) {
+    align-items: center;
+  }
+`;
 
 const Span = styled.span`
   background: ${({ theme }) => theme.colors.primary};
