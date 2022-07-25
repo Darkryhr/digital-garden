@@ -13,6 +13,7 @@ import {
 import { getPosts } from 'lib/utils';
 
 const PostFeed = ({ posts }) => {
+  console.log(posts);
   const [filteredPosts, setFilteredPosts] = useState(posts);
   const [currentPageIndex, setCurrentPageIndex] = useState(1);
 
@@ -41,15 +42,19 @@ const PostFeed = ({ posts }) => {
           <Divider />
         </SectionWrapper>
         <SectionWrapper delay={0.3}>
-          {filteredPosts.map(({ data, slug }) => (
-            <PostPreview
-              key={slug}
-              slug={slug}
-              title={data.title}
-              date={data.date}
-              excerpt={data.excerpt}
-            />
-          ))}
+          {filteredPosts
+            .sort((a, b) => (a.data.index < b.data.index ? 1 : -1))
+            .map(({ data, slug }) => (
+              <PostPreview
+                key={data.index}
+                index={data.index}
+                slug={slug}
+                title={data.title}
+                date={data.date}
+                excerpt={data.excerpt}
+              />
+            ))}
+
           <Box
             style={{
               padding: '1.7rem 0',

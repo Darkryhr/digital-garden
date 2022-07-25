@@ -7,7 +7,8 @@ import { Heading3, Heading4, Subtitle } from '@components/shared';
 import DateFormatter from '@components/DateFormatter';
 import { breakpoint } from '@styled/breakpoints.css';
 
-const PostPreview = ({ title, date, excerpt, slug }) => {
+const PostPreview = ({ title, date, excerpt, slug, index }) => {
+  console.log(index);
   return (
     <Link href={`/posts/${slug}`} passHref>
       <PreviewWrapper

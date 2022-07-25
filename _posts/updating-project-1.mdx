@@ -1,0 +1,96 @@
+---
+title: 'Updating my blog project'
+excerpt: 'I decided its time to make some updates'
+date: '2022-07-25T09:59:11.253Z'
+tags: [Jamstack]
+index: 5
+---
+
+# Updating my blog project: Next.js, Firebase SDK v9 and ChakraUI
+
+<DateFormatter dateString={'2022-07-25T09:59:11.253Z'} light={true} />
+
+<Article>
+
+## Overview
+
+So before I dive into whats changed, I should probably explain what is. This project--originially called vex--was one of the first projects I'd ever done with Next, or at least the first one to really require the unique features of Next.
+
+Essentially this is a blog site where you can write in markdown and it's parsed to HTML and styled appropriately, it leverages Nexts SSG and ISR to provide high speed and realtime data hydration. Firebase operates the heavy lifting on the backend; authentication, database and storage bucket.
+
+All this is well and good but when I decided to take at it again, well, I didn't like what I saw. Felt amateur-ish, so I decided with more knowledge and confidence to update all the packages and overhaul the project so that it felt more complete, a product if you will. Now that meant was:
+
+1. Updating Next to v12
+
+2. Updating the Firebase SDK to v9
+
+3. Overhauling file structure
+
+4. Overhauling the logic
+
+5. And overhauling the design
+
+And since I was gonna overhaul the look and feel I felt like this was also an opportunity to delve deeper into a library I've wanted to really try for a while - ChakraUI.
+
+## Firebase - moving from SDK 8 to 9
+
+If you're like me the first time you saw the 9th version of Firebases SDK you felt a bit overwhelmed, but upon closer inspection it turns out not much has changed in terms of the logic you have to implement. What they've done with this version is make the whole thing modular, and switched from chaining functions and methods to more of a piping approach. If you're familiar with angular it's that kind thing.
+
+What that means is that it'll weigh much less on your prod build.
+
+Say, for example, you want to get a document, well first you'll create the reference with the doc() function, which accepts a potentially endless number of segments which define the path to your desired snapshot, pass that into the getDoc() function, and what you'll get is what you expect: a document.
+
+Same thing for collections, create the reference with the collection() function, create a query(if need be) and pass that into the getDocs() function.
+
+So to perform the operation you want you import the appropriate function and then inside it place the reference, and then continuously pass operators, such as orderby, where, limit, etc.
+
+```js:db.js
+// first import the relevant operators from the firestore package
+import { doc, getDoc } from 'firebase/firestore';
+
+export async function getUserPost(docRef, slug) {
+  // next define the path / reference
+  const postRef = doc(db, 'users', docRef, 'posts', slug);
+
+  // the perform the operation itself
+  const postDoc = await getDoc(postRef);
+
+  return postDoc.data();
+}
+```
+
+That's it in terms of updating to 9, honestly I like it, I think--for me atleast--doing it like this makes me have to think more clearly about what I'm trying to achieve.
+
+## Code changes and refactors
+
+I decided to isolate database operations to a separate file to keep page files cleaner and give operations more obvious names.
+
+In terms of auth I decided to change the context into a full blown hook, which I can either provide in a wrapping auth checker component, or provide directly to the necessary component. This hook provides login functions, a logout function and user data in the form of react state, as well as formatting said user data into a neater public facing object, which updates using a useEffect hook according to changes to the auth instance.
+
+Additionally I decided I didn't like the way username were originially handled, felt messy, usernames are an integral of the user, both in the document / schema and both on the sites front, so having this weird possible middle state where a user was logged in but didn't have a username just didn't gel with me.
+
+So what I decided to do was off-load some initial work to Google - now when a user logs in for the first time their initial username is their email, since that's already guaranteed to be unique theres no need to check it, and afterwards the user is free to edit their username, at their leisure, on their account page.
+
+The way that works is when user tries to change their username a check is performed, against the database, and if the reference to that specific username already exists, it means its unavailable, and since this check could theoretically every loads of times over the course of a single edit, the request to the database is wrapped in a lodash debounce function, which--simply put--waits X amount of time before performing the function provided.
+
+## ChakraUI
+
+As I mentioned earlier, I didn't really like the way my original design ended up, but since I figured restarting from scratch with something like styled-components or CSS modules might take ages, and provide me with no new information, I opted for ChakraUI, and I must say - What. a. joy.
+
+Now I tend to get quite invested in the visual design of my projects, but I have to be honest, I ended up quite thrilled with how my site ended up. Chakra is just so versatile and intuitive, not to mention jam-packed with basically every feature a front-end developer could want, but dread to implement, We're talking about:
+
+- Toasts
+
+- Modals
+
+- Tooltips
+
+- Popups
+
+- Loading spinners
+
+and the list just goes on, Chakra really ended being the star of the show for me, an easy recommendation for anyone, whether they love or hate web design, there's something for everyone to appreciate here.
+
+More to come in Part 2.
+
+</Article>
