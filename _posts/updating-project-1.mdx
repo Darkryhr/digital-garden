@@ -14,21 +14,21 @@ index: 5
 
 ## Overview
 
-So before I dive into whats changed, I should probably explain what is. This project--originially called vex--was one of the first projects I'd ever done with Next, or at least the first one to really require the unique features of Next.
+So before I dive into whats changed, I should probably explain what is. This project--originally called vex--was one of the first projects I'd ever done with Next, or at least the first one to really require the unique features of Next.
 
 Essentially this is a blog site where you can write in markdown and it's parsed to HTML and styled appropriately, it leverages Nexts SSG and ISR to provide high speed and realtime data hydration. Firebase operates the heavy lifting on the backend; authentication, database and storage bucket.
 
 All this is well and good but when I decided to take at it again, well, I didn't like what I saw. Felt amateur-ish, so I decided with more knowledge and confidence to update all the packages and overhaul the project so that it felt more complete, a product if you will. Now that meant was:
 
-1. Updating Next to v12
+1. Updating Next to v12 - not really much needs to be done here, when I originally started this project Next was on version 10 I think, so most of the changes here are under the hood, like Rust as the compiler 🦀
 
-2. Updating the Firebase SDK to v9
+2. Updating the Firebase SDK to v9 - here is where the big change came, with version 9 firebase opted for a modular 'a la carte' approach, where you only import the bits you need.
 
-3. Overhauling file structure
+3. Overhauling file structure - a real mess, queries and components strewn about.
 
-4. Overhauling the logic
+4. Overhauling the logic - some of the logic, mainly usernames and auth, felt like they could use a change, usernames needed to be streamlined, auth needed to be more robust.
 
-5. And overhauling the design
+5. And overhauling the design - I don't even understand why I liked the original look, it was too much and left lots to be desired in terms of user friendliness, it needed to be cleaner.
 
 And since I was gonna overhaul the look and feel I felt like this was also an opportunity to delve deeper into a library I've wanted to really try for a while - ChakraUI.
 
@@ -67,7 +67,7 @@ I decided to isolate database operations to a separate file to keep page files c
 
 In terms of auth I decided to change the context into a full blown hook, which I can either provide in a wrapping auth checker component, or provide directly to the necessary component. This hook provides login functions, a logout function and user data in the form of react state, as well as formatting said user data into a neater public facing object, which updates using a useEffect hook according to changes to the auth instance.
 
-Additionally I decided I didn't like the way username were originially handled, felt messy, usernames are an integral of the user, both in the document / schema and both on the sites front, so having this weird possible middle state where a user was logged in but didn't have a username just didn't gel with me.
+Additionally I decided I didn't like the way username were originally handled, felt messy, usernames are an integral of the user, both in the document / schema and both on the sites front, so having this weird possible middle state where a user was logged in but didn't have a username just didn't gel with me.
 
 So what I decided to do was off-load some initial work to Google - now when a user logs in for the first time their initial username is their email, since that's already guaranteed to be unique theres no need to check it, and afterwards the user is free to edit their username, at their leisure, on their account page.
 
