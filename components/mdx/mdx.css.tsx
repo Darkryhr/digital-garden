@@ -143,10 +143,14 @@ export const Article = styled.article`
 
   pre {
     overflow: hidden;
+    overflow-x: scroll;
     border: 1px solid ${({ theme }) => theme.colors.border};
     border-bottom-left-radius: 0.3rem;
     border-bottom-right-radius: 0.3rem;
     margin-bottom: 1em;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   .rehype-code-title {
