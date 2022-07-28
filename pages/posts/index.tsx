@@ -39,9 +39,11 @@ const PostFeed = ({ posts }) => {
               I&apos;ve worked on.
             </Subtitle>
           </Box>
-          <Divider />
         </SectionWrapper>
         <SectionWrapper delay={0.3}>
+          <Divider />
+        </SectionWrapper>
+        <SectionWrapper delay={0.4}>
           {filteredPosts
             .sort((a, b) => (a.data.index < b.data.index ? 1 : -1))
             .map(({ data, slug }) => (

@@ -23,7 +23,6 @@ const Section = styled(motion.section)`
   width: 100%;
   position: relative;
   overflow-x: clip;
-  padding: 0.4rem 0;
   @media (${breakpoint.device.sm}) {
     padding-left: 1rem;
     padding-right: 1rem;

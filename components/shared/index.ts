@@ -102,11 +102,14 @@ export const Column = styled.section<{ $end?: boolean; $layout?: boolean }>`
   ${props => (props.$layout ? 'padding: 3rem 0' : '')};
 `;
 
-export const Grid = styled.div`
+export const Grid = styled.div<{ $min?: number }>`
   display: grid;
   gap: 0.5rem;
   row-gap: 3rem;
-  grid-template-columns: repeat(auto-fit, minmax(101px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(${props => (props.$min ? `${props.$min}px` : '101px')}, 1fr)
+  );
   padding: 1rem 0;
   grid-template-rows: auto;
   margin: 1em auto;
