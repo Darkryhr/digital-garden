@@ -48,7 +48,3 @@ const HeaderWrapper = styled.header`
   background: ${({ theme }) => `${theme.colors.primary}99`};
   box-shadow: inset 0 -1px 0 hsl(0deg 0% 100% / 10%);
 `;
-
-const FooterWrapper = styled.footer`
-  border-top: 1px solid ${({ theme }) => theme.colors.secondary};
-`;

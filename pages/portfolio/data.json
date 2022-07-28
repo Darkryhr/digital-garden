@@ -4,7 +4,7 @@
     "url": "https://www.gabriel-lellouche.com/",
     "blurUrl": "/assets/placeholder/mylogo.png",
     "icon": "/assets/portfolio/mylogo.svg",
-    "desc": "This, just...this. By yours truly, responsive design, static blog, light / dark theme and animations",
+    "desc": "This, just...this. By yours truly, responsive design, static blog, light / dark theme and animations.",
     "tags": ["Next.js", "Framer", "Styled-Components", "Markdown"]
   },
   {
@@ -12,7 +12,7 @@
     "url": "https://clever-stonebraker-68587b.netlify.app/",
     "blurUrl": "/assets/placeholder/sightsee.png",
     "icon": "/assets/portfolio/sightsee.svg",
-    "desc": "SERN stack vacation site complete with followable holiday destinations and user authentication with JSON web tokens",
+    "desc": "SERN stack vacation site complete with followable holiday destinations and user authentication with JSON web tokens.",
     "tags": ["Redux Toolkit", "Vite", "Express", "Sequelize", "JWT"]
   },
   {
@@ -24,19 +24,19 @@
     "tags": ["Context API", "Stripe", "SCSS"]
   },
   {
-    "name": "Vex Blogs",
+    "name": "Str Blog",
     "url": "https://next-blog-nine-henna.vercel.app/",
     "blurUrl": "/assets/placeholder/vex.png",
     "icon": "/assets/portfolio/vex.svg",
-    "desc": "A next.js 'dev.to'-style blogging app, with efficient real-time data hydration using Incremental Static Regeneration",
-    "tags": ["Context", "Markdown", "Firebase", "Next.js", " ISR"]
+    "desc": "A next.js 'dev.to'-style blogging app, with efficient real-time data hydration using ISR.",
+    "tags": ["Context", "Markdown", "Firebase", "Next.js", " ISR", "ChakraUI"]
   },
   {
     "name": "Firestarter",
     "url": "https://wonderful-goldstine-9fcc89.netlify.app/",
     "blurUrl": "/assets/placeholder/firestarter.png",
     "icon": "/assets/portfolio/firestarter.svg",
-    "desc": "An angular kanban board + a small angular universal ssr demo, dynamic forms enbale both google and email login",
+    "desc": "An angular kanban board + a small angular universal ssr demo, dynamic forms enbale both google and email login.",
     "tags": ["Angular", "Material", "Firebase", "SSR Demo", "Drag & Drop"]
   },
   {
@@ -44,7 +44,7 @@
     "url": "https://angular-firemart.firebaseapp.com/",
     "blurUrl": "/assets/placeholder/firemart.png",
     "icon": "/assets/portfolio/firemart.svg",
-    "desc": "MEAN stack app, dockerized express backend, frontend hosted w/ firebase. Features auth with JWT, admin CRUD w/ image upload, a real-time cart and printable invoices",
+    "desc": "MEAN stack app, dockerized express backend, frontend hosted w/ firebase. Features auth with JWT, admin CRUD w/ image upload, a real-time cart and printable invoices.",
     "tags": ["Angular", "Material", "MongoDB", "Express", "JWT", "Docker"]
   },
   {
