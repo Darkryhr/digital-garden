@@ -7,10 +7,16 @@ export const SEOConfig = {
     url: 'https://www.gabriel-lellouche.com/',
     title: 'Gabriel does a thing',
     description: 'Personal digital garden',
-    image: 'https://www.gabriel-lellouche.com/card.png',
+    images: [
+      {
+        url: 'https://www.gabriel-lellouche.com/card.png',
+        width: 400,
+        height: 201,
+        alt: 'Summary Card',
+        type: 'image/jpng',
+      },
+    ],
     site_name: 'GabrielLellouche.com',
-    imageWidth: 400,
-    imageHeight: 200,
   },
   twitter: {
     handle: '@GabrielAintReal',
