@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ThemeProvider } from 'styled-components';
 import { Toaster } from 'react-hot-toast';
+import { SEOConfig } from '../next-seo.config';
 import 'normalize.css';
 
 import { useDarkMode } from 'hooks/useDarkMode';
@@ -12,7 +13,7 @@ import Layout from '@components/Layout';
 import Loader from '@components/Loader';
 import { MDXProvider } from '@mdx-js/react';
 import MDXComponents from '@components/mdx';
-import SEO from '@components/SEO';
+import { DefaultSeo } from 'next-seo';
 
 function App({ Component, pageProps, router }: AppProps) {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -36,7 +37,6 @@ function App({ Component, pageProps, router }: AppProps) {
   return (
     <ThemeProvider theme={themeMode}>
       <MDXProvider components={MDXComponents}>
-        <SEO />
         <GlobalStyles />
         <Layout toggleTheme={themeToggler}>
           {/* 
@@ -56,7 +56,14 @@ function App({ Component, pageProps, router }: AppProps) {
                 },
               }}
             >
-              {pageLoading ? <Loader /> : <Component {...pageProps} />}
+              {pageLoading ? (
+                <Loader />
+              ) : (
+                <>
+                  <DefaultSeo {...SEOConfig} />
+                  <Component {...pageProps} />
+                </>
+              )}
             </motion.div>
           </AnimatePresence>
           <Toaster position='bottom-center' reverseOrder={false} />

@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 import SectionWrapper from '@components/SectionWrapper';
 import IntroSection from 'containers/IntroSection';
 import { BreakpointWrapper } from '@components/shared';
