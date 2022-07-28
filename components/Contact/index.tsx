@@ -137,8 +137,8 @@ const Contact = () => {
           <Span>or</Span>
           <OrEmail>
             <strong>email me: </strong>
-            <EmailLink href='mailto:info@gabriel-lellouche.com'>
-              info@gabriel-lellouche.com
+            <EmailLink href='mailto:hello@gabriel-lellouche.com'>
+              hello@gabriel-lellouche.com
             </EmailLink>
           </OrEmail>
         </SubmitWrapper>

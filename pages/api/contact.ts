@@ -5,7 +5,7 @@ sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 async function sendEmail(req, res) {
   try {
     await sendgrid.send({
-      to: 'lellouchegabriel04@gmail.com', // Your email where you'll receive emails
+      to: 'hello@gabriel-lellouche.com', // Your email where you'll receive emails
       from: {
         email: 'info@gabriel-lellouche.com',
         name: 'My Personal Site',
