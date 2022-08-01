@@ -1,6 +1,6 @@
 import DateFormatter from '@components/DateFormatter';
 import { Divider } from '../shared';
-import { CustomLink } from './CustomLink';
+import { CustomInternalLink, CustomLink } from './CustomLink';
 import { Pre } from './Pre';
 import { Article, Heading1, Heading2, Ul, Ol, Paragraph, Tip } from './mdx.css';
 import { StyledImage } from './StyledImage';
@@ -13,6 +13,7 @@ const MDXComponents = {
   p: props => <Paragraph {...props} />,
   ol: props => <Ol {...props} />,
   hr: props => <Divider {...props} />,
+  Link: props => <CustomInternalLink {...props} />,
   Image: StyledImage,
   pre: Pre,
   Article,

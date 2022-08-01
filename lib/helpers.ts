@@ -26,7 +26,6 @@ export const getAllContent = (dirFiles, directory) =>
     );
     const { data, content } = matter(fileContent);
     const slug = getSlug(file);
-
     return { data, content, slug };
   });
 
@@ -38,4 +37,8 @@ export const filterPostsByPageIndex = (posts, pageIndex) => {
   return posts.filter(
     (post, index) => index < totalPagePosts && index >= prevPagePosts
   );
+};
+
+export const filterPublishedPosts = posts => {
+  return posts.filter(post => post.data.published);
 };

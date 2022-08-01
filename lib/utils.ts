@@ -3,18 +3,21 @@ import {
   getSlugs,
   getAllContent,
   filterPostsByPageIndex,
+  filterPublishedPosts,
 } from './helpers';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { Post } from 'models/post';
 
 const postsDir = path.join(process.cwd(), '_posts');
 const snipsDir = path.join(process.cwd(), '_snippets');
 
-export const getPosts = pageIndex => {
+export const getPosts = (pageIndex): Post[] => {
   const dirFiles = getDirFiles(postsDir);
   const posts = getAllContent(dirFiles, postsDir);
-  return filterPostsByPageIndex(posts, pageIndex);
+  const publishedPosts = filterPublishedPosts(posts);
+  return filterPostsByPageIndex(publishedPosts, pageIndex);
 };
 
 export const getPostSlugs = () => {

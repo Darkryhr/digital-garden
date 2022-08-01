@@ -11,9 +11,9 @@ import {
   BreakpointWrapper,
 } from '@components/shared';
 import { getPosts } from 'lib/utils';
+import { Post } from 'models/post';
 
-const PostFeed = ({ posts }) => {
-  console.log(posts);
+const PostFeed = ({ posts }: { posts: Post[] }) => {
   const [filteredPosts, setFilteredPosts] = useState(posts);
   const [currentPageIndex, setCurrentPageIndex] = useState(1);
 
@@ -49,7 +49,6 @@ const PostFeed = ({ posts }) => {
             .map(({ data, slug }) => (
               <PostPreview
                 key={data.index}
-                index={data.index}
                 slug={slug}
                 title={data.title}
                 date={data.date}
@@ -83,7 +82,7 @@ const PostFeed = ({ posts }) => {
 
 export default PostFeed;
 
-export function getStaticProps() {
+export function getStaticProps(): { props: { posts: Post[] } } {
   const posts = getPosts(1);
   return {
     props: {

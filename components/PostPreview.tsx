@@ -3,12 +3,11 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Heading3, Heading4, Subtitle } from '@components/shared';
+import { Heading4, Subtitle } from '@components/shared';
 import DateFormatter from '@components/DateFormatter';
 import { breakpoint } from '@styled/breakpoints.css';
 
-const PostPreview = ({ title, date, excerpt, slug, index }) => {
-  console.log(index);
+const PostPreview = ({ title, date, excerpt, slug }) => {
   return (
     <Link href={`/posts/${slug}`} passHref>
       <PreviewWrapper

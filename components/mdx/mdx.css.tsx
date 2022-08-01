@@ -61,10 +61,11 @@ export const Ol = styled.ol`
   counter-reset: counter-val;
   list-style: none;
   padding-left: 53px;
+  margin-top: 1rem;
   li {
     counter-increment: counter-val;
     position: relative;
-    margin: 0 0 2.5rem 0;
+    margin: 0 0 2rem 0;
     &::before {
       content: counter(counter-val);
       color: ${({ theme }) => theme.colors.accent};

@@ -1,0 +1,82 @@
+---
+title: 'Building a blog 3 ways: A comparison'
+excerpt: "What's the best way to be open and running with a blog?"
+date: '2022-08-01T09:59:11.253Z'
+tags: [Sanity, Next.js, Firebase, ChakraUI, TailwindCSS, MDX, styled-components]
+published: true
+index: 7
+---
+
+# I built a blog 3 ways, which is best?
+
+<DateFormatter dateString={'2022-08-01T09:59:11.253Z'} light={true} />
+
+<Article>
+
+I realized at this point I had built 3 blogs apps, each with a different database / content management solution, so I figured why not compare my experience with each of them, and decide which is best.
+
+### The three builds are:
+
+- Firebase for content management, Chakra-ui for styling.
+
+- Sanity for content management, TailwindCSS for styling.
+
+- MDX, meaning github for content management, styled-components for styling.
+
+### Let's set the criteria:
+
+1. <Link href='#customization'>**Control / Customization**</Link> - Do you own the
+   product? or does the product own you? how much can you really manipulate in your
+   own app? How involved is the styling, responsiveness, accesibility etc?
+
+2. <Link href='#speed'>**Speed**</Link> - All of these project were built with Next
+   and are statically generated, so in terms of performance theres not much to harp
+   on. No, when I say speed I mean how fast can you get to a working product - speed
+   to MVB.
+
+3. <Link href='#ease'>**Ease**</Link> - How much setup did it take? how many docs
+   did I have to read? How many accounts did I have login into? How many services
+   did I sign in to? Obviously all these things affect speed, but I think this is
+   enough of sticking point by itself to justify its own section.
+
+## Customization
+
+Thing is, when it comes to developing a blog, theres only so much you can do in terms of the content itself, thats why so many cms' offer pre-built blog schemas, because they're all gonna have a lot of similarities.
+
+With that in mind, however, I have to say I still think MDX Provides the most choice for creating really unique content, being able to pass in React components really tilts the scales in its favor.
+
+When it comes to styling, styled-components has to be my go to, you have to write a lot of your own styles, even for really small things, and sometimes making special versions of components, or adding props you know you'll only ever use once can get pretty tedious, however I still maintain that if you're a styling-oriented developer--like myself--you'll get a lot of satisfcation from styled-components, especially with how suprisingly well-behaved it is with other libraries like framer-motion.
+
+styled-components is also my preferred pick of an MDX-base blog, since the markdown with style components, rather than full-blown React components can save you some hassle.
+
+## Speed
+
+How quickly can you get set-up and writing your first post? well firebase out of the running; managing firestore rules and writing database queries and creating indexes, etc really hampers your pace, at least for me it did.
+
+I'd have to say, suprisingly I'd have to give the speed award to Sanity, at time of writing I've only used it for one project, but even with the slow start of trying to figure out a new product and how to implement it, I had it running in basically a day, whereas with MDX theres actually a lot of setup involved; you need to configure next to play nice with MDX, write all the logic for reading files from your file system, convert that to HTML, add all the necessary remark / rehype plugins, implement something like mdx-remote to handle that content, and we haven't even styled anything yet.
+
+So I think even for the more seasoned developer, Sanity is the way to go for fast as possible minimum viable product.
+
+## Ease
+
+Now this where it gets a bit tricky, on the face of it, it seems like Sanity is the platform of choice, its way easier to manage and setup than either firebase or MDX...
+
+...but what if you want users to be able to login and leave comments? or sign up and become contributers without going through the rigmarole of screening people and adding them as members to your project, which--past a certain point--will cost you money with Sanity.
+
+See for something like authentication Firebase is as easy as it gets I think, while still being backed by one the biggest giants in tech. It's also much easier if you want to let others get involved in writing stuff, I may loathe having to write firestore rules, but once it's done you're basically set for letting other take the reigns and start contributing.
+
+So ease is relative it seems, and really depeneds on what kind of features you want to have.
+
+## Verdict
+
+**If you're a developer looking to start a personal blog today**, I'd recommend MDX, its relatively easy, doesn't any accounts (either than github, but you had that anyway), and is very 'individual' dependant, you can do what you want, so long as you're willing to put in the effort, and in exchange for that effort you can create a really unique and feature rich blog, while honing and demonstrating yours skills to others.
+
+**If you're a developer building a blog for a client**, sanity is the way to go, setup is much easier than it seems at first, and so long as you invest in developing the clients workflow and understanding, its very user friendly even for non-technical people.
+
+**If you're planning to develop a community blog**, or a forum, something very public, where lots of users can write posts, like dev.to, firebase is probably your best bet, setup can be a bit rough, but you'll probably want the full suite of firebase tools, like firebase auth for users, firestore for document management, and firebase storage for image and other content storage. And granted, for all that, the process is still pretty easy, just be ready for some hassle like: setting up projects and instances, verbose queries, firestore rules, oauth tokens and authorizations, etc.
+
+### P.S.
+
+Keep in mind none of this is set in stone, or even neccesarily the way I'd do it, these are just some of the solutions I've used, and as you can see, each comes with its own set of drawbacks and advantages, but nothing prevents you from mixing it up; why not use firebase for auth and leverage google for heavy-lifting security wise, while keeping the content local? Don't like styling but still want MDX? tailwind and custom components will get the job done.
+
+</Article>

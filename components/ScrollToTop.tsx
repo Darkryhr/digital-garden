@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { TiArrowUpThick } from 'react-icons/ti';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -12,6 +13,7 @@ const variants = {
 
 const ScrollToTop = () => {
   const [visible, setVisible] = useState(false);
+  const router = useRouter();
 
   const ToggleVisibility = () => {
     if (window.scrollY > 300) {
@@ -26,6 +28,8 @@ const ScrollToTop = () => {
       top: 0,
       behavior: 'smooth',
     });
+    if (router.asPath.includes('#'))
+      router.replace(router.asPath.split('#')[0]);
   };
 
   useEffect(() => {
