@@ -39,6 +39,7 @@ function App({ Component, pageProps, router }: AppProps) {
       <MDXProvider components={MDXComponents}>
         <GlobalStyles />
         <Layout toggleTheme={themeToggler}>
+          <DefaultSeo {...SEOConfig} />
           {/* 
   // @ts-ignore */}
           <AnimatePresence exitBeforeEnter={true} initial={false}>
@@ -60,7 +61,6 @@ function App({ Component, pageProps, router }: AppProps) {
                 <Loader />
               ) : (
                 <>
-                  <DefaultSeo {...SEOConfig} />
                   <Component {...pageProps} />
                 </>
               )}
