@@ -54,5 +54,13 @@
     "icon": "/assets/portfolio/mylogo.svg",
     "desc": "A bug tracking app, GraphQL backend API, Postgres database managed with prisma. deploy coming soon.",
     "tags": ["GraphQL", "Next.js", "Prisma", "PostgreSQL", "JWT", "Docker"]
+  },
+  {
+    "name": "Lena Ozer",
+    "url": "https://www.lena-ozer.com/",
+    "blurUrl": "/assets/placeholder/lena-ozer.png",
+    "icon": "/assets/portfolio/lena-ozer.svg",
+    "desc": "A personal brand and blog site, built for my mom, with Next, Tailwind and Sanity",
+    "tags": ["Next.js", "Sanity", "TailwindCSS"]
   }
 ]
