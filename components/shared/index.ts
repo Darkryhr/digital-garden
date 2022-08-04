@@ -51,7 +51,11 @@ export const ProjectButton = styled(motion.button)`
   cursor: pointer;
   max-width: 80px;
   min-width: 50px;
+  background-color: ${({ theme }) => theme.colors.secondary};
   border: 1px solid ${({ theme }) => theme.colors.border};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const GradientButton = styled(motion.button)`
@@ -181,9 +185,6 @@ export const Heading3 = styled.h3`
   line-height: 1.4;
   @media (${breakpoint.device.sm}) {
     font-size: 1.5rem;
-  }
-  @media (${breakpoint.device.xs}) {
-    font-size: 1rem;
   }
 `;
 

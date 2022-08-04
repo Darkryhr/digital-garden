@@ -79,7 +79,7 @@ const Rename = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: ${breakpoint.size.lg};
-  height: calc(100vh - 200px);
+  height: calc(100vh - 140px);
 `;
 
 const Circle = styled.div`

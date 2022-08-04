@@ -37,7 +37,7 @@ const Modal = ({ handleClose, project }) => {
         animate='visible'
         exit='exit'
       >
-        <Heading3 style={{ marginBottom: '1rem' }}>{project.name}</Heading3>
+        <Heading3 style={{ marginBottom: '0.6rem' }}>{project.name}</Heading3>
         <TagWrapper>
           {project.tags.map(tag => (
             <Tag key={tag}>{tag}</Tag>
@@ -100,7 +100,7 @@ const TagWrapper = styled.div`
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding: 0.2rem 0 0.7rem 0;
+  padding: 0.2rem 0 0.4rem 0;
 `;
 
 const Tag = styled.span`

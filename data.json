@@ -48,14 +48,6 @@
     "tags": ["Angular", "Material", "MongoDB", "Express", "JWT", "Docker"]
   },
   {
-    "name": "Bug Tracker",
-    "url": "https://github.com/Darkryhr/bugtrackr",
-    "blurUrl": "/assets/placeholder/mylogo.png",
-    "icon": "/assets/portfolio/mylogo.svg",
-    "desc": "A bug tracking app, GraphQL backend API, Postgres database managed with prisma. deploy coming soon.",
-    "tags": ["GraphQL", "Next.js", "Prisma", "PostgreSQL", "JWT", "Docker"]
-  },
-  {
     "name": "Lena Ozer",
     "url": "https://www.lena-ozer.com/",
     "blurUrl": "/assets/placeholder/lena-ozer.png",

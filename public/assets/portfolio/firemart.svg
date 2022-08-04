@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-	 x="0px" y="0px" width="43.587px" height="30.101px" viewBox="-371.194 526.299 43.587 30.101" xml:space="preserve">
+<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="120px" height="120px" viewBox="0 0 120 120" overflow="visible" xml:space="preserve">
+<path fill="#2A2A2A" d="M109.594,120H10.406C4.659,120,0,115.341,0,109.594V10.406C0,4.659,4.659,0,10.406,0h99.188
+	C115.341,0,120,4.659,120,10.406v99.188C120,115.341,115.341,120,109.594,120z"/>
 <g>
-	<path id="XMLID_13_" fill="#5EBB04" d="M-350.384,540.859l-5.181,15.542h-6.496l9.21-27.383h7.154l1.233,12.746l9.374-12.746h7.483
-		l-9.21,27.383h-6.661l5.263-15.788l-8.305,10.854h-2.796L-350.384,540.859z"/>
 	<g>
-		<polygon fill="#262626" points="-359.023,538.387 -366.095,538.387 -371.194,553.682 -364.204,553.682 -360.997,544.226 
-			-352.034,544.226 -350.143,538.387 -356.968,538.387 		"/>
-		<polygon fill="#262626" points="-361.984,526.299 -363.957,532.138 -356.968,532.138 -346.607,532.138 -344.633,526.299 		"/>
+		<path id="XMLID_13_" fill="#5EBB04" d="M58.495,65.108l-8.82,26.461h-11.06l15.68-46.621h12.18l2.1,21.701l15.96-21.701h12.74
+			l-15.68,46.621h-11.34l8.96-26.881l-14.14,18.481h-4.76L58.495,65.108z"/>
+	</g>
+	<g>
+		<g>
+			<polygon fill="#FCFCFC" points="43.445,49.011 31.404,49.011 22.724,75.052 34.624,75.052 40.084,58.952 55.345,58.952 
+				58.565,49.011 46.945,49.011 			"/>
+			<polygon fill="#FCFCFC" points="38.404,28.431 35.044,38.371 46.945,38.371 64.585,38.371 67.945,28.431 			"/>
+		</g>
 	</g>
 </g>
 </svg>
