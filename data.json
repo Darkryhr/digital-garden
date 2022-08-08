@@ -54,5 +54,13 @@
     "icon": "/assets/portfolio/lena-ozer.svg",
     "desc": "A personal brand and blog site, built for my mom, with Next, Tailwind and Sanity",
     "tags": ["Next.js", "Sanity", "TailwindCSS"]
+  },
+  {
+    "name": "Octa",
+    "url": "https://next-chat-lime.vercel.app/",
+    "blurUrl": "/assets/placeholder/octa.png",
+    "icon": "/assets/portfolio/octa.svg",
+    "desc": "1-1 Chat app with direct messaging and live status",
+    "tags": ["Next.js", "Firebase", "TailwindCSS"]
   }
 ]
