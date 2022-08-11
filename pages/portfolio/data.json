@@ -4,23 +4,38 @@
     "url": "https://www.gabriel-lellouche.com/",
     "blurUrl": "/assets/placeholder/mylogo.png",
     "icon": "/assets/portfolio/mylogo.svg",
-    "desc": "This, just...this. By yours truly, responsive design, static blog, light / dark theme and animations.",
-    "tags": ["Next.js", "Framer", "Styled-Components", "Markdown"]
+    "desc": "My personal site, the one you're on right now, w/ a static blog, animation, modals, light & dark mode, and spotify connection.",
+    "tags": [
+      "Next.js",
+      "Framer",
+      "styled-Components",
+      "Markdown",
+      "Spotify API",
+      "MDX"
+    ]
   },
   {
     "name": "Sightsee",
     "url": "https://clever-stonebraker-68587b.netlify.app/",
     "blurUrl": "/assets/placeholder/sightsee.png",
     "icon": "/assets/portfolio/sightsee.svg",
-    "desc": "SERN stack vacation site complete with followable holiday destinations and user authentication with JSON web tokens.",
-    "tags": ["Redux Toolkit", "Vite", "Express", "Sequelize", "JWT"]
+    "desc": "full stack vacation site with followable holiday destinations, user authentication with JSON web tokens, and a protected route.",
+    "tags": [
+      "Redux Toolkit",
+      "Vite",
+      "Express",
+      "Sequelize",
+      "JWT",
+      "Tailwind",
+      "Fullstack"
+    ]
   },
   {
     "name": "Urban Viking",
     "url": "https://urban-vikings.vercel.app/",
     "blurUrl": "/assets/placeholder/urban-viking.png",
     "icon": "/assets/portfolio/urban-viking.svg",
-    "desc": "E-commerce site with context and stripe API",
+    "desc": "E-comm site with shopping cart, sleek design and stripe checkout.",
     "tags": ["Context API", "Stripe", "SCSS"]
   },
   {
@@ -28,24 +43,49 @@
     "url": "https://next-blog-nine-henna.vercel.app/",
     "blurUrl": "/assets/placeholder/vex.png",
     "icon": "/assets/portfolio/vex.svg",
-    "desc": "A next.js 'dev.to'-style blogging app, with efficient real-time data hydration using ISR.",
-    "tags": ["Context", "Markdown", "Firebase", "Next.js", " ISR", "ChakraUI"]
+    "desc": "A community blog site, with firebase user authentication, user profile page, editable markdown posts w/ live view, image uploading via firebase storage",
+    "tags": [
+      "Context",
+      "Markdown",
+      "Firebase",
+      "Storage bucket",
+      "Next.js",
+      "ISR",
+      "ChakraUI"
+    ]
   },
   {
     "name": "Firestarter",
     "url": "https://wonderful-goldstine-9fcc89.netlify.app/",
     "blurUrl": "/assets/placeholder/firestarter.png",
     "icon": "/assets/portfolio/firestarter.svg",
-    "desc": "An angular kanban board + a small angular universal ssr demo, dynamic forms enbale both google and email login.",
-    "tags": ["Angular", "Material", "Firebase", "SSR Demo", "Drag & Drop"]
+    "desc": "A kanban board w/ google and email login, draggable boards w/ color selection, responsive material design + a small angular universal ssr demo.",
+    "tags": [
+      "Angular",
+      "Material",
+      "Firebase",
+      "Dynamic Forms",
+      "Angular Universal",
+      "Drag & Drop"
+    ]
   },
   {
     "name": "Firemart",
     "url": "https://angular-firemart.firebaseapp.com/",
     "blurUrl": "/assets/placeholder/firemart.png",
     "icon": "/assets/portfolio/firemart.svg",
-    "desc": "MEAN stack app, dockerized express backend, frontend hosted w/ firebase. Features auth with JWT, admin CRUD w/ image upload, a real-time cart and printable invoices.",
-    "tags": ["Angular", "Material", "MongoDB", "Express", "JWT", "Docker"]
+    "desc": "full stack online grocery shopping app, backend built w/ express & mongoDB, frontend hosted w/ firebase. Features custom user auth with JWT, admin authorization for CRUD operation including image upload, a real-time cart and printable invoices.",
+    "tags": [
+      "Angular",
+      "Auth guards",
+      "HTTP Interceptor",
+      "Material",
+      "MongoDB",
+      "Express",
+      "JWT",
+      "Docker",
+      "Fullstack"
+    ]
   },
   {
     "name": "Bug Tracker",
@@ -53,6 +93,14 @@
     "blurUrl": "/assets/placeholder/mylogo.png",
     "icon": "/assets/portfolio/mylogo.svg",
     "desc": "A bug tracking app, GraphQL backend API, Postgres database managed with prisma. deploy coming soon.",
-    "tags": ["GraphQL", "Next.js", "Prisma", "PostgreSQL", "JWT", "Docker"]
+    "tags": [
+      "GraphQL",
+      "Apollo Client",
+      "Next.js",
+      "Prisma",
+      "PostgreSQL",
+      "JWT",
+      "Docker"
+    ]
   }
 ]

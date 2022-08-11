@@ -6,8 +6,15 @@ import skills from '../skills.json';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import SectionWrapper from '@components/SectionWrapper';
+import { useDarkMode } from 'hooks/useDarkMode';
 
 const SkillsSection = () => {
+  const [theme, themeToggler, mountedComponent] = useDarkMode();
+
+  if (!mountedComponent) return null;
+
+  console.log(theme === 'dark');
+
   return (
     <>
       <SectionWrapper delay={0.4}>
@@ -24,13 +31,12 @@ const SkillsSection = () => {
                 whileHover={{
                   scale: 1.05,
                 }}
-                bgColor={skill.color}
               >
                 <Image
                   src={skill.url}
                   alt={skill.name}
-                  width='50px'
-                  height='50px'
+                  width='45px'
+                  height='45px'
                 />
               </ImageBubble>
               <span>{skill.name}</span>
@@ -44,17 +50,14 @@ const SkillsSection = () => {
 
 export default SkillsSection;
 
-const ImageBubble = styled(motion.div)<{ bgColor: string }>`
+const ImageBubble = styled(motion.div)<{ $isDarkMode?: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.bgColor};
-  padding: 2.2rem;
-  width: 110px;
-  height: 110px;
+  width: 80px;
+  height: 80px;
   cursor: pointer;
-  border-radius: 99px;
 `;
 
 const SkillWrapper = styled.div`
@@ -65,5 +68,6 @@ const SkillWrapper = styled.div`
   span {
     margin-top: 1rem;
     font-size: 0.9rem;
+    font-weight: 500;
   }
 `;

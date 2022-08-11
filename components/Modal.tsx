@@ -106,6 +106,7 @@ const TagWrapper = styled.div`
 const Tag = styled.span`
   font-size: 0.7rem;
   font-weight: 600;
+  padding-bottom: 0.2rem;
   /* padding: 0.4rem; */
   padding-right: 0.5rem;
   display: inline-block;
