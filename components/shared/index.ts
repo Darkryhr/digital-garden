@@ -195,10 +195,9 @@ export const Heading4 = styled.h4`
 
 export const Subtitle = styled.p`
   opacity: 0.8;
-  font-weight: 400;
   letter-spacing: 0.01rem;
   line-height: 1.5;
-  font-size: 0.9rem;
+  font-size: 0.87rem;
   .bot {
     margin-bottom: 2rem;
   }

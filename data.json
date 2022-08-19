@@ -2,9 +2,10 @@
   {
     "name": "Gabriel does a thing",
     "url": "https://www.gabriel-lellouche.com/",
+    "repo": "https://github.com/Darkryhr/digital-garden",
     "blurUrl": "/assets/placeholder/mylogo.png",
     "icon": "/assets/portfolio/mylogo.svg",
-    "desc": "My personal site, the one you're on right now, w/ a static blog, animation, modals, light & dark mode, and spotify connection.",
+    "desc": "My personal site, the one you're on right now, w/ a static blog, animations, modals, light & dark mode, and a live spotify status bar.",
     "tags": [
       "Next.js",
       "Framer",
@@ -17,9 +18,10 @@
   {
     "name": "Sightsee",
     "url": "https://clever-stonebraker-68587b.netlify.app/",
+    "repo": "https://github.com/Darkryhr/sightsee-client",
     "blurUrl": "/assets/placeholder/sightsee.png",
     "icon": "/assets/portfolio/sightsee.svg",
-    "desc": "full stack vacation site with followable holiday destinations, user authentication with JSON web tokens, and a protected route.",
+    "desc": "Vacation site w/ followable holiday destinations, user authentication with JSON web tokens, and a protected route.",
     "tags": [
       "Redux Toolkit",
       "Vite",
@@ -33,17 +35,19 @@
   {
     "name": "Urban Viking",
     "url": "https://urban-vikings.vercel.app/",
+    "repo": "https://github.com/Darkryhr/urban-vikings",
     "blurUrl": "/assets/placeholder/urban-viking.png",
     "icon": "/assets/portfolio/urban-viking.svg",
-    "desc": "E-comm site with shopping cart, sleek design and stripe checkout.",
+    "desc": "E-commerce fashion brand site w/ an advanced cart (editable, responsive, persistent), stripe checkout, and personally designed products.",
     "tags": ["Context API", "Stripe", "SCSS"]
   },
   {
     "name": "Str Blog",
     "url": "https://next-blog-nine-henna.vercel.app/",
+    "repo": "https://github.com/Darkryhr/next-blog",
     "blurUrl": "/assets/placeholder/vex.png",
     "icon": "/assets/portfolio/vex.svg",
-    "desc": "A community blog site, with firebase user authentication, user profile page, editable markdown posts w/ live view, image uploading via firebase storage",
+    "desc": "A community blog site, with firebase user authentication, user profile page, editable markdown posts w/ live view, image uploading via firebase storage.",
     "tags": [
       "Context",
       "Markdown",
@@ -57,9 +61,10 @@
   {
     "name": "Firestarter",
     "url": "https://wonderful-goldstine-9fcc89.netlify.app/",
+    "repo": "https://github.com/Darkryhr/firestarter",
     "blurUrl": "/assets/placeholder/firestarter.png",
     "icon": "/assets/portfolio/firestarter.svg",
-    "desc": "A kanban board w/ google and email login, draggable boards w/ color selection, responsive material design + a small angular universal ssr demo.",
+    "desc": "A kanban board w/ google and email authentication, drag & drop boards w/ color selection, responsive material design + an angular universal SSR demo.",
     "tags": [
       "Angular",
       "Material",
@@ -72,9 +77,10 @@
   {
     "name": "Firemart",
     "url": "https://angular-firemart.firebaseapp.com/",
+    "repo": "https://github.com/Darkryhr/firemart",
     "blurUrl": "/assets/placeholder/firemart.png",
     "icon": "/assets/portfolio/firemart.svg",
-    "desc": "full stack online grocery shopping app, backend built w/ express & mongoDB, frontend hosted w/ firebase. Features custom user auth with JWT, admin authorization for CRUD operation including image upload, a real-time cart and printable invoices.",
+    "desc": "Supermarket app, w/ user authentication, role authorization(admin) for CRUD operation + image uploading, real-time carts, and printable invoices.",
     "tags": [
       "Angular",
       "Auth guards",
@@ -90,9 +96,10 @@
   {
     "name": "Bug Tracker",
     "url": "https://github.com/Darkryhr/bugtrackr",
+    "repo": "https://github.com/Darkryhr/bugtrackr",
     "blurUrl": "/assets/placeholder/mylogo.png",
     "icon": "/assets/portfolio/mylogo.svg",
-    "desc": "A bug tracking app, GraphQL backend API, Postgres database managed with prisma. deploy coming soon.",
+    "desc": "A bug tracking app, GraphQL backend API, Postgres database managed with prisma. WIP",
     "tags": [
       "GraphQL",
       "Apollo Client",
@@ -106,17 +113,19 @@
   {
     "name": "Lena Ozer",
     "url": "https://www.lena-ozer.com/",
+    "repo": "https://github.com/Darkryhr/lena-ozer",
     "blurUrl": "/assets/placeholder/lena-ozer.png",
     "icon": "/assets/portfolio/lena-ozer.svg",
-    "desc": "A personal brand and blog site, built for my mom, with Next, Tailwind and Sanity",
+    "desc": "A personal brand and blog site w/ content management, built for my mom, with Next, Tailwind and Sanity.",
     "tags": ["Next.js", "Sanity", "TailwindCSS"]
   },
   {
     "name": "Octa",
     "url": "https://next-chat-lime.vercel.app/",
+    "repo": "https://github.com/Darkryhr/next-chat",
     "blurUrl": "/assets/placeholder/octa.png",
     "icon": "/assets/portfolio/octa.svg",
-    "desc": "1-1 Chat app with user auth, direct messaging and live status",
+    "desc": "1-1 Chat app with user authentication, direct messaging and live status.",
     "tags": ["Next.js", "Firebase", "TailwindCSS"]
   }
 ]

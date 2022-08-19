@@ -27,7 +27,6 @@ const Modal = ({ handleClose, project }) => {
       opacity: 0,
     },
   };
-
   return (
     <Backdrop onClick={handleClose}>
       <ModalWrapper
@@ -43,19 +42,29 @@ const Modal = ({ handleClose, project }) => {
             <Tag key={tag}>{tag}</Tag>
           ))}
         </TagWrapper>
-        <Subtitle style={{ textAlign: 'start', lineHeight: '1.5' }}>
+        <Subtitle style={{ textAlign: 'center', lineHeight: '1.5' }}>
           {project.desc}
         </Subtitle>
-
-        <a href={project.url} target='_blank' rel='noreferrer'>
-          <ModalButton
-            onClick={handleClose}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Visit
-          </ModalButton>
-        </a>
+        <ButtonWrapper>
+          <a href={project.repo} target='_blank' rel='noreferrer'>
+            <RepoButton
+              onClick={handleClose}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Repo
+            </RepoButton>
+          </a>
+          <a href={project.url} target='_blank' rel='noreferrer'>
+            <DeployButton
+              onClick={handleClose}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Visit
+            </DeployButton>
+          </a>
+        </ButtonWrapper>
       </ModalWrapper>
     </Backdrop>
   );
@@ -82,35 +91,56 @@ const ModalWrapper = styled(motion.div)`
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 `;
 
-const ModalButton = styled(motion.button)`
-  background: ${({ theme }) => theme.colors.gradient};
-  color: ${({ theme }) => theme.colors.text};
-  padding: 0.6rem 1.5rem;
+const Button = styled(motion.button)`
+  padding: 0.5rem 1.3rem;
   border-radius: 0.2rem;
-  margin-top: 1rem;
   cursor: pointer;
-  border: 1px solid ${props => props.theme.colors.secondary};
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  border: 1px solid ${props => props.theme.colors.border};
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+`;
+
+const DeployButton = styled(Button)`
+  background: ${({ theme }) => theme.colors.accent};
+  border: none;
+`;
+
+const RepoButton = styled(Button)`
+  background: none;
+`;
+
+const ButtonWrapper = styled.div`
+  margin: 0 auto;
+  margin-top: 1rem;
+  display: flex;
+
+  justify-content: space-between;
+  & * + * {
+    margin-left: 0.5rem;
+  }
 `;
 
 const TagWrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
-  padding: 0.2rem 0 0.4rem 0;
+  padding: 0 0 0.4rem 0;
 `;
 
 const Tag = styled.span`
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 400;
   padding-bottom: 0.2rem;
   /* padding: 0.4rem; */
   padding-right: 0.5rem;
   display: inline-block;
-  -space: nowrap;
+  white-space: nowrap;
 
-  color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.text + 90};
+  &:hover {
+    color: ${({ theme }) => theme.colors.accent};
+  }
 `;

@@ -4,7 +4,7 @@ export const darkTheme: Theme = {
   colors: {
     primary: '#07080E',
     secondary: '#1D1C21',
-    accent: '#FEA520',
+    accent: '#FF7F11',
     text: '#eaeaea',
     border: '#474747',
     gradient: `
@@ -16,7 +16,7 @@ export const lightTheme: Theme = {
   colors: {
     primary: '#FAFAFF',
     secondary: '#E0E0E0',
-    accent: '#FEA520',
+    accent: '#FF7F11',
     text: '#000000',
     border: '#C6CFD2',
     gradient: `

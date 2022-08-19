@@ -33,13 +33,13 @@ const ProjectsSection = () => {
       </SectionWrapper>
       <SectionWrapper delay={0.3}>
         <Grid>
-          {projects.map(({ name, url, icon, desc, tags, blurUrl }) => (
+          {projects.map(({ name, url, icon, desc, tags, blurUrl, repo }) => (
             <ProjectButton
               data-cy='portfolio-project'
               key={name}
               onClick={() => {
                 !modalOpen
-                  ? setModalProject({ name, url, icon, desc, tags })
+                  ? setModalProject({ name, url, icon, desc, tags, repo })
                   : setModalProject({});
                 modalOpen ? close() : open();
               }}
