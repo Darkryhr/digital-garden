@@ -1,19 +1,19 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
 import { AnimatePresence } from 'framer-motion';
-import { RiMenu4Fill, RiCloseLine } from 'react-icons/ri';
+import Link from 'next/link';
+import React, { useEffect, useRef, useState } from 'react';
+import { RiCloseLine, RiMenu4Fill } from 'react-icons/ri';
 
 import { Logo } from '@components/Logo';
-import { Menu } from './Menu';
+import { BreakpointWrapper } from '@components/shared';
 import {
+  LogoWrapper,
+  MobileMenu,
+  MobileWrapper,
   Nav,
   WrapperLeft,
   WrapperRight,
-  LogoWrapper,
-  MobileWrapper,
-  MobileMenu,
 } from './Header.css';
-import { BreakpointWrapper } from '@components/shared';
+import { Menu } from './Menu';
 
 const Header = ({ toggleTheme }) => {
   const [open, setOpen] = useState(false);

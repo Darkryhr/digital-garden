@@ -1,6 +1,6 @@
+import { breakpoint } from '@styled/breakpoints.css';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { breakpoint } from '@styled/breakpoints.css';
 export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -30,7 +30,7 @@ export const LogoWrapper = styled(motion.div)`
   cursor: pointer;
   display: flex;
   color: '#fb8b24';
-  max-width: 85px;
+  max-width: 140px;
   margin-left: 3px;
 `;
 

@@ -2,7 +2,7 @@ import { Theme } from 'models/styled';
 
 export const darkTheme: Theme = {
   colors: {
-    primary: '#07080E',
+    primary: '#0a0a0b',
     secondary: '#1D1C21',
     accent: '#FF7F11',
     text: '#eaeaea',

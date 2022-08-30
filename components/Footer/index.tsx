@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useState } from 'react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import styled from 'styled-components';
 
-import NowPlaying from '@components/NowPlaying';
 import Contact from '@components/Contact';
+import { Logo, LogoType } from '@components/Logo';
+import NowPlaying from '@components/NowPlaying';
 import { IconButton, Muted } from '@components/shared';
-import { Logo } from '@components/Logo';
 import { breakpoint } from '@styled/breakpoints.css';
 
 const Footer = () => {
@@ -20,7 +20,7 @@ const Footer = () => {
       <ContentWrapper>
         <CopyWrapper>
           <LogoWrapper>
-            <Logo theme={themeIcon} />
+            <LogoType theme={themeIcon} />
           </LogoWrapper>
           <Muted
             style={{
@@ -82,7 +82,7 @@ const ContentWrapper = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-  max-width: 80px;
+  max-width: 30px;
 `;
 
 const Wrapper = styled.footer`
@@ -118,4 +118,7 @@ const CopyWrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 0 0 1rem 0;
+  @media (${breakpoint.device.md}) {
+    margin-top: 1rem;
+  }
 `;
