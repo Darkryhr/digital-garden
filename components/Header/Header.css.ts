@@ -30,7 +30,7 @@ export const LogoWrapper = styled(motion.div)`
   cursor: pointer;
   display: flex;
   color: '#fb8b24';
-  max-width: 140px;
+  max-width: 125px;
   margin-left: 3px;
 `;
 

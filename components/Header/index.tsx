@@ -41,13 +41,7 @@ const Header = ({ toggleTheme }) => {
       <Nav>
         <WrapperLeft>
           <Link href='/' passHref>
-            <LogoWrapper
-              whileHover={{ scale: 1.05, opacity: 0.7 }}
-              transition={{
-                duration: 0.15,
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <LogoWrapper whileTap={{ scale: 0.95 }}>
               <Logo theme={themeIcon} />
             </LogoWrapper>
           </Link>

@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import styled from 'styled-components';
 
 import Contact from '@components/Contact';
-import { Logo, LogoType } from '@components/Logo';
+import { Logo, LogoIcon } from '@components/Logo';
 import NowPlaying from '@components/NowPlaying';
 import { IconButton, Muted } from '@components/shared';
 import { breakpoint } from '@styled/breakpoints.css';
@@ -20,7 +20,7 @@ const Footer = () => {
       <ContentWrapper>
         <CopyWrapper>
           <LogoWrapper>
-            <LogoType theme={themeIcon} />
+            <LogoIcon theme={themeIcon} />
           </LogoWrapper>
           <Muted
             style={{
@@ -82,7 +82,7 @@ const ContentWrapper = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-  max-width: 30px;
+  max-width: 40px;
 `;
 
 const Wrapper = styled.footer`
