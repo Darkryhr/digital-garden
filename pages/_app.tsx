@@ -52,58 +52,61 @@ function App({ Component, pageProps, router }: AppProps) {
   if (!mountedComponent) return <div />;
 
   return (
+    //     <Script
+    //       strategy='afterInteractive'
+    //       src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+    //     />
+    //     <Script
+    //       id='gtag-init'
+    //       strategy='afterInteractive'
+    //       dangerouslySetInnerHTML={{
+    //         __html: `
+    //           window.dataLayer = window.dataLayer || [];
+    //           function gtag(){dataLayer.push(arguments);}
+    //           gtag('js', new Date());
+    //           gtag('config', '${gtag.GA_TRACKING_ID}', {
+    //             page_path: window.location.pathname,
+    //           });
+    //         `,
+    //       }}
+    //     />
+    //     <MDXProvider components={MDXComponents}>
+    //       <GlobalStyles />
+    //       <Layout toggleTheme={themeToggler}>
+    //         <DefaultSeo {...SEOConfig} />
+    //         {/*
+    // // @ts-ignore */}
+    //         <AnimatePresence exitBeforeEnter={true} initial={false}>
+    //           <motion.div
+    //             style={{ width: '100%' }}
+    //             key={router.route}
+    //             initial='pageInitial'
+    //             animate='pageAnimate'
+    //             variants={{
+    //               pageInitial: {
+    //                 opacity: 0,
+    //               },
+    //               pageAnimate: {
+    //                 opacity: 1,
+    //               },
+    //             }}
+    //           >
+    //             {pageLoading ? (
+    //               <Loader />
+    //             ) : (
+    //               <>
+    //               </>
+    //             )}
+    //           </motion.div>
+    //         </AnimatePresence>
+    //         <Toaster position='bottom-center' reverseOrder={false} />
+    //       </Layout>
+    //     </MDXProvider>
+
     <ThemeProvider theme={themeMode}>
-      <Script
-        strategy='afterInteractive'
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-      />
-      <Script
-        id='gtag-init'
-        strategy='afterInteractive'
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${gtag.GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-        }}
-      />
-      <MDXProvider components={MDXComponents}>
-        <GlobalStyles />
-        <Layout toggleTheme={themeToggler}>
-          <DefaultSeo {...SEOConfig} />
-          {/* 
-  // @ts-ignore */}
-          <AnimatePresence exitBeforeEnter={true} initial={false}>
-            <motion.div
-              style={{ width: '100%' }}
-              key={router.route}
-              initial='pageInitial'
-              animate='pageAnimate'
-              variants={{
-                pageInitial: {
-                  opacity: 0,
-                },
-                pageAnimate: {
-                  opacity: 1,
-                },
-              }}
-            >
-              {pageLoading ? (
-                <Loader />
-              ) : (
-                <>
-                  <Component {...pageProps} />
-                </>
-              )}
-            </motion.div>
-          </AnimatePresence>
-          <Toaster position='bottom-center' reverseOrder={false} />
-        </Layout>
-      </MDXProvider>
+      <DefaultSeo {...SEOConfig} />
+
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 }
