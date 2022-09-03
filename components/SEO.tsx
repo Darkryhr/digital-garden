@@ -1,5 +1,5 @@
-import React from 'react';
 import Head from 'next/head';
+import React from 'react';
 
 const SEO = ({
   title = '| Gabriel does a thing',
@@ -37,16 +37,11 @@ const SEO = ({
       <link rel='manifest' href='/site.webmanifest' />
       <link rel='shortcut icon' href='/favicon.ico' />
       <meta property='og:title' content={title} />
-      <meta property='og:description' content={desc} />
       <meta property='og:site_name' content='Gabriel does a thing' />
       <meta property='og:type' content='website' />
-      <meta property='og:image' content='https://i.imgur.com/xQcr8X8.png' />
-      <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:site' content='@GabrielAintReal' />
-      <meta name='twitter:title' content={title} />
-      <meta name='twitter:description' content={desc} />
+      <meta property='og:description' content={desc} />
       <meta
-        name='twitter:image'
+        property='og:image'
         content='https://www.gabriel-lellouche.com/card.png'
       />
       <title>
