@@ -19,7 +19,7 @@ export const Span = styled.span`
   border-radius: 50%;
   margin: 0 1rem;
   @media (${breakpoint.device.sm}) {
-    margin: 1rem 0 0 0;
+    margin: 0.75rem 0;
   }
 `;
 
@@ -30,7 +30,7 @@ export const OrEmail = styled.div`
   width: fit-content;
   max-width: 125px;
   @media (${breakpoint.device.sm}) {
-    padding-top: 1rem;
+    padding: 0.75rem 0;
     text-align: center;
     max-width: none;
   }
@@ -45,8 +45,11 @@ export const Form = styled.form`
   padding: 2rem 0;
   /* min-width: 530px; */
 
-  @media (${breakpoint.device.xs}) {
+  @media (${breakpoint.device.sm}) {
     padding: 0;
+  }
+
+  @media (${breakpoint.device.xs}) {
     max-width: none;
   }
 `;

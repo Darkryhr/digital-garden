@@ -21,14 +21,16 @@ const Footer = () => {
         <CopyWrapper>
           <LogoWrapper>
             <LogoIcon theme={themeIcon} />
+            <p>Gabriel Lellouche</p>
           </LogoWrapper>
+          |
           <Muted
             style={{
               marginBottom: '1rem',
-              marginLeft: '0.7rem',
+              marginLeft: '1rem',
             }}
           >
-            | &nbsp; Copyright &copy; {new Date().getFullYear()}
+            Copyright &copy; {new Date().getFullYear()}
           </Muted>
         </CopyWrapper>
         <SocialWrapper>
@@ -82,7 +84,15 @@ const ContentWrapper = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-  max-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 140px;
+  p {
+    margin-left: 0.8rem;
+    width: min-content;
+    font-weight: 600;
+  }
 `;
 
 const Wrapper = styled.footer`
@@ -118,7 +128,7 @@ const CopyWrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 0 0 1rem 0;
-  @media (${breakpoint.device.md}) {
+  @media (${breakpoint.device.sm}) {
     margin-top: 1rem;
   }
 `;
