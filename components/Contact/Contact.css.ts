@@ -1,7 +1,7 @@
-import styled from 'styled-components';
 import { Column } from '@components/shared';
 import { breakpoint } from '@styled/breakpoints.css';
 import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
 export const CustomColumn = styled(Column)`
   @media (${breakpoint.device.sm}) {
@@ -44,8 +44,10 @@ export const Form = styled.form`
   max-width: 550px;
   padding: 2rem 0;
   /* min-width: 530px; */
-  @media (${breakpoint.device.sm}) {
-    padding: 0 2rem;
+
+  @media (${breakpoint.device.xs}) {
+    padding: 0;
+    max-width: none;
   }
 `;
 
@@ -55,15 +57,15 @@ export const EmailLink = styled.a`
 `;
 
 export const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.2rem;
-  @media (${breakpoint.device.sm}) {
-  }
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin-bottom: 0.8rem;
 `;
+
 export const InputContainer = styled.div`
   border-radius: 5px;
-  width: 49%;
+  width: 100%;
   margin-right: 1rem;
   flex-direction: column;
   padding: 0.7rem 0 0.5rem 1rem;
