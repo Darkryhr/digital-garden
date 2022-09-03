@@ -12,6 +12,7 @@ import { SEOConfig } from '../next-seo.config';
 import Layout from '@components/Layout';
 import Loader from '@components/Loader';
 import MDXComponents from '@components/mdx';
+import SEO from '@components/SEO';
 import * as gtag from '@lib/gtag';
 import { GlobalStyles } from '@styled/global.css';
 import { darkTheme, lightTheme } from '@styled/theme.css';
@@ -104,8 +105,7 @@ function App({ Component, pageProps, router }: AppProps) {
     //     </MDXProvider>
 
     <ThemeProvider theme={themeMode}>
-      <DefaultSeo {...SEOConfig} />
-
+      <SEO />
       <Component {...pageProps} />
     </ThemeProvider>
   );
