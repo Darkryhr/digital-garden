@@ -15,9 +15,9 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
     transition: all 0.30s linear;
     background:${({ theme }) => theme.colors.primary};
-    background-image: radial-gradient(${({ theme }) =>
+    /* background-image: radial-gradient(${({ theme }) =>
       theme.colors.secondary} 1px, transparent 0);
-    background-size: 30px 30px;
+    background-size: 30px 30px; */
     overflow-x: hidden;
   font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
 
