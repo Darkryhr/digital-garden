@@ -76,8 +76,11 @@ const LogoWrapper = styled.div`
   rotate: 15deg;
   scale: 2;
   transform: translateX(100px);
-  @media (${breakpoint.device.md}) {
+  @media (${breakpoint.device.sm}) {
     transform: translateX(50px);
+  }
+  @media (${breakpoint.device.xs}) {
+    transform: translateX(30px);
   }
 `;
 
