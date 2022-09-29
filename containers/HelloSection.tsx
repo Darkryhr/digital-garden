@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 import { LogoIcon } from '@components/Logo';
-import SectionWrapper from '@components/SectionWrapper';
-import {
-  BreakpointWrapper,
-  Button,
-  Container,
-  Heading1,
-  Heading2,
-} from '@components/shared';
+import { BreakpointWrapper, Button, Heading2 } from '@components/shared';
+import { breakpoint } from '@styled/breakpoints.css';
 import styled from 'styled-components';
 
 const HelloSection = () => {
@@ -57,7 +51,6 @@ export default HelloSection;
 
 const ColorBg = styled.div`
   background-color: ${({ theme }) => theme.colors.accent};
-  height: 42vh;
   margin: 0 auto;
   width: 100%;
   display: flex;
@@ -94,6 +87,8 @@ const ContentWrapper = styled.div`
 
     span {
       font-weight: 600;
+    }
+    @media (${breakpoint.device.md}) {
     }
   }
 `;
