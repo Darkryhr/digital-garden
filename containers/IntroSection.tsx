@@ -1,7 +1,7 @@
-import React from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
+import React from 'react';
 import { HiDownload } from 'react-icons/hi';
+import styled from 'styled-components';
 
 import {
   Column,

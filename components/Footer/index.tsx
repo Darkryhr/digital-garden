@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import styled from 'styled-components';
 
 import Contact from '@components/Contact';
-import { Logo, LogoIcon } from '@components/Logo';
+import { LogoIcon } from '@components/Logo';
 import NowPlaying from '@components/NowPlaying';
 import { IconButton, Muted } from '@components/shared';
 import { breakpoint } from '@styled/breakpoints.css';
@@ -27,7 +27,6 @@ const Footer = () => {
           <Muted
             style={{
               marginBottom: '1rem',
-              marginLeft: '1rem',
             }}
           >
             Copyright &copy; {new Date().getFullYear()}
@@ -87,7 +86,7 @@ const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  max-width: 140px;
+  max-width: 120px;
   p {
     margin-left: 0.8rem;
     width: min-content;
@@ -127,8 +126,12 @@ const SocialWrapper = styled.div`
 const CopyWrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  max-width: 280px;
   padding: 0 0 1rem 0;
   @media (${breakpoint.device.sm}) {
+    max-width: none;
+    width: 80%;
     margin-top: 1rem;
   }
 `;

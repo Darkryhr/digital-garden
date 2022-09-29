@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
 import { breakpoint } from '@styled/breakpoints.css';
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
 //* Button Styles
 export const Button = styled(motion.button)<{ $filled?: boolean }>`
@@ -82,7 +82,7 @@ export const Divider = styled.div`
 
 //* Wrappers
 export const Container = styled.section`
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 67px);
   margin: 0 auto;
   width: 100%;
   display: flex;
@@ -170,7 +170,7 @@ export const Heading2 = styled.h2`
   font-weight: 700;
   line-height: 1.16;
   font-size: 3rem;
-  padding: 0 0 1rem 0;
+  padding: 0 0 0.5rem 0;
   @media (${breakpoint.device.sm}) {
     font-size: 2rem;
   }
@@ -195,15 +195,15 @@ export const Heading4 = styled.h4`
 
 export const Subtitle = styled.p`
   opacity: 0.8;
-  letter-spacing: 0.01rem;
   line-height: 1.5;
   font-size: 0.87rem;
   .bot {
     margin-bottom: 2rem;
   }
+  padding: 0.5rem 0 0 0;
+
   @media (${breakpoint.device.sm}) {
     font-size: 0.85rem;
-    padding: 0.5rem 0 0 0;
   }
 `;
 

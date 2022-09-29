@@ -28,8 +28,8 @@ export const LogoIcon = ({ theme }) => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       xmlSpace='preserve'
-      width='20%'
-      height='20%'
+      width='100%'
+      height='100%'
       fill={theme === 'dark' || !theme ? '#f4f4f4' : '#000000'}
       viewBox='0 0 92.89 110.48'
     >
