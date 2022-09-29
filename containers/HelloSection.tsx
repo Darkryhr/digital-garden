@@ -24,8 +24,6 @@ const HelloSection = () => {
               <span> Gabriel</span>, I'm a developer and graphic designer and
               this is my special little corner where I can write stuff and try
               out all kinds of looks and neat features.
-              <br />
-              Feel free to take a look around or get in touch.
             </p>
             <CTAButton
               whileHover={{
@@ -61,6 +59,7 @@ const ColorBg = styled.div`
   * {
     color: ${({ theme }) => theme.colors.primary};
   }
+  overflow: hidden;
 `;
 
 export const Wrapper = styled.div`
@@ -75,6 +74,11 @@ const LogoWrapper = styled.div`
   align-items: center;
   justify-content: center;
   rotate: 15deg;
+  scale: 2;
+  transform: translateX(100px);
+  @media (${breakpoint.device.md}) {
+    transform: translateX(50px);
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -87,8 +91,6 @@ const ContentWrapper = styled.div`
 
     span {
       font-weight: 600;
-    }
-    @media (${breakpoint.device.md}) {
     }
   }
 `;
