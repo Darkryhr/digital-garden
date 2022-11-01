@@ -94,23 +94,6 @@
     ]
   },
   {
-    "name": "Bug Tracker",
-    "url": "https://github.com/Darkryhr/bugtrackr",
-    "repo": "https://github.com/Darkryhr/bugtrackr",
-    "blurUrl": "/assets/placeholder/mylogo.png",
-    "icon": "/assets/portfolio/mylogo.svg",
-    "desc": "A bug tracking app, GraphQL backend API, Postgres database managed with prisma. WIP",
-    "tags": [
-      "GraphQL",
-      "Apollo Client",
-      "Next.js",
-      "Prisma",
-      "PostgreSQL",
-      "JWT",
-      "Docker"
-    ]
-  },
-  {
     "name": "Lena Ozer",
     "url": "https://www.lena-ozer.com/",
     "repo": "https://github.com/Darkryhr/lena-ozer",
@@ -118,14 +101,5 @@
     "icon": "/assets/portfolio/lena-ozer.svg",
     "desc": "A personal brand and blog site w/ content management, built for my mom, with Next, Tailwind and Sanity.",
     "tags": ["Next.js", "Sanity", "TailwindCSS"]
-  },
-  {
-    "name": "Octa",
-    "url": "https://next-chat-lime.vercel.app/",
-    "repo": "https://github.com/Darkryhr/next-chat",
-    "blurUrl": "/assets/placeholder/octa.png",
-    "icon": "/assets/portfolio/octa.svg",
-    "desc": "1-1 Chat app with user authentication, direct messaging and live status.",
-    "tags": ["Next.js", "Firebase", "TailwindCSS"]
   }
 ]
